@@ -1,8 +1,0 @@
-make love	7
-do no harm	7
-take care	4
-do work	38
-make a move	7
-take a look	6
-get hurt	2
-take a chance	13
