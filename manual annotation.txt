@@ -1,0 +1,22 @@
+==== 1. different meaning from wiktionary =====
+
+back door	3	doors of the back side entrance/accomplishing indirect means
+take care	299	good-bye/ to be cautious, careful or prudent	
+get away	158	to move away/ disblief
+heavy metal	53	metal that is ..
+
+===== 2. CD -> detect entity -> NCD =====
+compositional phrases -> entity name (episode, song) -> non-compositional
+
+car warsh -> a song.
+cash machine -> an article about song
+
+
+
+
+===== 3. NCD -> NCD
+
+
+
+
+
