@@ -4,15 +4,15 @@ def rank_list_comp(p, corpus, knowledge_base, p_scenario = None, threshold = 0.3
     # perturbed_ranked_lists: \hat(L)_p
     # term_context_dict: (term, context) pairs
 
-    terms = p.split()
+    terms = p.split() 
 
-    term_context_dict = {}
+    term_context_dict = {} # what is context? what is value
     # The lines below are what we propose
 
     # Get phrase contexts in a query or in a certain context
     scenario = p_scenario
     if scenario == None:
-        scenario = corpus
+        scenario = corpus   ## why? what if just be empty or none
     phrase_context = get_context(scenario, p)
 
     if 'adapt_with_knowledge_base':
