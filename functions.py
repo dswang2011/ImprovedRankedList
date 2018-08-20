@@ -10,7 +10,7 @@ def get_context_TFIDF(corpus, phrase, index):
     term_weight_dict = {}
     return term_weight_dict
 
- def get_combined_WordEmbedding(corpus, phrase, table_dict):
+ def get_context_WordEmbedding(corpus, phrase, table_dict):
     context_vector = []	# 300 dimention
     return context_vector
 
