@@ -60,7 +60,7 @@ def get_candidate_pages(phrase, knowledge_base):
 def get_matched_contexts(phrase_context, candidate_contexts_list, threshold):
     matched_contexts_dic = {}
     for candidate_context in candidate_contexts_list:
-        score = ranked_list_similarity(phrase_context, candidate_context, 1)
+        score = ranked_list_similarity(phrase_context, candidate_context)
         if score > threshold:
             matched_contexts_dic[candidate_context] = score
 
@@ -74,7 +74,7 @@ def get_context(corpus, phrase):
 
 
 
-def ranked_list_similarity(ranked_list_1, ranked_list_2, weight):
+def ranked_list_similarity(ranked_list_1, ranked_list_2):
     score = 0
     return score
 
