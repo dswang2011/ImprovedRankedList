@@ -1,19 +1,18 @@
-def rank_list_comp(p, corpus, knowledge_base, p_scenario = None, threshold = 0.3):
+from functions import *
+from indri import *
+import nltk
+# nltk.download('wordnet')
+def rank_list_comp(p, corpus, knowledge_base, scenario, context_type = 'wordvec', threshold = 0.3):
     # p: orginal phrase
     # original_ranked_list: L_p
     # perturbed_ranked_lists: \hat(L)_p
     # term_context_dict: (term, context) pairs
 
-    terms = p.split() 
-
-    term_context_dict = {} # what is context? what is value
-    # The lines below are what we propose
 
     # Get phrase contexts in a query or in a certain context
-    scenario = p_scenario
-    if scenario == None:
-        scenario = corpus   ## why? what if just be empty or none
     phrase_context = get_context(scenario, p)
+    index_dir_path = "E:/qiuchi/index/index_clueweb12"
+    index = IndriAPI(index_dir_path)
 
     if 'adapt_with_knowledge_base':
         # Get phrase diambiguation pages in the knowledge base
@@ -26,23 +25,28 @@ def rank_list_comp(p, corpus, knowledge_base, p_scenario = None, threshold = 0.3
         phrase_context = compute_updated_context(matched_contexts_dic)
 ############################################################################
 
+    perturbed_phrase_list = get_perturbed_phrases(p)
+
     # get context of perturbed phrases
     perturbed_phrase_context_list = []
-    for term in terms:
-        synonym_terms = get_synonym_terms(knowledge_base, term) #get synonym terms from knowledge base
+    for perturbed_phrase in perturbed_phrase_list:
+        context_list = index.get_context(corpus, perturbed_phrase)
+        if context_type == 'tfidf':
+            context_rep = get_context_TFIDF(context_list, index)
+        elif context_type == 'word_embedding':
+            context_rep = get_context_WordEmbedding(context_list, lookup_table)
 
-        for synonym_term in synonym_terms:
-            perturbed_phrase = p.replace('term',synonym_term)
-            ranked_list = {}
-            context = get_context(corpus, perturbed_phrase)
-            perturbed_phrase_context_list.append(context)
+        perturbed_phrase_context_list.append(context_rep)
 
 
     # compute compositionality scores
     score = 0
-    for perturbed_phrase_list in perturbed_phrase_context_list:
-        score = score + ranked_list_similarity(perturbed_phrase_list, phrase_context)
-
+    if context_type == 'tfidf':
+        for perturbed_phrase_list in perturbed_phrase_context_list:
+            score = score + tfidf_similarity(perturbed_phrase_list, phrase_context)
+    elif context_type == 'word_embedding':
+        for perturbed_phrase_list in perturbed_phrase_context_list:
+            score = score + context_similarity(perturbed_phrase_list, phrase_context)
     score = score/len(perturbed_phrase_context_list)
     return score
 
@@ -67,22 +71,3 @@ def get_matched_contexts(phrase_context, candidate_contexts_list, threshold):
     return matched_contexts_dic
 
 
-def get_context(corpus, phrase):
-    term_weight_dict = {}
-    return term_weight_dict
-
-
-
-
-def ranked_list_similarity(ranked_list_1, ranked_list_2):
-    score = 0
-    return score
-
-def update_ranked_list(ranked_list, context):
-
-    return
-
-
-def get_synonym_terms(knowledge_base, term):
-    term_list = []
-    return(term_list)
