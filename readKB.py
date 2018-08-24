@@ -11,17 +11,15 @@ def get_candidate_pages(phrase, knowledge_base):
 def read_test_data(test_data):
 	phrases = []
 	scenarios = []
+	labels = []
 	with open(test_data,'r') as f:
 		for line in f:
 			strs = line.split('\t')
-			if len(strs)>=2:
-				ss = strs[1].split('/')
-				if len(ss)>=2:
-					phrases.append(strs[0].strip())
-					phrases.append(strs[0].strip())
-					scenarios.append(ss[0].strip())
-					scenarios.append(ss[1].strip())
-	return phrases,scenarios
+			if len(strs)>2:		
+				phrases.append(strs[0].strip())
+				scenarios.append(strs[1].strip())
+				labels.append(strs[2].strip())
+	return phrases,scenarios,labels
 
 def get_prepared_KB(file_prepared_KB):
 	phrase2candidates = {}
@@ -33,7 +31,6 @@ def get_prepared_KB(file_prepared_KB):
 				# process last one
 				if p != '':
 					phrase2candidates[p] = candi_list
-					print(p,':',len(candi_list))
 				# process next one
 				strs = line.split('\t')
 				p = strs[1].strip()
@@ -49,7 +46,7 @@ def get_prepared_KB(file_prepared_KB):
 
 # test case:
 knowledge_base = get_prepared_KB(file_prepared_KB)
-phrases,scenarios = read_test_data(test_data)
-for p in phrases:
-	candi_list = get_candidate_pages(p,knowledge_base)
-	print(p,":",candi_list)
+phrases,scenarios,labels = read_test_data(test_data)
+for i in range(len(phrases)):
+	candi_list = get_candidate_pages(phrases[i],knowledge_base)
+	print(phrases[i],":",labels[i])
