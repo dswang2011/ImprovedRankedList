@@ -43,6 +43,17 @@ def get_context_WordEmbedding(context_list, matrix, word_list):
     context_vector = context_vector/len(context_list)	# 300 dimention
     return context_vector
 
+def get_context_TF(phrase,scenario):
+    term_weight_dict = {}
+    for term in scenario:
+        if term in term_weight_dict:
+            term_weight_dict[term] = term_weight_dict[term]+1
+        else:
+            term_weight_dict[term] = 1
+
+def get_phrase_context(scenario,p):
+    return scenario
+
 '''
 3. get perturbated phrase for phrase p. The question is we should investigate how to filter out meanless ones (or top-k, k=5/6?).
 input: phrase p
