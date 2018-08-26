@@ -3,10 +3,11 @@ import io,re,codecs
 import numpy as np
 import configparser
 import argparse
-from indri import IndriAPI
-from word_embedding import *
-from readKB import *
-from functions import *
+from corpus_index import IndriAPI
+from word_embedding import form_matrix
+from knowledge_base import get_prepared_KB
+from utils import get_perturbed_phrases, get_phrase_context,read_test_data
+import math
 
 class ImprovedRankList(object):
 
@@ -34,11 +35,11 @@ class ImprovedRankList(object):
         return info
 
     def initialize(self):
-        self.knowledge_base = get_prepared_KB(file_prepared_KB)
+        self.knowledge_base = get_prepared_KB(self.knowledge_base_path)
         self.corpus_index = IndriAPI(self.index_dir_path)
         self.word_embedding = None
         if 'path_to_vec' in self.__dict__:
-            self.word_embedding =form_matrix(path_to_vec)
+            self.word_embedding = form_matrix(self.path_to_vec)
 
     def run(self):
         phrases,scenarios,labels = read_test_data(self.input_path)
