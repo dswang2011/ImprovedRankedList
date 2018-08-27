@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from copy import copy
-
-def get_prepared_KB(file_prepared_KB):
+from utils import stem_words
+def get_prepared_KB(file_prepared_KB, stemmed = True):
     phrase2candidates = {}
     with open(file_prepared_KB,'r',encoding = 'utf-8') as f:
         p = ''
@@ -11,6 +11,7 @@ def get_prepared_KB(file_prepared_KB):
                 # process last one
                 if p != '':
                     phrase2candidates[p] = copy(candi_list)
+
                 # process next one
                 strs = line.split('\t')
                 p = strs[1].strip()
@@ -20,6 +21,8 @@ def get_prepared_KB(file_prepared_KB):
                 if len(strs)>1:
                     explain = strs[1].replace("==SS==","")
                     explain = explain.replace("==DB==","")
+                    if stemmed:
+                        explain = stem_words(explain)
                     candi_list.append(explain)
 
         if p != '':

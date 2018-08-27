@@ -3,6 +3,8 @@ from corpus_index import IndriAPI
 from word_embedding import *
 import numpy as np
 import math
+from scipy.stats import pearsonr
+from nltk.stem.porter import *
 ################## Qiuchi: ###################
 
 
@@ -39,7 +41,8 @@ def get_synonym_terms(term):
         synonym_term_list = synonym_term_list + ss.lemma_names()
 
     synonym_term_list = list(set(synonym_term_list))
-    synonym_term_list.remove(term)
+    if term in synonym_term_list:
+        synonym_term_list.remove(term)
     return synonym_term_list
 
 
@@ -55,6 +58,19 @@ def read_test_data(test_data):
                 scenarios.append(strs[1].strip())
                 labels.append(strs[2].strip())
     return phrases,scenarios,labels
+
+def pearson_correlation(x,y):
+    return(pearsonr(x,y)[0])
+
+def stem_words(text):
+    stemmer = PorterStemmer()
+    words = text.split()
+    new_text = ''
+    for word in words:
+        new_text = new_text+ stemmer.stem(word) +' '
+
+    new_text = new_text.strip()
+    return new_text
 
 if __name__ == '__main__':
     path_to_vec = 'glove/glove.6B.50d.txt'

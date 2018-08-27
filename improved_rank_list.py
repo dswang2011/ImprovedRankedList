@@ -6,7 +6,7 @@ import argparse
 from corpus_index import IndriAPI
 from word_embedding import form_matrix
 from knowledge_base import get_prepared_KB
-from utils import get_perturbed_phrases, get_phrase_context,read_test_data
+from utils import *
 import math
 
 class ImprovedRankList(object):
@@ -48,14 +48,20 @@ class ImprovedRankList(object):
             output_file = self.output_file
 
         file_writer = codecs.open(output_file,'w')
+        scores = []
         for phrase,scenario,label in zip(phrases,scenarios,labels):
             score = self.rank_list_comp(phrase, scenario)
-            print(score, label)
-            file_writer.write('{}\t{}\n'.format(score,label))
+            scores.append(score)
+            print(phrase, score, label)
+            file_writer.write('{}\t{}\t{}\n'.format(phrase,score,label))
 
+        pearson_correlation_coefficient = pearson_correlation(scores,labels)
+        print( pearson_correlation_coefficient)
 
      # def initialize(self):
     def rank_list_comp(self, p, scenario):
+        scenario = stem_words(scenario)
+        p = stem_words(p)
         phrase_context_terms = get_phrase_context(scenario, p)
 
         print('Computing the context representation.')
@@ -155,14 +161,15 @@ class ImprovedRankList(object):
         if 'kb_matching_threshold' in self.__dict__:
             threshold = self.kb_matching_threshold
         matched_contexts_pairs = []
+        total_score = 0
         for candidate_context in candidate_contexts_list:
             candidate_context_rep = self.get_context_rep([candidate_context])
             score = self.get_context_similarity(phrase_context_rep, candidate_context_rep)
-        total_score = 0
-        if score > threshold:
-            matched_contexts_pairs.append((candidate_context_rep,score))
-            # matched_contexts_dic[candidate_context] = score
-            total_score = total_score + score
+
+            if score > threshold:
+                matched_contexts_pairs.append((candidate_context_rep,score))
+                # matched_contexts_dic[candidate_context] = score
+                total_score = total_score + score
 
         # Normalize similarity scores
         for i in range(len(matched_contexts_pairs)):
