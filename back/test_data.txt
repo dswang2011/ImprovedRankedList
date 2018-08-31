@@ -23,3 +23,12 @@ make love	sextual intercourse/make amorous approches, rmance
 hot dog	
 black horse
 
+heart attack	An acute myocardial infarction, sometimes fatal, caused by the sudden occurrence of coronary thrombosis, which obstructs the blood supply to the heart and leads to necrosis of heart muscle tissue	1
+heart attach	Death or failure	0
+heavy metal	A toxic heavy metal is any relatively dense metal or metalloid that is noted for its potential toxicity	1
+heavy metal	A genre descended from rock music	0
+home run	The portion of a journey that ends at home I'm on the home run. 	1
+home run	A four-base hit, a homer''The first baseman hit a '''home run''' to lead off the ninth.	0
+
+70---
+
