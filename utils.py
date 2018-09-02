@@ -5,6 +5,8 @@ import numpy as np
 import math
 from scipy.stats import pearsonr
 from nltk.stem.porter import *
+import pandas as pd
+import string
 ################## Qiuchi: ###################
 
 
@@ -26,6 +28,8 @@ def get_perturbed_phrases(p):
         synonym_terms = get_synonym_terms(term) #get synonym terms from knowledge base
 
         for synonym_term in synonym_terms:
+            synonym_term = strip_punctuation(synonym_term)
+            synonym_term = stem_words(synonym_term)
             perturbed_phrase = p.replace(term,synonym_term)
             perturbed_phrase_list.append(perturbed_phrase)
     return perturbed_phrase_list
@@ -50,14 +54,25 @@ def read_test_data(test_data):
     phrases = []
     scenarios = []
     labels = []
-    with open(test_data,'r') as f:
-        for line in f:
-            strs = line.split('\t')
-            if len(strs)>2:
-                phrases.append(strs[0].strip())
-                scenarios.append(strs[1].strip())
-                labels.append(strs[2].strip())
+
+
+    if test_data.endswith('csv'):
+    # file_name = 'preprocessed_data.csv'
+        df = pd.read_csv(test_data, names = ['phrase','scenario','cd_score'])
+        phrases = df['phrase'].values
+        scenarios = df['scenario'].values
+        labels = df['cd_score'].values
+    else:
+        with open(test_data,'r') as f:
+            for line in f:
+                strs = line.split('\t')
+                if len(strs)>2:
+                    phrases.append(strs[0].strip())
+                    scenarios.append(strs[1].strip())
+                    labels.append(strs[2].strip())
     return phrases,scenarios,labels
+def strip_punctuation(text):
+    return ''.join(c for c in text if c not in string.punctuation)
 
 def pearson_correlation(x,y):
     return(pearsonr(x,y)[0])

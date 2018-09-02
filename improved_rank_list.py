@@ -42,21 +42,24 @@ class ImprovedRankList(object):
             self.word_embedding = form_matrix(self.path_to_vec)
 
     def run(self):
-        phrases,scenarios,labels = read_test_data(self.input_path)
-        output_file = 'output.txt'
-        if 'output_file' in self.__dict__:
-            output_file = self.output_file
+        self.rank_list_comp('field day', ' A day of class taken away from school for a field trip.')
+        # phrases,scenarios,labels = read_test_data(self.input_path)
+        # # print(phrases)
+        # # print(scenarios)
+        # output_file = 'output.txt'
+        # if 'output_file' in self.__dict__:
+        #     output_file = self.output_file
 
-        file_writer = codecs.open(output_file,'w')
-        scores = []
-        for phrase,scenario,label in zip(phrases,scenarios,labels):
-            score = self.rank_list_comp(phrase, scenario)
-            scores.append(score)
-            print(phrase, score, label)
-            file_writer.write('{}\t{}\t{}\n'.format(phrase,score,label))
+        # file_writer = codecs.open(output_file,'w')
+        # scores = []
+        # for phrase,scenario,label in zip(phrases,scenarios,labels):
+        #     score = self.rank_list_comp(phrase, scenario)
+        #     scores.append(score)
+        #     print(phrase, score, label)
+        #     file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
 
-        pearson_correlation_coefficient = pearson_correlation(scores,labels)
-        print( pearson_correlation_coefficient)
+        # pearson_correlation_coefficient = pearson_correlation(scores,labels)
+        # print(pearson_correlation_coefficient)
 
      # def initialize(self):
     def rank_list_comp(self, p, scenario):
@@ -98,8 +101,8 @@ class ImprovedRankList(object):
         window_size = 50
         if 'window_size' in self.__dict__:
             window_size = self.window_size
-
         context_list = self.corpus_index.get_context_list(perturbed_phrase, window_size = window_size)
+
         return context_list
 
 

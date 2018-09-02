@@ -77,8 +77,8 @@ class IndriAPI(object):
 def main():
     index_dir_path = "E:/qiuchi/index/index_clueweb12"
     indri = IndriAPI(index_dir_path)
-    contexts = indri.get_context_list('white house',window_size = 50)
-    print(get_context_TFIDF(contexts, indri))
+    contexts = indri.get_context_list('field day',window_size = 50)
+    # print(get_context_TFIDF(contexts, indri))
     # print(contexts)
 
     # print(len(docs))

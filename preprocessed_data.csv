@@ -1,0 +1,131 @@
+blood_sugar,the_amount_of_glucose_in_a_persons_blood,is_it_compositional
+air conditioning, An air conditioner or system of air conditioners.''This car has '''air conditioning'''.'' ,1
+air conditioning, The state of temperature and humidity produced by an air conditioner.,0.666666667
+blood pressure," The measurement of a person's blood pressure, expressed as systolic blood pressure and diastolic blood pressure readings.''The nurse spent all day taking '''blood pressures''' at the hospital.'' ",1
+blood pressure," The pressure exerted by the blood against the walls of the arteries and veins; it varies during the heartbeat cycle, and according to a person's age, health and physical condition.''the great majority of people who have serious conditions from high '''blood pressure''' suffer debilitating illness'' ",1
+blood sugar, Glucose in the blood.,0.666666667
+blood test, A serologic analysis of a sample of blood; a test in which blood is removed from a subject and analyzed to determine the presence or levels of any of a variety of substances which indicate whether the subject has health problems.,1
+blood test," An analysis of blood performed on two subjects to determine whether they are biologically related, such as a paternity test.",1
+bottom line, The final balance; the amount of money or profit left after everything has been tallied.,0
+bottom line, The summary or result; the most important information''The '''bottom line''' is that there simply are not enough hours in the day to finish all there is to do.'' {{syn|en|upshot|net-net}} ,0.333333333
+building site," A messy, disorganized area.",0.333333333
+building site," The site of a former structure, indicated by an assemblage of features, artifacts or debris, remote-sensing data, or historic records (e.g., deed records).",0
+building site," The site, the place where a building is located, is currently under construction, or shall be constructed.",1
+capital gain, An amount by which the value or the proceeds of the sale of a capital asset by its owner exceed its cost to the owner.,1
+capital gain, An increase in the value of a capital asset,1
+cash flow, A statement of such transactions.,0.666666667
+cash flow, The sum of cash revenues and expenditures over a period of time.,1
+center stage, An important or prominent position.,0.666666667
+center stage," The area in the center of the stage, especially one towards the front.",1
+chief executive, Chief executive officer.,1
+chief executive, The governor of a U.S. state.,0
+chief executive, The head of government or head of state.,1
+chief executive, The president of the United States.,0
+city block," The distance from one urban street to the next, or an approximately comparable distance.''In Lawrence, a mile is generally 12 '''city blocks''' east-west or 8 blocks north-south.'' ''Go along that road for about a '''city block''', and you should see an old barn.'' ",0
+city block," The smallest part of a town enclosed by streets.''The store is huge, occupying an entire '''city block'''.'' ",1
+city hall, The building that houses a city's government.{{ux|en|The vice-mayor has an office on the third floor of '''city hall'''.}} ,1
+city hall, The city government; government in general.{{ux|en|You can't fight '''city hall'''.}} ,1
+country house, A second home.,0.666666667
+country house," A weekend and holiday residence, located outside of urban areas, used as a retreat from city life.",0.666666667
+customer service, A department that provides services to existing customers.,1
+customer service," The act of providing services to customers before, during and after a purchase.",1
+disaster area, An area that has been the site of a natural disaster that receives an official designation entitling residents and organizations within that area to receive relief and benefits.''Much of the central Gulf Coast was declared a '''disaster area''' after hurricane Katrina.'' ,1
+disaster area, An area that looks like one that has suffered a natural disaster.''Your room is a '''disaster area'''.'' ,1
+discount rate, An interest rate that a central bank charges depository institutions that borrow reserves from it.,1
+discount rate, The interest rate used to discount future cashflows of a financial instrument; the annual interest rate used to decrease the amounts of future cashflows to yield their present value.,1
+domino effect, The situation in which one event sets off a chain of additional events.,0.666666667
+domino effect," The theory that, if South Vietnam fell to Communism, it would be followed by Cambodia, Laos, and additional South Asian countries.",0.333333333
+energy level, ''My '''energy levels''' have dropped since I stopped exercising.'' ,0.909090909
+energy level, any of the discrete stable energies that a quantum mechanical system (such as the electrons of an atom) can have,0.666666667
+exchange rate, The amount of one currency that a person or institution defines as equivalent to another when either buying or selling it at any particular moment,1
+exchange rate," The rate at which one currency can be exchanged for another, usually expressed as the value of the one in terms of the other.",1
+face value, No more or less than what is stated; a literal or direct meaning or interpretation.''Please take this comment at '''face value''' and don't try to read anything into it.'' ,0.666666667
+face value," The amount or value listed on a bill, note, stamp, etc.; the stated value or amount.",1
+field day, A day of class taken away from school for a field trip.,0.666666667
+field day, A day on which there is top-to-bottom all-hands cleaning.,0
+field day," A great time or a great deal to do, at somebody else's expense.''The reporters will have a '''field day''' with a comment like that.'' ''The scandal was a '''field day''' for the press.'' ",0.090909091
+field day, A great time or a great deal to do.''They went to the park and had a '''field day''' playing on the swings.'' ,0.384615385
+field day, A parade day.,0
+field day, A school day for athletic events; a sports day.,0.5
+food chain, A hierarchy.''With my promotion this month I will continue my steady journey to the top of the [[food chain]].'' ,0
+food chain, The feeding relationships between species in a biotic community.,0.666666667
+front yard," A enclosed and often primarily utilitarian area to the front of a house or similar residence, typically having a hard surface or paving.",1
+front yard," A yard to the front of a house or similar residence, typically having a lawn and often trees, shrubs, and/or flowers.",1
+heat wave, A period of exceptionally hot weather.,0.666666667
+heat wave, Three consecutive days with daytime high temperature of 90 degrees Fahrenheit or higher.,0.666666667
+high school, An institution which provides all or part of secondary education.,1
+high school, secondary school,0.666666667
+ice cap," A permanent expanse of ice encompassing a large geographical area, e.g. in Earth's polar zones or at high elevation.''The ocean beneath the arctic '''ice cap''' hosts many unique organisms adapted to the cold and shortage of light.'' ''The '''ice cap''' of Kilimanjaro is shrinking, and some researchers believe it will disappear within the next one hundred years.'' ",0.666666667
+ice cap, An ice pack designed to be worn on the head.,0.7
+ivory tower," A sheltered, overly-academic existence or perspective, implying a disconnection or lack of awareness of reality or practical considerations.{{ux|en|Such a proposal looks fine from an '''ivory tower''', but it could never work in real life.}} ",0.333333333
+ivory tower, Separated from reality and practical matters; overly academic.,0.333333333
+jet engine," an engine that obtains thrust by taking in air at the front, using it to burn fuel, then ejecting the hot combustion products at the rear through a propulsive nozzle",0.666666667
+jet engine," any engine propelled by expelling a high speed fluid jet (jet propulsion), such as a rocket, turbojet, turbofan, ramjet etc.",1
+keyboard instrument," Any musical instrument (a chordophone) that uses a keyboard to manipulate strings which produce sound, including a piano.",1
+keyboard instrument," Any musical instrument that produces sound directly from the manipulation of a keyboard by the performer, including a piano and a celesta.",1
+keyboard instrument," Any musical instrument which features a keyboard, such as a piano, synthesizer or celesta.",1
+love affair, A feeling of enthusiasm or strong liking for something; a fondness.{{ux|en|I've always had a '''love affair''' with stamps.}} ,0.666666667
+love affair, An affair; a usually adulterous relationship between people who are not married to each other.{{ux|en|He was involved in a '''love affair''' with a married woman.}} ,1
+market price," On restaurant menus, used to mean the price charged depends on the price of supplies, which may vary.",0.333333333
+market price," The price at which a product, financial instrument, service or other tradable item can be bought and sold at an open market; the going price.",1
+milk jug, A jug for holding milk.,1
+milk jug, A woman's breast.,0.333333333
+money maker, A lady's breast.,0
+money maker, A woman's buttocks.,0
+money maker, Something profitable.,0.555555556
+motion picture, A movie.{{ux|en|“Gone with the Wind” is my favorite '''motion picture'''.}} ,1
+motion picture," A sequence of images depicting people or objects in motion, preserved on a recording medium and capable of being projected for viewing.{{ux|en|Some technical knowledge of cameras and lighting is needed to create a '''motion picture'''.}} ",0.666666667
+passenger car, A railroad car that carries passengers.,0.666666667
+passenger car, A road vehicle that carries passengers; a motorcar or automobile.,1
+power plant, A station built for the production of electric power; a power station.''All of this areas power comes from the nuclear [[power plant]] across the river.'' ,1
+power plant, The portion of a vehicle devoted to providing energy for motion; the engine or motor.''A train without the [[power plant]] is just a bunch of metal boxes on wheels.'' ,0.666666667
+printing press, A mechanical device used for printing text or images repeatedly,0.666666667
+printing press, An organisation or factory containing such a machine,0.333333333
+public school, A college or university,0.333333333
+public school, A publicly funded and administered school; such schools in the context of other countries,1
+public school," Certain private schools, particularly any grammar school operated apart from the personal lands of its students or the fee-paying secondary schools which developed from or were modelled upon them; a British boarding school",0.666666667
+question mark, A state of doubt or uncertainty.''There’s a '''question mark''' over whether or not he’ll be fit for the next game.'' ,0.666666667
+question mark," The punctuation mark ???, used at the end of a sentence to indicate a question.",0.666666667
+real estate," Property that cannot easily be moved, usually buildings and the ground they are built on.",0.333333333
+real estate, Space used for a particular purpose.,0
+risk assessment," The determination of the potential impact of an individual risk by measuring or otherwise assessing both the likelihood that it will occur and the impact if it should occur, and then combining the result according to an agreed rule to give a single measure of potential impact.",1
+risk assessment, The overall process of identifying all the risks to and from an activity and assessing the potential impact of each risk.,0.923076923
+sand trap, A basin that prevents the passage of sand etc into a drainage system.,0.333333333
+sand trap," A sand-filled hollow, on a golf course, used as a hazard; a bunker.",0.666666667
+shock wave, A powerful compression wave produced by the movement of a body through a fluid or gas at a velocity greater than the local speed of sound.,1
+shock wave, Any violent disturbance.,0.333333333
+side effect," A change in state caused by a function call (typically ""side-effect"").''Eiffel is somewhat purist about insisting that functions have no '''side effects'''.'' ",0.333333333
+side effect," An adverse effect, an unintended consequence of a drug or therapy; usually not a beneficial effect.",0.777777778
+side effect, An unintended consequence of any action in addition to the intended consequence of that action.,0.333333333
+space shuttle, Any vehicle capable of repeatedly travelling between destinations in outer space carrying people or cargo.,1
+space shuttle, Any vehicle capable of travelling repeatedly between the Earth's surface and outer space carrying people or cargo.,0.916666667
+stock exchange, A building that trades stocks in of companies for money and vice versa.,0.666666667
+stock exchange, An organisation that trades stocks in of companies for money and vice versa.,0.333333333
+stock market, A cattle market.,0.333333333
+stock market, A market for the trading of company stock.,1
+television series, A group of episodes of such a program.,1
+television series, A television program which consists of several episodes that are broadcast at regular intervals.Friends'' was one of the most successful '''television series''' in recent years.'' ,1
+television station, A radio frequency or band assigned to a television broadcaster.,1
+television station, A studio or building from where a television channel is broadcast.,1
+television station, An organization which operates a television channel.,0.333333333
+test case, A legal action intended to set a precedent.,0.333333333
+test case, Any of a set of conditions and variables used to test an application.,0.727272727
+treasure chest," A chest filled with treasure, especially one used by pirates etc.",0.666666667
+treasure chest, The chest that held the royal treasury.,0.769230769
+trust fund," Loosely, a substantial inheritance of money.",0.666666667
+trust fund, Property held by a trustee in a trust established by a grantor for a beneficiary.,1
+value system," A hierarchy of values that all moral agents possess, demonstrated by their choices. Most people's value systems differ, making the imposition of a singular value system by the state a source of constant social warfare. This is an individualistic concept. One's value system is molded by one's virtues or vices.",0.909090909
+value system," A person's standards and self-discipline set, based on the common sense and wisdom of knowing what the proper moral rules and discipline are, and the amount of willingness to see themselves and others abide by them.",0.666666667
+vice president," A deputy to a president, often empowered to assume the position of president on his death or absence.",1
+vice president, An executive in a business in charge of a department or branch.,1
+video game," A type of game existing as and controlled by software, usually run by a video game console or a computer, played on a video terminal or television screen, and controlled by a paddle, joystick, joypad, mouse, or keyboard.",1
+video game, video game console,0.818181818
+water line," Any one of certain lines of a vessel, model, or plan, parallel with the surface of the water at various heights from the keel. In a half-breadth plan, the water lines are outward curves showing the horizontal form of the ship at their several heights; in a sheer plan, they are projected as straight horizontal lines.",0.7
+water line," Any one of several lines marked upon the outside of a vessel, corresponding with the surface of the water when she is afloat on an even keel. The lowest line indicates the vessel's proper submergence when not loaded, and is called the light water line; the highest, called the load water line, indicates her proper submergence when loaded.",1
+water line, The level at which water meets land along the shore of a body of water.,0.666666667
+water line, The line corresponding to the surface of the water touching any submerged object or body.,1
+water line," the outline of a horizontal section of a vessel, as when floating in the water.",0.666666667
+white knight, An individual or corporation that intends to acquire another company in order to avert a hostile takeover.,0.090909091
+white knight, Somebody who unnecessarily defends somebody else. A man who defends a woman in debate etc. in an attempt to gain her favour.,0.333333333
+white knight, To unnecessarily defend somebody.,0
+white knight," a hero, savior, or righteous individual",0.666666667
