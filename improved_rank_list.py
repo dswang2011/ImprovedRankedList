@@ -52,13 +52,19 @@ class ImprovedRankList(object):
 
         file_writer = codecs.open(output_file,'w')
         scores = []
+        targets = []
+        i = 0
         for phrase,scenario,label in zip(phrases,scenarios,labels):
-            score = self.rank_list_comp(phrase, scenario)
-            scores.append(score)
-            print(phrase, score, label)
-            file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
-
-        pearson_correlation_coefficient = pearson_correlation(scores,labels)
+            if i >0:
+                score = self.rank_list_comp(phrase, scenario)
+                print(score)
+                scores.append(score)
+                targets.append(float(label))
+                file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
+            i = i+1
+        pearson_correlation_coefficient = pearson_correlation(scores,targets)
+        writer = codecs.open(self.pearson_correlation_file,'w')
+        writer.write(str(pearson_correlation_coefficient))
         print(pearson_correlation_coefficient)
 
      # def initialize(self):
