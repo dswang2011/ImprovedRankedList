@@ -189,3 +189,103 @@ country house	A second home.	1
 white knight	To unnecessarily defend somebody.	0
 money maker	Something profitable.	0
 treasure chest	The chest that held the royal treasury.	1
+add up	To accumulate; to amount to.  If you can save even a couple of dollars per day	0
+air out	To throw passes	0
+aim to	He's aiming to be sure he hits the target on his first shot.	1
+aim to	To intend to.  I wasn't aiming to hurt you; it's just how things worked out.	1
+add up	To make sense; to be reasonable or consistent.  His story just doesn't add up. Why would he have been at the restaurant the day before the event?	0
+add on	The manufacturer sold many add ons for the basic camera.   The secretary offered a typing and copying service for theses	0
+add on	To put an expansion onto a building	1
+add up	To take a sum.  Add up the prices and find out how much it will cost.	0
+add on	To incorporate (something extra	0
+back off	To become less aggressive	1
+back in	A betting term from French hazard	0
+bag up	to put into a bag {{ux|en|Shall I bag up your groceries for you	0
+bag up	To laugh heartily; crack up.  I couldnt get a sentence out straight; I was baggin up.	0
+back off	To move backwards away from something.  I tried to back off slowly from the tiger in my path.	1
+back off	To lower the setting of.  Could you back off the volume a bit? It's really loud.	0
+attend to	To diligently work on; to pay attention to.  You should attend to your studies if you plan to succeed in the exams.	1
+bear out	To corroborate	0
+attend to	To serve; to satisfy someone's needs as a servant would; to wait on.	0
+bear out	To maintain and support to the end; to defend to the last.	1
+air out	To discuss in the open; to address an issue or conflict that has long been avoided.	0
+air out	To expose to air; to leave open or spread out	0
+beat off	To drive something away with blows or military force. Now often used figuratively.	1
+beat down	To severely beat someone up.	0
+beat down	(of the sun or rain) To strike with great force.  We had to leave the beach because the sun was really beating down.   It was a ghastly morning	0
+back in	To reverse a vehicle into a space.	0
+beat down	To haggle with someone to sell at a lower price.  I managed to beat him down to half his original asking price.	0
+beat up	Repeatedly bomb a military target or targets.	0
+beat up	To sail to windward using a series of alternate tacks across the wind.	0
+beat off	To masturbate	0
+beat off	To waste time.  I beat off at work all day; I didn't get anything done.	0
+bail out	To make a unscheduled voluntary termination of an underwater dive	0
+bail out	To sell all or part of one's holdings in stocks	0
+bail out	To secure the release of an arrested person by providing bail money.	0
+ball up	To coil up into a ball.  He balled up his fists	0
+ball up	To hunch over and pull in one's arms and legs.  Her son balls up in fear whenever there is a storm.	0
+ball up	To ruin or botch.	0
+ball up	To crush into a ball shape.  She balled up her paper in frustration.	0
+bail out	To leave (or not attend at all) a place or a situation	0
+beat up	An act of beating up: A raid. A beating; a hazing.	0
+bail out	To remove water from a boat by scooping it out.	1
+beat up	To cause	0
+bail out	To exit an aircraft while in flight.	0
+beat up	A person who	1
+bail out	To rescue	0
+beat up	To attack suddenly; to alarm (largely an obsolete usage).	0
+beat up	To go diligently about in order to get helpers or participants in an enterprise.  to beat up for recruits	0
+beat up	To feel badly guilty and accuse oneself over something. Usually followed by over or about.  Don't beat yourself up over such a minor mistake.	0
+beat up	To give a severe beating to	0
+beat up	A tree planted later than others in a plantation.	0
+beat up	An artificially or disingenuously manufactured alarm or outcry	0
+beat up	To get something done	0
+base on	To derive (a work) from.	0
+bang on	To constantly talk about. {{ux|en|I started recycling	0
+bang on	Exactly at {{ux|en|I managed to arrive bang on five oclock.}} {{ux|en|Shes bang on the dot	0
+bang on	Precisely accurate; exactly appropriate or fitting; spot on. {{syn|en|on the mark|on the money|spot on}}	0
+bear off	To remove to a distance; to keep clear from rubbing against anything.  to bear off a blow; to bear off a boat	0
+black out	To lose consciousness; to suffer a blackout.	0
+bash out	To play (a tune) clumsily on a piano or similar instrument.	0
+bash out	To write something very quickly	0
+base on	To ground (an opinion	1
+be around	To be alive	0
+bang away	to work tirelessly  I've been banging away at the essay for ages	0
+bed down	To put an animal to rest for the night.	0
+bang away	to constantly and irritatingly talk (about)  My folks keep banging away at me to study harder.	0
+bed down	To lie down to sleep for the night	1
+bang away	to strike or hit repeatedly  bang away on the drums	1
+beat up	Battered by time and usage; beaten up.	1
+bite off	}} To accept or commit oneself to a task	0
+bind up	To tie together	1
+bind up	To wrap	0
+be around	To be near; to socialize with.  You're fun to be around.	0
+black out	To make dark.	0
+bite off	To acquire	0
+blend in	To fit unnoticed into the surroundings.  He disguised himself as a businessman to blend in with the others wearing suits.   The aliens adopted human form in order to blend in.	1
+blend in	To add (an ingredient) by mixing or blending.	1
+black up	To make something (e.g. a film	0
+black up	To put on blackface makeup.	0
+bear off	To gain; to carry off	0
+black out	To censor or cover up.	0
+bear off	To restrain; to keep from approaching.	0
+black out	To censor or cover up by writing over with black ink.	0
+blast away	To destroy by blasting explosives	0
+blank out	To cause (something) to become blank. To erase (something)	0
+blank out	to set even	0
+blank out	To become blank. To temporarily lose memory  He removed the paper from the heat	0
+blast away	to continue shooting rapidly.  They were blasting away at each other for 10 minutes before the shooting died down.	1
+blow away	To delete (data	0
+blow away	To overwhelm.	1
+blow away	To disperse or to depart on currents of air.  I didn't have to rake. The leaves just blew away.	1
+block out	to cover something	0
+block out	to begin to reduce to shape; to mark out roughly; to lay out.  to block out a plan	0
+block off	To book	0
+block off	To obstruct.  The lorry is blocking off the road	0
+blow away	To kill (someone) by shooting them.  The kid just blew the clerk away.	0
+blow away	To cause to go away by blowing	0
+block out	to prevent from entering or penetrating.  High-factor suncream blocks out the sun's rays.	0
+block out	to prevent (a thought) from entering one's mind.  After finding out she had terminal cancer	1
+blow out	To extinguish something	0
+blow away	To cause to go away	0
+blow away	To flabbergast; to impress greatly.  The critics were blown away by their latest album.	1
