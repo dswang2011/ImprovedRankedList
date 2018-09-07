@@ -97,8 +97,8 @@ class ImprovedRankList(object):
             context_list = self.get_context_list(perturbed_phrase)
             context_rep = self.get_context_rep(context_list)
             output_score = output_score + self.get_context_similarity(phrase_context_rep, context_rep)
-
-        return output_score
+        avg_perturb_score = output_score/len(perturbed_phrase_list)
+        return avg_perturb_score
 
 
 
