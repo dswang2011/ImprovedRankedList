@@ -71,7 +71,7 @@ class ImprovedRankList(object):
      # def initialize(self):
     def rank_list_comp(self, p, scenario):
         #scenario = stem_words(scenario)
-        p = stem_words(p)
+        p_stem = stem_words(p)
         phrase_context_terms = self.get_window_list(p)
 
         print('Computing the context representation.')
@@ -79,7 +79,7 @@ class ImprovedRankList(object):
         if self.adapt_with_knowledge_base:
             print('Recomputing the context representation with Knowledge base.')
             # Get phrase diambiguation pages in the knowledge base
-            candidate_context_list = self.get_candidate_pages(p)
+            candidate_context_list = self.get_candidate_pages(p_stem)
             # Find all (matched contexts, matching scores) above a given threshold
             matched_contexts_dic = self.get_matched_contexts(scenario, candidate_context_list)
 

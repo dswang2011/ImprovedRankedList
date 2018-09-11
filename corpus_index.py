@@ -77,7 +77,8 @@ class IndriAPI(object):
 def main():
     index_dir_path = "E:/qiuchi/index/index_clueweb12"
     indri = IndriAPI(index_dir_path)
-    contexts = indri.get_context_list('field day',window_size = 50)
+    print(indri.get_doc_frequency('day'))
+    print(indri.get_doc_frequency('dai'))
     # print(get_context_TFIDF(contexts, indri))
     # print(contexts)
 
