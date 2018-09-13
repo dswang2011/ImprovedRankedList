@@ -1,0 +1,131 @@
+﻿city block	The smallest part of a town enclosed by streets.''The store is huge, occupying an entire '''city block'''.''	1
+city block	The distance from one urban street to the next, or an approximately comparable distance.''In Lawrence, a mile is generally 12 '''city blocks''' east-west or 8 blocks north-south.'' ''Go along that road for about a '''city block''', and you should see an old barn.''	0
+city block	city block	0
+side effect	An adverse effect, an unintended consequence of a drug or therapy; usually not a beneficial effect.	1
+side effect	An unintended consequence of any action in addition to the intended consequence of that action.	0.333333333
+side effect	[entity] Side Effect was an American disco and jazz-funk band, that recorded between 1972 and 1982. The group was formed in Los Angeles, California in 1972 by Augie Johnson who became their leader.	0
+field day	A day of class taken away from school for a field trip.	0.666666667
+field day	A great time or a great deal to do, at somebody else's expense.''The reporters will have a '''field day''' with a comment like that.'' ''The scandal was a '''field day''' for the press.''	0
+field day	[entity] The Field Day Theatre Company began as an artistic collaboration between playwright Brian Friel and actor Stephen Rea. In 1980, the duo set out to launch a production of Friel's recently completed play, Translations. They decided to rehearse and premiere the play in Derry with the hope of establishing a major theatre company for Northern Ireland. The production and performance of Translations generated a level of excitement and anticipation that unified, if only for a short time, the various factions of a divided community. Although Field Day has never put forth a formal mission statement, their intention was to create a space, a 'fifth province,' that transcended the crippling oppositions of Irish politics. The term 'fifth province' — Ireland consists of four provinces – was coined by the editors of an Irish Journal, The Crane Bag, to name an imaginary cultural space from which a new discourse of unity might emerge. In addition to being an enormous popular and critical success, Field Day's first production created just such a space. After the production of Translations, Seamus Heaney, Ireland's most prominent poet, recognised the importance of what they had accomplished and urged Brian Friel to continue with the project: "this was what theatre was supposed to do" (cited in Richtarik, 65). That the company was established in Derry, Northern Ireland's "second city," is significant. Although Friel knew the city well (he had lived there until 1967), Derry, being close to the border, was a hot-spot in the north-south tensions during the "The Troubles". Furthermore, its western location and its relationship to Belfast, Northern Ireland's east coast capital, underline a second historically older division in Ireland – the division between the cosmopolitan east and the rural, romantic west.	0
+stock market	A market for the trading of company stock.	1
+stock market	A cattle market.	0.333333333
+shock wave	A powerful compression wave produced by the movement of a body through a fluid or gas at a velocity greater than the local speed of sound.	1
+shock wave	Any violent disturbance.	0.333333333
+television station	A radio frequency or band assigned to a television broadcaster.	1
+television station	An organization which operates a television channel.	0.333333333
+stock exchange	A building that trades stocks in of companies for money and vice versa.	0.666666667
+stock exchange	An organisation that trades stocks in of companies for money and vice versa.	0.333333333
+food chain	The feeding relationships between species in a biotic community.	1
+food chain	A hierarchy.''With my promotion this month I will continue my steady journey to the top of the [[food chain]].''	0
+food chain	[entity] The Food Chain is a London, United Kingdom-based charity who provide nutritional support services for people living with HIV in London. Formed on Christmas Day 1988, its stated aim is "to ensure people living with HIV in London can access the nutrition they need to get well, stay well and lead healthy, independent lives.". Using a large network of volunteers The Food Chain deliver meals and groceries, offers cookery and nutrition classes and communal eating opportunities to people living with HIV in London and their dependents. These are largely delivered from the Acorn House kitchen near King's Cross. In 2005, The Food Chain won the Queen's Award for Volunteer Organisation of the Year. The Food Chain also won The Guardian Charity of the Year award in 2005, and the National Lottery 'Inspiration' award in 2006.	0
+printing press	A mechanical device used for printing text or images repeatedly	0.666666667
+printing press	An organisation or factory containing such a machine	0.333333333
+chief executive	The head of government or head of state.	1
+chief executive	The governor of a U.S. state.	0
+discount rate	The interest rate used to discount future cashflows of a financial instrument; the annual interest rate used to decrease the amounts of future cashflows to yield their present value.	1
+discount rate	[entity] Social discount rate (SDR) is the discount rate used in computing the value of funds spent on social projects. Determining this rate is not always easy and can be the subject of discrepancies in the true net benefit to certain projects, plans and policies.	0
+space shuttle	Any vehicle capable of travelling repeatedly between the Earth's surface and outer space carrying people or cargo.	1
+space shuttle	[entity] The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA), as part of the Space Shuttle program. Its official program name was Space Transportation System (STS), taken from a 1969 plan for a system of reusable spacecraft of which it was the only item funded for development. The first of four orbital test flights occurred in 1981, leading to operational flights beginning in 1982. Five complete Shuttle systems were built and used on a total of 135 missions from 1981 to 2011, launched from the Kennedy Space Center (KSC) in Florida. Operational missions launched numerous satellites, interplanetary probes, and the Hubble Space Telescope (HST); conducted science experiments in orbit; and participated in construction and servicing of the International Space Station. The Shuttle fleet's total mission time was 1322 days, 19 hours, 21 minutes and 23 seconds. Shuttle components included the Orbiter Vehicle (OV), a pair of recoverable solid rocket boosters (SRBs), and the expendable external tank (ET) containing liquid hydrogen and liquid oxygen. The Shuttle was launched vertically, like a conventional rocket, with the two SRBs operating in parallel with the OV's three main engines, which were fueled from the ET. The SRBs were jettisoned before the vehicle reached orbit, and the ET was jettisoned just before orbit insertion, which used the orbiter's two Orbital Maneuvering System (OMS) engines. At the conclusion of the mission, the orbiter fired its OMS to de-orbit and re-enter the atmosphere. The orbiter then glided as a spaceplane to a runway landing, usually at the Shuttle Landing Facility of KSC or Rogers Dry Lake in Edwards Air Force Base, California. After landing at Edwards, the orbiter was flown back to the KSC on the Shuttle Carrier Aircraft, a specially modified Boeing 747. The first orbiter, Enterprise, was built in 1976 for use in Approach and Landing Tests and had no orbital capability. Four fully operational orbiters were initially built: Columbia, Challenger, Discovery, and Atlantis. Of these, two were lost in mission accidents: Challenger in 1986 and Columbia in 2003, with a total of fourteen astronauts killed. A fifth operational (and sixth in total) orbiter, Endeavour, was built in 1991 to replace Challenger. The Space Shuttle was retired from service upon the conclusion of Atlantis's final flight on July 21, 2011.	0
+public school	A publicly funded and administered school; such schools in the context of other countries	1
+public school	A college or university	0.333333333
+building site	The site, the place where a building is located, is currently under construction, or shall be constructed.	1
+building site	The site of a former structure, indicated by an assemblage of features, artifacts or debris, remote-sensing data, or historic records (e.g., deed records).	0
+sand trap	A sand-filled hollow, on a golf course, used as a hazard; a bunker.	0.666666667
+sand trap	A basin that prevents the passage of sand etc into a drainage system.	0.333333333
+test case	Any of a set of conditions and variables used to test an application.	0.75
+test case	A legal action intended to set a precedent.	0.333333333
+market price	The price at which a product, financial instrument, service or other tradable item can be bought and sold at an open market; the going price.	1
+market price	On restaurant menus, used to mean the price charged depends on the price of supplies, which may vary.	0.333333333
+domino effect	The situation in which one event sets off a chain of additional events.	0.666666667
+domino effect	The theory that, if South Vietnam fell to Communism, it would be followed by Cambodia, Laos, and additional South Asian countries.	0.333333333
+love affair	An affair; a usually adulterous relationship between people who are not married to each other.{{ux|en|He was involved in a '''love affair''' with a married woman.}}	1
+love affair	[entity] Love Affair is a 1939 American romantic film starring Irene Dunne and Charles Boyer and featuring Maria Ouspenskaya. It was directed by Leo McCarey and written by Delmer Daves and Donald Ogden Stewart, based on a story by McCarey and Mildred Cram.	0
+center stage	The area in the center of the stage, especially one towards the front.	1
+center stage	[entity] Center Stage is an American television anthology series that aired in 1954 on the American Broadcasting Company as a summer replacement for The Motorola Television Hour. It aired on the American Broadcasting Company (ABC) on alternate weeks from June 1, 1954 to September 21, 1954, swapping airings with the U.S. Steel Hour. The series was produced by Herbert Brodkin. There were nine episodes, one of which was written by Rod Serling. Among its stars were Walter Matthau, Charles Coburn, Lee Marvin, and Vivian Blaine.	0
+center stage	[entity] Center Stage is an album by Australian-American pop singer Helen Reddy that was released in 1998 by Varèse Sarabande. Reddy describes the album as the perfect melding of two areas of her career: "the recording studio and the theatrical stage. I tried to select songs from various songwriters in different eras. I've also included (of course) a song from each of the musical shows I've performed in."	0
+money maker	Something profitable.	1
+money maker	A lady's breast.	0
+money maker	[entity] "Money Maker" is the first single from Ludacris's fifth album Release Therapy.The song was released to the radio on July 17, 2006. The song is Ludacris' take on the 1961 Elmore James blues song Shake Your Moneymaker. It was produced by The Neptunes and features Pharrell. The song was written by Chris Bridges (Ludacris), and Pharrell Williams. The video was released on August 17, 2006. The video premiered on MTV's Making the Video. The single reached number 1 on various charts. It has peaked at number 1 on the Billboard Hot 100, the Hot R&B/Hip-Hop Songs, and number 1 on Hot Rap Tracks in the United States. It also became the number 1 single on radio in the United States on October 19, 2006. The music video managed to enter BET's 106 & Park and peak at number 1, where it remained for several days. The single has strong airplay on BET and MTV. It also has airplay on Canada's Muchmusic. The single had a major promotional campaign and huge airplay on radio around the U.S., Canada and other countries around the globe. The song was performed on the 2006 MTV Video Music Awards.This is Ludacris's third #1 hit single. American R&B singer, Amerie, recorded an answer back (remix) to the single. The song was included on her first Mixtape, Because I Love It Volume 1 (the mixtape that was released to accompany her third studio Because I Love It). The song however did not appear on the final album. "Because I Love It" was released to international markets only. The song won a Grammy Award for Best Rap Song in 2007.	0
+white knight	a hero, savior, or righteous individual	0.666666667
+white knight	An individual or corporation that intends to acquire another company in order to avert a hostile takeover.	0
+white knight	[entity] The White Knight is a fictional character in Lewis Carroll's book Through the Looking-Glass.He represents the chess piece of the same name.As imagined in John Tenniel's illustrations for the Alice stories he has echoes of John Millais's Sir Isumbras at the Ford.	0
+white knight	[entity] In business, a white knight is a friendly investor that acquires a corporation at a fair consideration with the support from the corporation's board of directors and management. This may be during a period while it is facing a hostile acquisition from another potential acquirer (black knight) or it is facing bankruptcy. White knights are preferred by the board of directors (when directors are acting in good faith with regards to the interest of the corporation and its shareholders) and/or management as in most cases as they do not replace the current board or management with a new board, whereas, in most cases, a black knight will seek to replace the current board of directors and/or management with its new board reflective of its net interest in the corporation's equity. The first type, the white knight, refers to the friendly acquirer of a target firm in a hostile takeover attempt by another firm. The intent of the acquisition is to circumvent the takeover of the object of interest by a third, unfriendly entity, which is perceived to be less favorable. The knight might defeat the undesirable entity by offering a higher and more enticing bid, or strike a favorable deal with the management of the object of acquisition. The second type refers to the acquirer of a struggling firm that may not necessarily be under threat by a hostile firm. The financial standing of the struggling firm could prevent any other entity being interested in an acquisition. The firm may already have huge debts to pay to its creditors, or worse, may already be bankrupt. In such a case, the knight, under huge risk, acquires the firm in crisis. After acquisition, the knight then rebuilds, or integrates the firm. A number of variations of the term have been used and these include: a grey knight which is an acquiring corporation or individual that enters a bid for a hostile takeover in addition to the target firm and first bidder, perceived as more favorable than the black knight (unfriendly bidder), but less favorable than the white knight (friendly bidder). Also, a white squire, which is similar to a white knight except it only exercises a significant minority stake, as opposed to a majority stake. A white squire doesn't have the intention, but rather serves as a figurehead in defense of a hostile takeover. The white squire may often also get special voting rights for their equity stake.	0
+milk jug	A jug for holding milk.	1
+milk jug	A woman's breast.	0.333333333
+blood sugar	Glucose in the blood.	0.666666667
+blood sugar	[entity] The blood sugar concentration or blood glucose level is the amount of glucose (sugar) present in the blood of a human or animal. The body naturally tightly regulates blood glucose levels as a part of metabolic homeostasis. With some exceptions, glucose is the primary source of energy for the body's cells, and blood lipids (in the form of fats and oils) are primarily a compact energy store. Glucose is transported from the intestines or liver to body cells via the bloodstream, and is made available for cell absorption via the hormone insulin, produced by the body primarily in the pancreas. Glucose levels are usually lowest in the morning, before the first meal of the day (termed "the fasting level"), and rise after meals for an hour or two by a few millimolar. Blood sugar levels outside the normal range may be an indicator of a medical condition. A persistently high level is referred to as hyperglycemia; low levels are referred to as hypoglycemia. Diabetes mellitus is characterized by persistent hyperglycemia from any of several causes, and is the most prominent disease related to failure of blood sugar regulation. Intake of alcohol causes an initial surge in blood sugar, and later tends to cause levels to fall. Also, certain drugs can increase or decrease glucose levels.	0
+blood sugar	[entity] "Blood Sugar" is a single by Australian Drum & Bass band, Pendulum, released on 18 June 2007 in the United Kingdom. It was the band's final single with the Breakbeat Kaos label, and was released in 12" vinyl. Both tracks were later added to the 2007 reissue of the group's debut album, Hold Your Colour, due to their popularity. "Axle Grinder" contains samples from the United States TV show, The Twilight Zone.	0
+country house	A weekend and holiday residence, located outside of urban areas, used as a retreat from city life.	0.666666667
+country house	[entity] "Country House" is a song by English alternative rock band Blur. It was released as the lead single from the band's fourth album The Great Escape on 14 August 1995. "Country House" was the first of two Blur singles to reach number one on the UK Singles Chart (the second being 1997's "Beetlebum").	0	
+beat off	To drive something away with blows or military force. Now often used figuratively.	0.666666667
+beat off	To masturbate	0
+beat off	[entity] Beat Off is the third full-length album by pop punk band The Queers.	0
+bear out	To maintain and support to the end; to defend to the last.	1
+bear out	To corroborate	0
+add on	To put an expansion onto a building	0.666666667
+add on	The manufacturer sold many add ons for the basic camera.  The secretary offered a typing and copying service for theses	0.333333333
+blast away	to continue shooting rapidly. They were blasting away at each other for 10 minutes before the shooting died down.	0.666666667
+blast away	To destroy by blasting explosives	0
+beat up	A person who has been beaten up	1
+beat up	To sail to windward using a series of alternate tacks across the wind.	0
+beat up	[entity] The Toasters are one of the original American third wave of ska bands. Founded in New York City in 1981, the band has released nine studio albums, primarily through Moon Ska Records.	0
+bail out	To remove water from a boat by scooping it out.	0.666666667
+bail out	To make a unscheduled voluntary termination of an underwater dive	0
+bail out	[entity] A bailout is a colloquial term for giving financial support to a company or country which faces serious financial difficulty or bankruptcy. It may also be used to allow a failing entity to fail gracefully without spreading contagion. A bailout can, but does not necessarily, avoid an insolvency process. The term is maritime in origin being the act of removing water from a sinking vessel using a smaller bucket. A bailout differs from the term bail-in (coined in the 2010s) under which the bondholders and/or depositors of global systemically important financial institutions (G-SIFIs) are forced to participate in the process, but taxpayers supposedly are not. Some governments have the power to participate in the insolvency process: for instance, the U.S. government intervened in the General Motors bailout of 2009–2013.	0
+block out	to prevent (a thought) from entering one's mind. After finding out she had terminal cancer	0.666666667
+block out	to cover something	0.333333333
+block out	[entity] Blockout is a puzzle video game, published in 1989 by California Dreams, developed in Poland by Aleksander Ustaszewski and Mirosław Zabłocki. The game is the logical extension of Tetris into the third dimension. In regular Tetris, the player manipulates a set of tetrominoes which fall into a two-dimensional pit (seen from the side). The aim is to solve a real-time packing problem by forming complete rows, which then disappear and score points. Poor play leads to incomplete rows, caused by inefficient arrangements of tiles; these rows do not disappear, giving the player progressively less space and less time to play subsequent pieces. Similarly, in Blockout, the player manipulates a set of polycubes which fall into a three-dimensional pit (seen from above; the pieces appear in the foreground and fall away). The pieces can be rotated around all three axes, and moved horizontally and vertically. The aim is to form complete layers.	0
+bind up	To tie together	0.666666667
+bind up	To wrap	0.333333333
+blow away	To overwhelm.	0.666666667
+blow away	To delete (data	0
+blow away	[entity] (For the song by A Fine Frenzy, see Bomb in a Birdcage.) "Blow Away" is a 1979 single by George Harrison, taken from his eponymous album.	0
+attend to	To diligently work on; to pay attention to. You should attend to your studies if you plan to succeed in the exams.	0.666666667
+attend to	To serve; to satisfy someone's needs as a servant would; to wait on.	0
+back off	To become less aggressive	1
+back off	To lower the setting of. Could you back off the volume a bit? It's really loud.	0.333333333
+base on	To ground (an opinion	0.666666667
+base on	To derive (a work) from.	0.333333333
+bang away	to strike or hit repeatedly bang away on the drums	0.666666667
+bang away	to work tirelessly I've been banging away at the essay for ages	0
+bed down	To lie down to sleep for the night	0.666666667
+bed down	To put an animal to rest for the night.	0
+back door	rear entrance of building	1
+back door	indirect means to achieve	0
+battle cry	yell at battle	1
+battle cry	mottot in game or sports	0
+control panel	flat surface which controls	1
+control panel	software window	0
+dog meat	meat from dog	1
+dog meat	depersonalized, debased	0
+gold rush	Any period of feverish migration into an area in which gold has been discovered.	1
+gold rush	A cocktail made from bourbon, honey, and lemon juice	0
+ground floor	The floor of a building closest to ground level; what is also known by some American English speakers as the first floor	1
+ground floor	The initial stage of a project	0
+blood sugar	blood glucose level	1
+blood sugar	a band	0
+green card	green color card	1
+green card	a warning card	0
+green card	US working permit, united states	0
+make love	sextual intercourse	0
+make love	make amorous approches, rmance	1
+front line	A front, or a boundary between opposing positions.	1
+front line	attack, collectively the attackers or forwards	0
+car wash	clean vehicles	1
+car wash	album	0
+death sentence	decree that punishment as death	1
+death sentence	film of	0
+fallen angel	an angel who rebelled against God and was exiled from heaven	1
+fallen angel	movie	0
+cover story	front page of publication	1
+cover story	fictitious account	0
+fild working	temporary fortification in the field	1
+fild working	collect raw data, field research	0
+finish line	the end of a process	1
+finish line	Song	0
+heart attack	An acute myocardial infarction, sometimes fatal, caused by the sudden occurrence of coronary thrombosis, which obstructs the blood supply to the heart and leads to necrosis of heart muscle tissue	1
+heart attach	Death or failure	0
+heavy metal	A toxic heavy metal is any relatively dense metal or metalloid that is noted for its potential toxicity	1
+heavy metal	A genre descended from rock music	0
+home run	The portion of a journey that ends at home I'm on the home run. 	1
+home run	A four-base hit, a homer''The first baseman hit a '''home run''' to lead off the ninth.	0
