@@ -104,12 +104,26 @@ class ImprovedRankList(object):
             print('00:',p,perturbed_phrase_list)
         return avg_perturb_score
 
-    # get window list for a phrase (or perturbs)
-    def get_window_list(self, perturbed_phrase):
+    # get window list for a phrase (or perturbs) of phrase-level
+    # def get_window_list(self, perturbed_phrase):
+    #     window_size = 10
+    #     if 'window_size' in self.__dict__:
+    #         window_size = self.window_size
+    #     context_list = self.corpus_index.get_context_list(perturbed_phrase, window_size = window_size)
+    #     return context_list
+
+    # get window list for a phrase of word-level
+    def get_window_list(self, phrase):
         window_size = 10
         if 'window_size' in self.__dict__:
             window_size = self.window_size
-        context_list = self.corpus_index.get_context_list(perturbed_phrase, window_size = window_size)
+        context_list = []
+        words = phrase.split(' ')
+        for word in words:
+            word_str = word.strip()
+            if len(word_str)>1:
+                temp_list = self.corpus_index.get_context_list(word_str, window_size = window_size)
+                context_list = context_list + temp_list
         return context_list
 
     def get_context_rep(self, context_list):
