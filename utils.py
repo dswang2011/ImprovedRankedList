@@ -63,7 +63,7 @@ def read_test_data(test_data):
         scenarios = df['scenario'].values
         labels = df['cd_score'].values
     else:
-        with open(test_data,'r') as f:
+        with open(test_data,'r',encoding = 'utf-8') as f:
             for line in f:
                 strs = line.split('\t')
                 if len(strs)>2:
@@ -88,15 +88,19 @@ def stem_words(text):
     return new_text
 
 if __name__ == '__main__':
-    path_to_vec = 'glove/glove.6B.50d.txt'
-    indri = IndriAPI('E:/qiuchi/index/index_clueweb12')
-    context_list = ['It is a good day', 'today is a good day', 'black horse']
-    matrix, word_list = form_matrix(path_to_vec)
-    ranked_list = get_context_TFIDF(context_list, indri)
+    input_file = 'input/test_input.txt'
+    phrases, scenarios, labels = read_test_data(input_file)
+    for phrase,scenario,label in zip(phrases,scenarios,labels):
+        print(phrase+'***'+scenario+'***'+label)
+    # path_to_vec = 'glove/glove.6B.50d.txt'
+    # indri = IndriAPI('E:/qiuchi/index/index_clueweb12')
+    # context_list = ['It is a good day', 'today is a good day', 'black horse']
+    # matrix, word_list = form_matrix(path_to_vec)
+    # ranked_list = get_context_TFIDF(context_list, indri)
     # wordvec= get_context_WordEmbedding(context_list, matrix, word_list)
 
     # print(wordvec_similarity(wordvec,wordvec))
-    print(tfidf_similarity(ranked_list,ranked_list))
+    # print(tfidf_similarity(ranked_list,ranked_list))
     # print(indri.get_doc_frequency('ivory'))
     # print(get_perturbed_phrases(p))
 
