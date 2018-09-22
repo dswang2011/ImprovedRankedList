@@ -76,6 +76,7 @@ class ImprovedRankList(object):
 
         print('Computing the context representation.')
         phrase_context_rep = self.get_context_rep(phrase_context_terms)
+        # print(phrase_context_rep)
         if self.adapt_with_knowledge_base:
             print('Recomputing the context representation with Knowledge base.')
             # Get phrase diambiguation pages in the knowledge base
@@ -85,7 +86,7 @@ class ImprovedRankList(object):
 
             # Generate the contexts of the original phrase based on matched candidate pages
             phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
-
+        # print(phrase_context_rep)
         print('Get perturbed phrase list.')
         perturbed_phrase_list = get_perturbed_phrases(p)
 
@@ -97,11 +98,13 @@ class ImprovedRankList(object):
             context_list = self.get_window_list(stem_perturb)
             context_rep = self.get_context_rep(context_list)
             output_score = output_score + self.get_context_similarity(phrase_context_rep, context_rep)
+        print('output_score = {}'.format(output_score))
         avg_perturb_score = 0 # default CD score
         if len(perturbed_phrase_list)>0:
             avg_perturb_score = output_score/len(perturbed_phrase_list)
         if avg_perturb_score ==0:
             print('00:',p,perturbed_phrase_list)
+        print('avg_score = {}'.format(avg_perturb_score))
         return avg_perturb_score
 
     # get window list for a phrase (or perturbs)
@@ -124,7 +127,7 @@ class ImprovedRankList(object):
                     if term in context_rep:
                         context_rep[term] = context_rep[term]+idf
                     else:
-                         context_rep[term] = idf
+                        context_rep[term] = idf
             for term in context_rep:
                 context_rep[term] = context_rep[term]/len(context_list)
         elif self.context_type == 'word_embedding':
@@ -171,19 +174,23 @@ class ImprovedRankList(object):
                 sum_square_weight_1 =  sum_square_weight_1+ context_rep_1[term]**2
                 if term in context_rep_2:
                     inner_product = inner_product+ context_rep_2[term]* context_rep_1[term]
+                    # print(context_rep_2[term],context_rep_1[term],inner_product)
 
             for term in context_rep_2:
                 sum_square_weight_2 =  sum_square_weight_2+ context_rep_2[term]**2
+            # print(inner_product)
             similarity_score = inner_product/(np.sqrt(sum_square_weight_1*sum_square_weight_2)+0.0001)
 
         elif self.context_type == 'word_embedding':
             similarity_score = np.inner(context_rep_1, context_rep_2)/(np.linalg.norm(context_rep_1)*np.linalg.norm(context_rep_2))
+        # print('context similarity score = {}'.format(similarity_score))
         return similarity_score
 
     def get_vect_similarity(self, vect_rep_1,vect_rep_2):
         similarity_score = 0
         similarity_score = np.inner(vect_rep_1, vect_rep_2)/(np.linalg.norm(vect_rep_1)*np.linalg.norm(vect_rep_2))
-        return similarity_score
+        # print(similarity_score[0][0])
+        return similarity_score[0][0]
 
 
     def get_matched_contexts(self, phrase_senario, candidate_contexts_list):
