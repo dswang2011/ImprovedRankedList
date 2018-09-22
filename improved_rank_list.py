@@ -91,8 +91,6 @@ class ImprovedRankList(object):
             # print('here')
             matched_contexts_dic = self.get_matched_contexts(scenario, candidate_context_list)
 
-
-
             # Generate the contexts of the original phrase based on matched candidate pages
             phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
         # print(phrase_context_rep)
@@ -141,6 +139,17 @@ class ImprovedRankList(object):
                         context_rep[term] = context_rep[term]+idf
                     else:
                         context_rep[term] = idf
+            topK_terms = 100
+            if 'topK_terms' in self.__dict__:
+                topK_terms = self.topK_terms
+            topK_terms = min(topK_terms, len(context_list))
+            sorted_context_rep = sorted(context_rep.items(), key = lambda item:item[1], reverse = True)
+
+            context_rep ={}
+            L= sorted_context_rep[:topK_terms]
+            for l in L:
+                context_rep[l[0]] = l[1]
+            # print(context_rep)
             for term in context_rep:
                 context_rep[term] = context_rep[term]/len(context_list)
         elif self.context_type == 'word_embedding':
