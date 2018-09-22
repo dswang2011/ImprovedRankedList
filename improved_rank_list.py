@@ -35,7 +35,8 @@ class ImprovedRankList(object):
         return info
 
     def initialize(self):
-        self.knowledge_base = get_prepared_KB(self.knowledge_base_path)
+        self.knowledge_base = get_prepared_KB(self.knowledge_base_path,stemmed = self.stem_words)
+        # print(self.knowledge_base)
         self.corpus_index = IndriAPI(self.index_dir_path)
         self.word_embedding = None
         if 'path_to_vec' in self.__dict__:
@@ -57,11 +58,12 @@ class ImprovedRankList(object):
         for phrase,scenario,label in zip(phrases,scenarios,labels):
             if i >0:
                 score = self.rank_list_comp(phrase, scenario)
-                print(score)
                 scores.append(score)
                 targets.append(float(label))
                 file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
             i = i+1
+            if i == 10:
+                break
         pearson_correlation_coefficient = pearson_correlation(scores,targets)
         writer = codecs.open(self.pearson_correlation_file,'w')
         writer.write(str(pearson_correlation_coefficient))
@@ -71,18 +73,25 @@ class ImprovedRankList(object):
      # def initialize(self):
     def rank_list_comp(self, p, scenario):
         #scenario = stem_words(scenario)
-        p_stem = stem_words(p)
-        phrase_context_terms = self.get_window_list(p)
+        p_stem = p
+        if self.stem_words:
+            p_stem = stem_words(p)
+            scenario = stem_words(scenario)
+        phrase_context_terms = self.get_window_list(p_stem)
 
         print('Computing the context representation.')
         phrase_context_rep = self.get_context_rep(phrase_context_terms)
         # print(phrase_context_rep)
         if self.adapt_with_knowledge_base:
             print('Recomputing the context representation with Knowledge base.')
+
             # Get phrase diambiguation pages in the knowledge base
-            candidate_context_list = self.get_candidate_pages(p_stem)
+            candidate_context_list = self.get_candidate_pages(p)
             # Find all (matched contexts, matching scores) above a given threshold
+            # print('here')
             matched_contexts_dic = self.get_matched_contexts(scenario, candidate_context_list)
+
+
 
             # Generate the contexts of the original phrase based on matched candidate pages
             phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
@@ -90,12 +99,16 @@ class ImprovedRankList(object):
         print('Get perturbed phrase list.')
         perturbed_phrase_list = get_perturbed_phrases(p)
 
+        print('Prune perturbed phrase list.')
+        perturbed_phrase_list = self.prune_perturbed_phrase(perturbed_phrase_list)
+
         print('Compute output score for determining CD/NCD.')
         output_score = 0
         # get context of perturbed phrases
         for perturbed_phrase in perturbed_phrase_list:
-            stem_perturb = stem_words(perturbed_phrase)
-            context_list = self.get_window_list(stem_perturb)
+            if self.stem_words:
+                perturbed_phrase = stem_words(perturbed_phrase)
+            context_list = self.get_window_list(perturbed_phrase)
             context_rep = self.get_context_rep(context_list)
             output_score = output_score + self.get_context_similarity(phrase_context_rep, context_rep)
         print('output_score = {}'.format(output_score))
@@ -163,6 +176,18 @@ class ImprovedRankList(object):
         # print(context_vector.shape)
         context_rep = context_rep/len(context_list)   # 300 dimention
         return context_rep
+    def prune_perturbed_phrase(self, perturbed_phrases):
+        topK_perturbed = 20
+        if 'perturbation_num' in self.__dict__:
+            topK_perturbed = self.perturbation_num
+
+        topK_perturbed = min(topK_perturbed,len(perturbed_phrases))
+
+        perturbed_phrases.sort(key=lambda x:self.corpus_index.get_co_occur_count_in_collection(x), reverse = True)
+        # for phrase in perturbed_phrases:
+
+        #     tf = self.corpus_index.get_co_occur_count_in_collection(phrase)
+        return(perturbed_phrases[0:topK_perturbed])
 
     def get_context_similarity(self, context_rep_1,context_rep_2):
         similarity_score = 0

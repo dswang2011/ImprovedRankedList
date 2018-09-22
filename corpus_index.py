@@ -37,6 +37,9 @@ class IndriAPI(object):
         document_array = self.indri.getDocumentTermArray(doc_name)
         return(document_array)
 
+    def get_co_occur_count_in_collection(self,dependency):
+        count = self.indri.getCoOccurCount(dependency)
+        return(count)
 
     def get_co_occur_count(self, terms, document_array, window_size = 5):
         dependency_string = ''.join(terms)
@@ -66,6 +69,7 @@ class IndriAPI(object):
     def get_collection_doc_count(self):
         doc_count = self.indri.getCollectionDocCount()
         return(doc_count)
+
     def get_collection_term_count(self):
         count = self.indri.getCollectionTermCount()
         return(count)
@@ -77,8 +81,9 @@ class IndriAPI(object):
 def main():
     index_dir_path = "E:/qiuchi/index/index_clueweb12"
     indri = IndriAPI(index_dir_path)
-    print(indri.get_doc_frequency('day'))
-    print(indri.get_doc_frequency('dai'))
+    print(indri.get_co_occur_count_in_collection('ivory tower'))
+    # print(indri.get_doc_frequency('day'))
+    # print(indri.get_doc_frequency('dai'))
     # print(get_context_TFIDF(contexts, indri))
     # print(contexts)
 
