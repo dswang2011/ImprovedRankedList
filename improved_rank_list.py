@@ -62,8 +62,6 @@ class ImprovedRankList(object):
                 targets.append(float(label))
                 file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
             i = i+1
-            if i == 10:
-                break
         pearson_correlation_coefficient = pearson_correlation(scores,targets)
         writer = codecs.open(self.pearson_correlation_file,'w')
         writer.write(str(pearson_correlation_coefficient))
