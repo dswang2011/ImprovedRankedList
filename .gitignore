@@ -4,4 +4,5 @@ resources/glove/*
 resources/word2vec/*
 test_*.py
 output/*
+config/*
 

@@ -51,7 +51,7 @@ class ImprovedRankList(object):
         if 'output_file' in self.__dict__:
             output_file = self.output_file
 
-        file_writer = codecs.open(output_file,'w')
+        file_writer = codecs.open(output_file,'w',encoding='utf8')
         scores = []
         targets = []
         i = 0
@@ -129,7 +129,7 @@ class ImprovedRankList(object):
                 word_str = word.strip()
                 if len(word_str)>1:
                     temp_list = self.corpus_index.get_context_list(word_str, window_size = window_size)
-                    context_list = context_list + temp_list
+                    context_list.extend(temp_list)
         else:
             context_list = self.corpus_index.get_context_list(phrase, window_size = window_size)
         return context_list
