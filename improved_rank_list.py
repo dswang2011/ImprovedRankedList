@@ -291,15 +291,15 @@ class ImprovedRankList(object):
             pages = self.knowledge_base[phrase]
             for page in pages:
                 # remove the repeating phrase (case insenstive)
-                if page.start_with('phrase'):
-                    page = page.replace('phrase','')
+                if page.startswith(phrase):
+                    page = page.replace(phrase,'',1)
                 # get only top window * 2 words
                 words = page.split(' ')
                 if len(words)<window_size*2:
                     res_pages.append(page)
                 else:
-                    tuned_page = .format(words[:window_size*2])
-                    res_page.append(tuned_page)
+                    tuned_page = ' '.join(words[:window_size*2])
+                    res_pages.append(tuned_page)
         else:
             print('== [empty KB] ==',phrase)
         return res_pages
