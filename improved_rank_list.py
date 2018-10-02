@@ -58,6 +58,7 @@ class ImprovedRankList(object):
         for phrase,scenario,label in zip(phrases,scenarios,labels):
             if i >0:
                 score = self.rank_list_comp(phrase, scenario)
+                score = float(score)
                 scores.append(score)
                 targets.append(float(label))
                 file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
@@ -112,16 +113,25 @@ class ImprovedRankList(object):
         if len(perturbed_phrase_list)>0:
             avg_perturb_score = output_score/len(perturbed_phrase_list)
         if avg_perturb_score ==0:
-            print('00:',p,perturbed_phrase_list)
+            print('== [perturb_score is 0, suspicious phrase]==:',p,perturbed_phrase_list)
         print('avg_score = {}'.format(avg_perturb_score))
         return avg_perturb_score
 
     # get window list for a phrase (or perturbs)
-    def get_window_list(self, perturbed_phrase):
+    def get_window_list(self, phrase):
         window_size = 10
         if 'window_size' in self.__dict__:
             window_size = self.window_size
-        context_list = self.corpus_index.get_context_list(perturbed_phrase, window_size = window_size)
+        context_list = []
+        if self.word_level:
+            words = phrase.split(' ')
+            for word in words:
+                word_str = word.strip()
+                if len(word_str)>1:
+                    temp_list = self.corpus_index.get_context_list(word_str, window_size = window_size)
+                    context_list = context_list + temp_list
+        else:
+            context_list = self.corpus_index.get_context_list(phrase, window_size = window_size)
         return context_list
 
     def get_context_rep(self, context_list):
@@ -137,10 +147,10 @@ class ImprovedRankList(object):
                         context_rep[term] = context_rep[term]+idf
                     else:
                         context_rep[term] = idf
-            topK_terms = 100
+            topK_terms = 1000   # default 1000
             if 'topK_terms' in self.__dict__:
                 topK_terms = self.topK_terms
-            topK_terms = min(topK_terms, len(context_list))
+            topK_terms = min(topK_terms, len(context_rep))  #not context_list, fixed into context_rep
             sorted_context_rep = sorted(context_rep.items(), key = lambda item:item[1], reverse = True)
 
             context_rep ={}
@@ -183,6 +193,7 @@ class ImprovedRankList(object):
         # print(context_vector.shape)
         context_rep = context_rep/len(context_list)   # 300 dimention
         return context_rep
+
     def prune_perturbed_phrase(self, perturbed_phrases):
         topK_perturbed = 20
         if 'perturbation_num' in self.__dict__:
@@ -270,11 +281,28 @@ class ImprovedRankList(object):
 
         return output_context
 
+    # refined 
     def get_candidate_pages(self,phrase):
+        window_size = 10
+        if 'window_size' in self.__dict__:
+            window_size = self.window_size
+        res_pages = []
         if phrase.strip() in self.knowledge_base:
-            return self.knowledge_base[phrase]
+            pages = self.knowledge_base[phrase]
+            for page in pages:
+                # remove the repeating phrase (case insenstive)
+                if page.start_with('phrase'):
+                    page = page.replace('phrase','')
+                # get only top window * 2 words
+                words = page.split(' ')
+                if len(words)<window_size*2:
+                    res_pages.append(page)
+                else:
+                    tuned_page = .format(words[:window_size*2])
+                    res_page.append(tuned_page)
         else:
-            return []
+            print('== [empty KB] ==',phrase)
+        return res_pages
 
 if __name__ == '__main__':
     rank_list = ImprovedRankList()
