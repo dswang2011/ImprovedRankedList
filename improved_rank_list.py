@@ -42,11 +42,13 @@ class ImprovedRankList(object):
         if 'path_to_vec' in self.__dict__:
             self.word_embedding = form_matrix(self.path_to_vec)
 
+    '''
+    The main function
+    '''
     def run(self):
-        # self.rank_list_comp('field day', ' A day of class taken away from school for a field trip.')
+        # Load Data from file
         phrases,scenarios,labels = read_test_data(self.input_path)
-        # print(phrases)
-        # print(scenarios)
+
         output_file = 'output.txt'
         if 'output_file' in self.__dict__:
             output_file = self.output_file
@@ -56,52 +58,85 @@ class ImprovedRankList(object):
         targets = []
         i = 0
         for phrase,scenario,label in zip(phrases,scenarios,labels):
-            if i >0:
+            if i > 0:
+                #Compute the compositional score
                 score = self.rank_list_comp(phrase, scenario)
                 score = float(score)
                 scores.append(score)
                 targets.append(float(label))
                 file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
             i = i+1
+        #Compute the Pearson Correlation Coefficient between the outputs and the ground truth
         pearson_correlation_coefficient = pearson_correlation(scores,targets)
         writer = codecs.open(self.pearson_correlation_file,'w')
         writer.write(str(pearson_correlation_coefficient))
-        print(pearson_correlation_coefficient)
+        # print(pearson_correlation_coefficient)
 
 
-     # def initialize(self):
+    '''
+    Compute the Compositional Score of a phrase
+    Given the Phrase p and its Scenario
+    '''
     def rank_list_comp(self, p, scenario):
-        #scenario = stem_words(scenario)
+        
         p_stem = p
         if self.stem_words:
             p_stem = stem_words(p)
             scenario = stem_words(scenario)
+
+        # Get all contexts containing p in the corpus
         phrase_context_terms = self.get_window_list(p_stem)
 
+
         print('Computing the context representation.')
-        phrase_context_rep = self.get_context_rep(phrase_context_terms)
+        # Identify the contexts related to the scenario
+        # The output is a dict of {matched_context, score} pairs
+        matched_contexts_dic = self.get_matched_contexts(scenario, phrase_context_terms)
+
+        # Compute the updated context representation
+        phrase_context_rep = self.compute_updated_context(phrase_context_terms, matched_contexts_dic)
+       
+
         # print(phrase_context_rep)
         if self.adapt_with_knowledge_base:
             print('Recomputing the context representation with Knowledge base.')
 
             # Get phrase diambiguation pages in the knowledge base
             candidate_context_list = self.get_candidate_pages(p)
-            # Find all (matched contexts, matching scores) above a given threshold
-            # print('here')
-            matched_contexts_dic = self.get_matched_contexts(scenario, candidate_context_list)
 
-            # Generate the contexts of the original phrase based on matched candidate pages
-            phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
-        # print(phrase_context_rep)
+            # Parallel model
+            if self.adapt_pattern == 'parallel':
+                # Find all (matched contexts, matching scores) above a given threshold
+                matched_contexts_dic = self.get_matched_contexts(scenario, candidate_context_list)
+
+                # Generate the contexts of the original phrase based on matched candidate pages
+                phrase_kb_context_rep = self.compute_updated_context(scenario, matched_contexts_dic)
+
+                # Combine the phrase context representation with its knowledge base representation
+                phrase_context_rep = self.combine_context(phrase_context_rep, phrase_kb_context_rep)
+
+            # Sequential model
+            elif self.adapt_pattern == 'sequential':
+                # Find all (matched contexts, matching scores) above a given threshold
+                matched_contexts_dic = self.get_matched_contexts(phrase_context_rep, candidate_context_list)
+
+                # Generate the contexts of the original phrase based on matched candidate pages
+                phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
+
+
+        
+        # Generate the list of perturbed phrases.
         print('Get perturbed phrase list.')
         perturbed_phrase_list = get_perturbed_phrases(p)
 
+        # Prune the list of perturbed phrases.
         print('Prune perturbed phrase list.')
         perturbed_phrase_list = self.prune_perturbed_phrase(perturbed_phrase_list)
 
         print('Compute output score for determining CD/NCD.')
         output_score = 0
-        # get context of perturbed phrases
+
+        # Traverse the perturbed phrases
         for perturbed_phrase in perturbed_phrase_list:
             if self.stem_words:
                 perturbed_phrase = stem_words(perturbed_phrase)
@@ -117,13 +152,14 @@ class ImprovedRankList(object):
         print('avg_score = {}'.format(avg_perturb_score))
         return avg_perturb_score
 
-    # get window list for a phrase (or perturbs)
+    # Get window list for a phrase (or a perturbed phrase)
     def get_window_list(self, phrase):
         window_size = 10
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         context_list = []
         if self.word_level:
+            # Get the list of context words that are close to each word in the phrase
             words = phrase.split(' ')
             for word in words:
                 word_str = word.strip()
@@ -131,12 +167,16 @@ class ImprovedRankList(object):
                     temp_list = self.corpus_index.get_context_list(word_str, window_size = window_size)
                     context_list.extend(temp_list)
         else:
+            # Get the list of context words that are close to the whole phrase
             context_list = self.corpus_index.get_context_list(phrase, window_size = window_size)
         return context_list
 
+    # Get the representation of a list of contexts
+    # Either as a tf-idf vector or as a word vector
     def get_context_rep(self, context_list):
         context_rep = None
         if self.context_type == 'tfidf':
+            # Build the TF-IDF representation
             collection_doc_count = self.corpus_index.get_collection_doc_count()
             context_rep = {}
             for context in context_list:
@@ -147,36 +187,43 @@ class ImprovedRankList(object):
                         context_rep[term] = context_rep[term]+idf
                     else:
                         context_rep[term] = idf
-            topK_terms = 1000   # default 1000
+
+            topK_terms = 100   # default 1000
             if 'topK_terms' in self.__dict__:
                 topK_terms = self.topK_terms
-            topK_terms = min(topK_terms, len(context_rep))  #not context_list, fixed into context_rep
+
+            # If the context representation has less than topK terms, then rank all the context terms
+            topK_terms = min(topK_terms, len(context_rep))
+
+            # Rank the context terms
             sorted_context_rep = sorted(context_rep.items(), key = lambda item:item[1], reverse = True)
 
+            # Get the top k terms
             context_rep ={}
             L= sorted_context_rep[:topK_terms]
             for l in L:
                 context_rep[l[0]] = l[1]
-            # print(context_rep)
+
+            # Divided by the number of contexts
             for term in context_rep:
                 context_rep[term] = context_rep[term]/len(context_list)
+
         elif self.context_type == 'word_embedding':
+            # Build the word vector representation
             matrix, word_list = self.word_embedding
             context_rep = np.zeros(shape = (1,matrix.shape[1]))
             for context in context_list:
                 term_list = context.split()
-                # term_vector
                 index_list = []
                 for term in term_list:
                     if term in word_list:
                         index_list.append(word_list.index(term))
                 context_mean = np.mean(matrix[index_list,:],axis = 0)
                 context_rep = context_rep + context_mean
-        # print(context_vector.shape)
-            context_rep = context_rep/len(context_list)   # 300 dimention
+            context_rep = context_rep/len(context_list)  
         return context_rep
 
-    # 300 dimension vect
+    # 300 dimension vector
     def get_vect_rep(self, context_list):
         context_rep = None
         matrix, word_list = self.word_embedding
@@ -205,7 +252,26 @@ class ImprovedRankList(object):
         # for phrase in perturbed_phrases:
 
         #     tf = self.corpus_index.get_co_occur_count_in_collection(phrase)
-        return(perturbed_phrases[0:topK_perturbed])
+        return perturbed_phrases[0:topK_perturbed]
+
+    def combine_context(self, context_rep_1,context_rep_2):
+        if self.context_type == 'tfidf':
+            output = {}
+            for term in context_rep_1:
+                weight_1 = context_rep_1[term]
+                weight_2 = 0
+                if term in context_rep_2:
+                    weight_2 = context_rep_2[term]
+                
+                weight = weight_1 * self.kb_corpus_combine_weight + weight_2 * (1- self.kb_corpus_combine_weight)
+                output[term] = weight
+
+        elif self.context_type == 'word_embedding':
+            output = context_rep_1 *self.kb_corpus_combine_weight + context_rep_2* (1-self.kb_corpus_combine_weight)
+
+        return output
+
+
 
     def get_context_similarity(self, context_rep_1,context_rep_2):
         similarity_score = 0
