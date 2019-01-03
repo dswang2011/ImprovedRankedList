@@ -96,6 +96,9 @@ class ImprovedRankList(object):
         # Compute the updated context representation
         phrase_context_rep = self.compute_updated_context(phrase_context_terms, matched_contexts_dic)
        
+        # Compute the original phrase representation
+        phrase_rep = self.get_context_rep([p_stem])
+
 
         # print(phrase_context_rep)
         if self.adapt_with_knowledge_base:
@@ -113,7 +116,7 @@ class ImprovedRankList(object):
                 phrase_kb_context_rep = self.compute_updated_context(scenario, matched_contexts_dic)
 
                 # Combine the phrase context representation with its knowledge base representation
-                phrase_context_rep = self.combine_context(phrase_context_rep, phrase_kb_context_rep)
+                phrase_context_rep = self.combine_context(phrase_context_rep, phrase_kb_context_rep,ratio = self.kb_corpus_combine_weight)
 
             # Sequential model
             elif self.adapt_pattern == 'sequential':
@@ -123,7 +126,8 @@ class ImprovedRankList(object):
                 # Generate the contexts of the original phrase based on matched candidate pages
                 phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
 
-
+        # Combine phrase representation with its context
+        phrase_context_rep = self.combine_context(phrase_context_rep, phrase_kb_context_rep,ratio = self.phrase_context_ratio)
         
         # Generate the list of perturbed phrases.
         print('Get perturbed phrase list.')
@@ -140,8 +144,11 @@ class ImprovedRankList(object):
         for perturbed_phrase in perturbed_phrase_list:
             if self.stem_words:
                 perturbed_phrase = stem_words(perturbed_phrase)
+
+            perturbed_phrase_rep = self.get_context_rep([perturbed_phrase])
             context_list = self.get_window_list(perturbed_phrase)
             context_rep = self.get_context_rep(context_list)
+            context_rep = self.combine_context(context_rep, perturbed_phrase_rep,ratio = self.phrase_context_ratio)
             output_score = output_score + self.get_context_similarity(phrase_context_rep, context_rep)
         print('output_score = {}'.format(output_score))
         avg_perturb_score = 0 # default CD score
@@ -254,7 +261,7 @@ class ImprovedRankList(object):
         #     tf = self.corpus_index.get_co_occur_count_in_collection(phrase)
         return perturbed_phrases[0:topK_perturbed]
 
-    def combine_context(self, context_rep_1,context_rep_2):
+    def combine_context(self, context_rep_1,context_rep_2, ratio = 0.5):
         if self.context_type == 'tfidf':
             output = {}
             for term in context_rep_1:
@@ -263,11 +270,11 @@ class ImprovedRankList(object):
                 if term in context_rep_2:
                     weight_2 = context_rep_2[term]
                 
-                weight = weight_1 * self.kb_corpus_combine_weight + weight_2 * (1- self.kb_corpus_combine_weight)
+                weight = weight_1 * ratio + weight_2 * (1- ratio)
                 output[term] = weight
 
         elif self.context_type == 'word_embedding':
-            output = context_rep_1 *self.kb_corpus_combine_weight + context_rep_2* (1-self.kb_corpus_combine_weight)
+            output = context_rep_1 *ratio + context_rep_2* (1-ratio)
 
         return output
 
