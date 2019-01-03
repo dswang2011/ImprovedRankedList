@@ -1,0 +1,15 @@
+== Explain of main files===
+
+
+== How to run ===
+1) run the server in java. 
+	path: SessionExperim/tju.session.utils/IndriAPIEntryPoint.java
+2) set the path of the input file
+	make sure that KB includes the phrases
+3) set the parameters in path: config/config.ini 
+	run the improved_ranked_list.py
+
+
+== TODO List ==
+1) remove the phrase in DBPedia and wiktionary
+2) 

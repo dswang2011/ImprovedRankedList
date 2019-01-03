@@ -8,6 +8,8 @@ from word_embedding import form_matrix
 from knowledge_base import get_prepared_KB
 from utils import *
 import math
+import re
+
 
 class ImprovedRankList(object):
 
@@ -161,7 +163,7 @@ class ImprovedRankList(object):
 
     # Get window list for a phrase (or a perturbed phrase)
     def get_window_list(self, phrase):
-        window_size = 10
+        window_size = 25
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         context_list = []
@@ -356,7 +358,7 @@ class ImprovedRankList(object):
 
     # refined 
     def get_candidate_pages(self,phrase):
-        window_size = 10
+        window_size = 25
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         res_pages = []
@@ -364,8 +366,10 @@ class ImprovedRankList(object):
             pages = self.knowledge_base[phrase]
             for page in pages:
                 # remove the repeating phrase (case insenstive)
-                if page.startswith(phrase):
-                    page = page.replace(phrase,'',1)
+                # page = page.replace(phrase,'')
+				pattern = re.compile(phrase, re.IGNORECASE)
+				page = pattern.sub('', page)
+
                 # get only top window * 2 words
                 words = page.split(' ')
                 if len(words)<window_size*2:
