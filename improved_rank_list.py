@@ -87,16 +87,17 @@ class ImprovedRankList(object):
             scenario = stem_words(scenario)
 
         # Get all contexts containing p in the corpus
-        phrase_context_terms = self.get_window_list(p_stem)
+        phrase_window_list = self.get_window_list(p_stem)
 
 
         print('Computing the context representation.')
         # Identify the contexts related to the scenario
-        # The output is a dict of {matched_context, score} pairs
-        matched_contexts_dic = self.get_matched_contexts(scenario, phrase_context_terms)
+        # The output is a dict of {matched_context, sim_score} pairs
+        matched_context2sim_dic = self.get_matched_contexts(scenario, phrase_window_list)
 
         # Compute the updated context representation
-        phrase_context_rep = self.compute_updated_context(phrase_context_terms, matched_contexts_dic)
+        # phrase_context_rep = self.compute_updated_context(phrase_window_list, matched_context2sim_dic)
+        phrase_context_rep = self.get_localized_contexts(scenario, phrase_window_list, len(scenario))
        
         # Compute the original phrase representation
         phrase_rep = self.get_context_rep([p_stem])
@@ -107,15 +108,15 @@ class ImprovedRankList(object):
             print('Recomputing the context representation with Knowledge base.')
 
             # Get phrase diambiguation pages in the knowledge base
-            candidate_context_list = self.get_candidate_pages(p)
+            candidate_page_list = self.get_candidate_pages(p)
 
             # Parallel model
             if self.adapt_pattern == 'parallel':
                 # Find all (matched contexts, matching scores) above a given threshold
-                matched_contexts_dic = self.get_matched_contexts(scenario, candidate_context_list)
+                matched_context2sim_dic = self.get_matched_contexts(scenario, candidate_page_list)
 
                 # Generate the contexts of the original phrase based on matched candidate pages
-                phrase_kb_context_rep = self.compute_updated_context(scenario, matched_contexts_dic)
+                phrase_kb_context_rep = self.compute_updated_context(scenario, matched_context2sim_dic)
 
                 # Combine the phrase context representation with its knowledge base representation
                 phrase_context_rep = self.combine_context(phrase_context_rep, phrase_kb_context_rep,ratio = self.kb_corpus_combine_weight)
@@ -123,12 +124,12 @@ class ImprovedRankList(object):
             # Sequential model
             elif self.adapt_pattern == 'sequential':
                 # Find all (matched contexts, matching scores) above a given threshold
-                matched_contexts_dic = self.get_matched_contexts(phrase_context_rep, candidate_context_list)
+                matched_context2sim_dic = self.get_matched_contexts(phrase_context_rep, candidate_page_list)
 
                 # Generate the contexts of the original phrase based on matched candidate pages
-                phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_contexts_dic)
+                phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_context2sim_dic)
 
-        # Combine phrase representation with its context
+        # Combine phrase representation with its context rep
         phrase_context_rep = self.combine_context(phrase_context_rep, phrase_kb_context_rep,ratio = self.phrase_context_ratio)
         
         # Generate the list of perturbed phrases.
@@ -182,14 +183,14 @@ class ImprovedRankList(object):
 
     # Get the representation of a list of contexts
     # Either as a tf-idf vector or as a word vector
-    def get_context_rep(self, context_list):
+    def get_context_rep(self, window_list):
         context_rep = None
         if self.context_type == 'tfidf':
             # Build the TF-IDF representation
             collection_doc_count = self.corpus_index.get_collection_doc_count()
             context_rep = {}
-            for context in context_list:
-                term_list = context.split()
+            for window in window_list:
+                term_list = window.split()
                 for term in term_list:
                     idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
                     if term in context_rep:
@@ -215,7 +216,7 @@ class ImprovedRankList(object):
 
             # Divided by the number of contexts
             for term in context_rep:
-                context_rep[term] = context_rep[term]/len(context_list)
+                context_rep[term] = context_rep[term]/len(window_list)
 
         elif self.context_type == 'word_embedding':
             # Build the word vector representation
@@ -233,11 +234,11 @@ class ImprovedRankList(object):
         return context_rep
 
     # 300 dimension vector
-    def get_vect_rep(self, context_list):
+    def get_vect_rep(self, window_list):
         context_rep = None
         matrix, word_list = self.word_embedding
         context_rep = np.zeros(shape = (1,matrix.shape[1]))
-        for context in context_list:
+        for context in window_list:
             term_list = context.split()
             # term_vector
             index_list = []
@@ -247,7 +248,7 @@ class ImprovedRankList(object):
             context_mean = np.mean(matrix[index_list,:],axis = 0)
             context_rep = context_rep + context_mean
         # print(context_vector.shape)
-        context_rep = context_rep/len(context_list)   # 300 dimention
+        context_rep = context_rep/len(window_list)   # 300 dimention
         return context_rep
 
     def prune_perturbed_phrase(self, perturbed_phrases):
@@ -310,21 +311,20 @@ class ImprovedRankList(object):
         # print(similarity_score[0][0])
         return similarity_score[0][0]
 
-
-    def get_matched_contexts(self, phrase_senario, candidate_contexts_list):
+    def get_matched_contexts(self, phrase_senario, candidate_window_list):
         phrase_vect_rep = self.get_vect_rep([phrase_senario])
         threshold = 0
         if 'kb_matching_threshold' in self.__dict__:
             threshold = self.kb_matching_threshold
         matched_contexts_pairs = []
         total_score = 0
-        for candidate_context in candidate_contexts_list:
-            candidate_context_rep = self.get_context_rep([candidate_context])
-            candidate_vect_rep = self.get_vect_rep([candidate_context])
+        for candidate_window in candidate_window_list:
+            candidate_context_rep = self.get_context_rep([candidate_window])
+            candidate_vect_rep = self.get_vect_rep([candidate_window])
             score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
             if score > threshold:
                 matched_contexts_pairs.append((candidate_context_rep,score))
-                # matched_contexts_dic[candidate_context] = score
+                # matched_contexts_dic[candidate_window] = score
                 total_score = total_score + score
 
         # Normalize similarity scores
@@ -332,6 +332,23 @@ class ImprovedRankList(object):
             matched_contexts_pairs[i] = (matched_contexts_pairs[i][0], matched_contexts_pairs[i][1]/total_score)
 
         return matched_contexts_pairs
+
+    def get_localized_contexts(self, phrase_senario, all_window_list, scenario_length):
+        phrase_vect_rep = self.get_vect_rep([phrase_senario])
+        threshold = 0
+        if 'kb_matching_threshold' in self.__dict__:
+            threshold = self.kb_matching_threshold
+        window_sim_pairs = []
+        total_score = 0
+        for candidate_window in all_window_list:
+            candidate_vect_rep = self.get_vect_rep([candidate_window])
+            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
+            if score > threshold:
+                window_sim_pairs.append((candidate_window,score))
+            sorted_by_second = sorted(window_sim_pairs, key=lambda tup: tup[1])
+
+        localized_context_rep = self.get_context_rep(sorted_by_second[-9:][0])
+        return localized_context_rep
 
     def compute_updated_context(self,phrase_context,matched_contexts_pairs):
         weight = 0.1
@@ -367,8 +384,8 @@ class ImprovedRankList(object):
             for page in pages:
                 # remove the repeating phrase (case insenstive)
                 # page = page.replace(phrase,'')
-				pattern = re.compile(phrase, re.IGNORECASE)
-				page = pattern.sub('', page)
+                pattern = re.compile(phrase, re.IGNORECASE)
+                page = pattern.sub('', page)
 
                 # get only top window * 2 words
                 words = page.split(' ')

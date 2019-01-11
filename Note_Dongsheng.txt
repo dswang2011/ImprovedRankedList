@@ -4,6 +4,7 @@
 == How to run ===
 1) run the server in java. 
 	path: SessionExperim/tju.session.utils/IndriAPIEntryPoint.java
+	SET the "indri index folder path" to config/config.ini in python folder, as well
 2) set the path of the input file
 	make sure that KB includes the phrases
 3) set the parameters in path: config/config.ini 
