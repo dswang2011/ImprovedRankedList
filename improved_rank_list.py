@@ -190,6 +190,7 @@ class ImprovedRankList(object):
             collection_doc_count = self.corpus_index.get_collection_doc_count()
             context_rep = {}
             for window in window_list:
+                # print('window:',window)
                 term_list = window.split()
                 for term in term_list:
                     idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
@@ -334,20 +335,28 @@ class ImprovedRankList(object):
         return matched_contexts_pairs
 
     def get_localized_contexts(self, phrase_senario, all_window_list, scenario_length):
-        phrase_vect_rep = self.get_vect_rep([phrase_senario])
         threshold = 0
         if 'kb_matching_threshold' in self.__dict__:
             threshold = self.kb_matching_threshold
-        window_sim_pairs = []
-        total_score = 0
-        for candidate_window in all_window_list:
-            candidate_vect_rep = self.get_vect_rep([candidate_window])
-            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
-            if score > threshold:
-                window_sim_pairs.append((candidate_window,score))
+        
+        # get K windows
+        k_windows = []
+        if scenario_length>0:
+            # ranking first
+            window_sim_pairs = []
+            phrase_vect_rep = self.get_vect_rep([phrase_senario])
+            for candidate_window in all_window_list:
+                candidate_vect_rep = self.get_vect_rep([candidate_window])
+                score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
+                if score > threshold:
+                    window_sim_pairs.append((candidate_window,score))
             sorted_by_second = sorted(window_sim_pairs, key=lambda tup: tup[1])
-
-        localized_context_rep = self.get_context_rep(sorted_by_second[-9:][0])
+            # get top 10
+            for i in range(1,11):
+                k_windows.append(sorted_by_second[len(sorted_by_second)-i][0])
+        else:
+            k_windows = all_window_list
+        localized_context_rep = self.get_context_rep(k_windows)
         return localized_context_rep
 
     def compute_updated_context(self,phrase_context,matched_contexts_pairs):
