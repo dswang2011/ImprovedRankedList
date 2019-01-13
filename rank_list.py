@@ -55,7 +55,7 @@ class ImprovedRankList(object):
         targets = []
         i = 0
         for phrase,scenario,label in zip(phrases,scenarios,labels):
-            if i >0:
+            if i > 0:
                 score = self.rank_list_comp(phrase, scenario)
                 print(score)
                 scores.append(score)
@@ -73,9 +73,11 @@ class ImprovedRankList(object):
         #scenario = stem_words(scenario)
         p_stem = p
         phrase_context_terms = self.get_window_list(p)
-
         print('Computing the context representation.')
+        
+#       Get Phrase Original Representation with Corpus
         phrase_context_rep = self.get_context_rep(phrase_context_terms)
+        
         if self.adapt_with_knowledge_base:
             print('Recomputing the context representation with Knowledge base.')
             # Get phrase diambiguation pages in the knowledge base
