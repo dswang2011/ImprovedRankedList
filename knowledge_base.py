@@ -19,8 +19,8 @@ def get_prepared_KB(file_prepared_KB, stemmed = True):
             else:
                 strs = line.split('\t')
                 if len(strs)>1:
-                    explain = strs[1].replace("==SS==","")
-                    explain = explain.replace("==DB==","")
+                    explain = strs[1].replace("[Wikipedia]","")
+                    explain = explain.replace("[Wiktionary]","")
                     if stemmed:
                         explain = stem_words(explain)
                     # print(explain)
