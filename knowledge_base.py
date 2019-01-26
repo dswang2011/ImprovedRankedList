@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from copy import copy
 from utils import stem_words
-def get_prepared_KB(file_prepared_KB, stemmed = True):
+def get_prepared_KB(file_prepared_KB, stemmed = 'False'):
     phrase2candidates = {}
     with open(file_prepared_KB,'r',encoding = 'utf-8') as f:
         p = ''
@@ -21,7 +21,7 @@ def get_prepared_KB(file_prepared_KB, stemmed = True):
                 if len(strs)>1:
                     explain = strs[1].replace("[Wikipedia]","")
                     explain = explain.replace("[Wiktionary]","")
-                    if stemmed:
+                    if stemmed in ['True','true','TRUE']:
                         explain = stem_words(explain)
                     # print(explain)
                     candi_list.append(explain)

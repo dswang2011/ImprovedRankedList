@@ -73,47 +73,47 @@ class ImprovedRankList(object):
 
     '''
     Compute the Compositional Score of a phrase
-    Given the Phrase p and its Scenario
+    Given the Phrase phrase and its Scenario
     '''
-    def rank_list_comp(self, p, scenario):
+    def rank_list_comp(self, phrase, scenario):
         
-        p_stem = p
-        if self.stem_words:
-            p_stem = stem_words(p)
+        p_stem = phrase
+        if self.stem_words in ['True','true']:
+            p_stem = stem_words(phrase)
             scenario = stem_words(scenario)
 
-        # 1. Compute localized contextual representation
-        # Get all contexts containing p in the corpus
-        phrase_corpus_windows = self.get_window_list(p_stem)
+        ######## Step1: Compute localized contextual representation ######
+        # Get all windows containing phrase in the corpus
+        phrase_windows = self.get_window_list(p_stem)
 
         #The number of shrinked K for scenario
-        k_shrink = max(int(len(phrase_corpus_windows)/(2**len(scenario))),8)
+        k_shrink = max(int(len(phrase_windows)/(2**len(scenario))),8)
         
         
         print('Computing the context representation.')
         # Identify the contexts related to the scenario
         # The output is a dict of {matched_context, sim_score} pairs
-        matched_context2sim_dic = self.get_matched_contexts(scenario, phrase_corpus_windows, n_match = k_shrink, threshold = 0)
+        matched_context2sim_dic = self.get_matched_contexts(scenario, phrase_windows, n_match = k_shrink, threshold = 0)
         
-        # Compute the original scenario representation
+        # - Compute the original scenario representation (consider as one window)
         scenario_context_rep = self.get_context_rep([scenario])
 
 
         # Compute the updated phrase context representation
         phrase_context_rep = self.compute_updated_context(scenario_context_rep, matched_context2sim_dic, average = True, weight = self.scenario_corpus_combine_weight)
-#        phrase_context_rep = self.get_localized_contexts(scenario, phrase_corpus_windows, len(scenario))
+#        phrase_context_rep = self.get_localized_contexts(scenario, phrase_windows, len(scenario))
        
         # Compute the original phrase representation
         phrase_rep = self.get_context_rep([p_stem])
 
 
-        # 2. Adjusting phrase context with KB
+        ######## Step2: Adjusting localized context rep with KB ######
         # print(phrase_context_rep)
         if self.adapt_with_knowledge_base:
             print('Recomputing the context representation with Knowledge base.')
 
             # Get phrase diambiguation pages in the knowledge base
-            candidate_page_list = self.get_candidate_pages(p)
+            candidate_page_list = self.get_candidate_pages(phrase)
 
             # Parallel model
             if self.adapt_pattern == 'parallel':
@@ -137,10 +137,10 @@ class ImprovedRankList(object):
         # Combine phrase representation with its context rep
         phrase_context_rep = self.combine_context(phrase_rep, phrase_context_rep,ratio = self.phrase_context_ratio)
         
-        # 3. get perturbed phrases
+        ######## 3. get perturbed phrases ######
         # Generate the list of perturbed phrases.
         print('Get perturbed phrase list.')
-        perturbed_phrase_list = get_perturbed_phrases(p)
+        perturbed_phrase_list = get_perturbed_phrases(phrase,self.stem_words)
 
         # Prune the list of perturbed phrases. (according to pair co-occurrence)
         print('Prune perturbed phrase list.')
@@ -151,7 +151,7 @@ class ImprovedRankList(object):
 
         # Traverse the perturbed phrases
         for perturbed_phrase in perturbed_phrase_list:
-            if self.stem_words:
+            if self.stem_words in ['True','true']:
                 perturbed_phrase = stem_words(perturbed_phrase)
             perturb_rep = self.get_context_rep([perturbed_phrase])
             pertub_window_list = self.get_window_list(perturbed_phrase)
@@ -167,7 +167,7 @@ class ImprovedRankList(object):
         if len(perturbed_phrase_list)>0:
             avg_perturb_score = output_score/len(perturbed_phrase_list)
         if avg_perturb_score ==0:
-            print('== [perturb_score is 0, suspicious phrase]==:',p,perturbed_phrase_list)
+            print('== [perturb_score is 0, suspicious phrase]==:',phrase,perturbed_phrase_list)
         print('avg_score = {}'.format(avg_perturb_score))
         return avg_perturb_score
 
@@ -369,30 +369,30 @@ class ImprovedRankList(object):
             
         return matched_contexts_pairs
 
-    def get_localized_contexts(self, phrase_senario, all_window_list, scenario_length):
-        threshold = 0
-        if 'kb_matching_threshold' in self.__dict__:
-            threshold = self.kb_matching_threshold
+    # def get_localized_contexts(self, phrase_senario, all_window_list, scenario_length):
+    #     threshold = 0
+    #     if 'kb_matching_threshold' in self.__dict__:
+    #         threshold = self.kb_matching_threshold
         
-        # get K windows
-        k_windows = []
-        if scenario_length>0:
-            # ranking first
-            window_sim_pairs = []
-            phrase_vect_rep = self.get_vect_rep([phrase_senario])
-            for candidate_window in all_window_list:
-                candidate_vect_rep = self.get_vect_rep([candidate_window])
-                score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
-                if score > threshold:
-                    window_sim_pairs.append((candidate_window,score))
-            sorted_by_second = sorted(window_sim_pairs, key=lambda tup: tup[1])
-            # get top 10
-            for i in range(1,11):
-                k_windows.append(sorted_by_second[len(sorted_by_second)-i][0])
-        else:
-            k_windows = all_window_list
-        localized_context_rep = self.get_context_rep(k_windows)
-        return localized_context_rep
+    #     # get K windows
+    #     k_windows = []
+    #     if scenario_length>0:
+    #         # ranking first
+    #         window_sim_pairs = []
+    #         phrase_vect_rep = self.get_vect_rep([phrase_senario])
+    #         for candidate_window in all_window_list:
+    #             candidate_vect_rep = self.get_vect_rep([candidate_window])
+    #             score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
+    #             if score > threshold:
+    #                 window_sim_pairs.append((candidate_window,score))
+    #         sorted_by_second = sorted(window_sim_pairs, key=lambda tup: tup[1])
+    #         # get top 10
+    #         for i in range(1,11):
+    #             k_windows.append(sorted_by_second[len(sorted_by_second)-i][0])
+    #     else:
+    #         k_windows = all_window_list
+    #     localized_context_rep = self.get_context_rep(k_windows)
+    #     return localized_context_rep
 
     def compute_updated_context(self,phrase_context,matched_contexts_pairs, average = False, weight = 0.1):
 #        weight = 0.1

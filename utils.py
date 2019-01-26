@@ -20,7 +20,7 @@ def get_phrase_context(scenario,p):
 input: phrase p
 output： a list of phrases perturbed_phrase_list
 '''
-def get_perturbed_phrases(p):
+def get_perturbed_phrases(p,stem_words='False'):
     perturbed_phrase_list = []
     perturbed_phrases = []
     terms = p.split()
@@ -29,9 +29,12 @@ def get_perturbed_phrases(p):
 
         for synonym_term in synonym_terms:
             synonym_term = strip_punctuation(synonym_term)
-            synonym_term = stem_words(synonym_term)
+            if stem_words in ['True','true','TRUE']:
+                synonym_term = stem_words(synonym_term)
             perturbed_phrase = p.replace(term,synonym_term)
             perturbed_phrase_list.append(perturbed_phrase)
+    if p in perturbed_phrase_list:
+        perturbed_phrase_list.remove(p)
     return perturbed_phrase_list
 
 '''
@@ -66,10 +69,10 @@ def read_test_data(test_data):
         with open(test_data,'r',encoding = 'utf-8') as f:
             for line in f:
                 strs = line.split('\t')
-                if len(strs)>2:
+                if len(strs)>1:
                     phrases.append(strs[0].strip())
                     scenarios.append(strs[1].strip())
-                    labels.append(strs[2].strip())
+                    labels.append(strs[1].strip())
     return phrases,scenarios,labels
 def strip_punctuation(text):
     return ''.join(c for c in text if c not in string.punctuation)
