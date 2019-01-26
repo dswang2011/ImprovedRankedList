@@ -173,7 +173,7 @@ class ImprovedRankList(object):
 
     # Get window list for a phrase (or a perturbed phrase)
     def get_window_list(self, phrase):
-        window_size = 25
+        window_size = 15
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         context_list = []
@@ -425,7 +425,7 @@ class ImprovedRankList(object):
 
     # refined 
     def get_candidate_pages(self,phrase):
-        window_size = 25
+        window_size = 15
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         res_pages = []

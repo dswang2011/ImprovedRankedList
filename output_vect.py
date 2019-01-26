@@ -63,13 +63,13 @@ class ImprovedRankList(object):
         # file_writer = codecs.open(output_file,'w',encoding='utf8')
         # scores = []
         # targets = []
-        flag = 0
+        # flag = 0
         for phrase,scenario,label in zip(phrases,scenarios,labels):
             #Compute the compositional score
-            if phrase.strip()=='birth place':
-            	flag=1
-            if flag==0:
-            	continue
+            # if phrase.strip()=='birth place':
+            # 	flag=1
+            # if flag==0:
+            # 	continue
             score = self.rank_list_comp(phrase, scenario)
         #     score = float(score)
         #     scores.append(score)
@@ -154,7 +154,7 @@ class ImprovedRankList(object):
 
     # Get window list for a phrase (or a perturbed phrase)
     def get_window_list(self, phrase):
-        window_size = 25
+        window_size = 15
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         context_list = []
@@ -406,7 +406,7 @@ class ImprovedRankList(object):
 
     # refined 
     def get_candidate_pages(self,phrase):
-        window_size = 25
+        window_size = 15
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         res_pages = []
