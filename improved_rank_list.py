@@ -4,7 +4,7 @@ import numpy as np
 import configparser
 import argparse
 from corpus_index import IndriAPI
-from word_embedding import form_matrix
+from word_embedding import *
 from knowledge_base import get_prepared_KB
 from utils import *
 import math
@@ -43,6 +43,14 @@ class ImprovedRankList(object):
         self.word_embedding = None
         if 'path_to_vec' in self.__dict__:
             self.word_embedding = form_matrix(self.path_to_vec)
+        # get pre-stored vectors
+        if self.context_type=='tfidf':
+            self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
+            self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
+        elif self.context_type=='word_embedding':
+            self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
+            self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
+        self.prepared_phrase2perturb = get_prepared_p2perturb(self.phrase2perturb_file)
 
     '''
     The main function
@@ -87,7 +95,7 @@ class ImprovedRankList(object):
         phrase_windows = self.get_window_list(p_stem)
 
         #The number of shrinked K for scenario
-        k_shrink = max(int(len(phrase_windows)/(2**len(scenario))),8)
+        k_shrink = max(int(len(phrase_windows)/(2**len(scenario.split(' ')))),8)
         
         
         print('Computing the context representation.')
@@ -192,7 +200,7 @@ class ImprovedRankList(object):
 
     # Get the representation of a list of contexts
     # Either as a tf-idf vector or as a word vector
-    def get_context_rep(self, window_list):
+    def get_context_rep(self, window_list, with_weight=False):
         context_rep = None
         if self.context_type == 'tfidf':
             # Build the TF-IDF representation
@@ -235,20 +243,85 @@ class ImprovedRankList(object):
             if len(window_list) ==0:
                 print('warning -- none of the words appear in the dictionary, returning zero vector.')
                 return context_rep
-            for context in window_list:
-                term_list = context.split()
+            for window in window_list:
+                term_list = window.split()
                 index_list = []
+                tot_idf = 0.0
                 for term in term_list:
                     if term in word_list:
-                        index_list.append(word_list.index(term))
+                        idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
+                        index_list.append(word_list.index(term)*idf)
+                        tot_idf+=idf
                 if len(index_list) == 0:
                     context_mean = np.zeros(shape = (1,matrix.shape[1]))
                 else:
-                    context_mean = np.mean(matrix[index_list,:],axis = 0)
-                context_rep = context_rep + context_mean
-           
+                    if with_weight==True:
+                        context_mean = np.sum(matrix[index_list,:],axis = 0)/tot_idf
+                    else:
+                        context_mean = np.mean(matrix[index_list,:],axis = 0)
+                context_rep = context_rep + context_mean  
             context_rep = context_rep/len(window_list)  
         return context_rep
+
+    def get_context_rep_manual(self, window_list,context_type):
+            context_rep = None
+            if context_type == 'tfidf':
+                # Build the TF-IDF representation
+                collection_doc_count = self.corpus_index.get_collection_doc_count()
+                context_rep = {}
+                for window in window_list:
+                    # print('window:',window)
+                    term_list = window.split()
+                    for term in term_list:
+                        idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
+                        if term in context_rep:
+                            context_rep[term] = context_rep[term]+idf
+                        else:
+                            context_rep[term] = idf
+
+                topK_terms = 100   # default 1000
+                if 'topK_terms' in self.__dict__:
+                    topK_terms = self.topK_terms
+
+                # If the context representation has less than topK terms, then rank all the context terms
+                topK_terms = min(topK_terms, len(context_rep))
+
+                # Rank the context terms
+                sorted_context_rep = sorted(context_rep.items(), key = lambda item:item[1], reverse = True)
+
+                # Get the top k terms
+                context_rep ={}
+                L= sorted_context_rep[:topK_terms]
+                for l in L:
+                    context_rep[l[0]] = l[1]
+
+                # Divided by the number of contexts
+                for term in context_rep:
+                    context_rep[term] = context_rep[term]/len(window_list)
+
+            elif context_type == 'word_embedding':
+                # Build the word vector representation
+                matrix, word_list = self.word_embedding
+                context_rep = np.zeros(shape = (1,matrix.shape[1]))
+                if len(window_list) ==0:
+                    print('warning -- none of the words appear in the dictionary, returning zero vector.')
+                    return context_rep
+                for window in window_list:
+                    term_list = window.split()
+                    index_list = []
+                    tot_idf = 0.0
+                    for term in term_list:
+                        if term in word_list:
+                            idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
+                            index_list.append(word_list.index(term)*idf)
+                            tot_idf+=idf
+                    if len(index_list) == 0:
+                        context_mean = np.zeros(shape = (1,matrix.shape[1]))
+                    else:
+                        context_mean = np.sum(matrix[index_list,:],axis = 0)/tot_idf
+                    context_rep = context_rep + context_mean  
+                context_rep = context_rep/len(window_list)  
+            return context_rep
 
 #    # 300 dimension vector
 #    def get_vect_rep(self, window_list):
@@ -338,14 +411,14 @@ class ImprovedRankList(object):
         if type(phrase_scenario) == dict or type(phrase_scenario) == np.ndarray:
             phrase_context_rep = phrase_scenario
         else:
-            phrase_context_rep = self.get_context_rep([phrase_scenario])
+            phrase_context_rep = self.get_context_rep([phrase_scenario],with_weight=True)
 #        threshold = 0
 #        if 'kb_matching_threshold' in self.__dict__:
 #            threshold = self.kb_matching_threshold
         matched_contexts_pairs = []
         
         for candidate_window in candidate_window_list:
-            candidate_context_rep = self.get_context_rep([candidate_window])
+            candidate_context_rep = self.get_context_rep([candidate_window],with_weight=True)
             score = self.get_context_similarity(phrase_context_rep, candidate_context_rep)
 #            candidate_vect_rep = self.get_vect_rep([candidate_window])
 #            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
@@ -368,6 +441,43 @@ class ImprovedRankList(object):
             matched_contexts_pairs[i] = (matched_contexts_pairs[i][0], matched_contexts_pairs[i][1]/total_score)
             
         return matched_contexts_pairs
+
+    def get_matched_windows(self, phrase_scenario, candidate_window_list, n_match = 0, threshold = 0):
+            
+            # If the input is already a context representation
+            if type(phrase_scenario) == dict or type(phrase_scenario) == np.ndarray:
+                phrase_context_rep = phrase_scenario
+            else:
+                phrase_context_rep = self.get_context_rep([phrase_scenario])
+    #        threshold = 0
+    #        if 'kb_matching_threshold' in self.__dict__:
+    #            threshold = self.kb_matching_threshold
+            matched_window_pairs = []
+            
+            for candidate_window in candidate_window_list:
+                candidate_context_rep = self.get_context_rep([candidate_window])
+                score = self.get_context_similarity(phrase_context_rep, candidate_context_rep)
+    #            candidate_vect_rep = self.get_vect_rep([candidate_window])
+    #            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
+                if score > threshold:
+                    matched_window_pairs.append((candidate_window,score))
+                    # matched_contexts_dic[candidate_window] = score
+    #                total_score = total_score + score
+                    
+            # Take the top n_match results, if there are more matched results
+            matched_window_pairs.sort(reverse = True, key = lambda x:x[1])
+            if n_match>0 and n_match<len(matched_window_pairs):
+                matched_window_pairs = matched_window_pairs[:n_match]
+                
+            # Normalize scores
+            total_score = 0
+            for (result, score) in matched_window_pairs:
+                total_score = total_score + score
+             
+            for i in range(len(matched_window_pairs)):
+                matched_window_pairs[i] = (matched_window_pairs[i][0], matched_window_pairs[i][1]/total_score)
+                
+            return matched_window_pairs
 
     # def get_localized_contexts(self, phrase_senario, all_window_list, scenario_length):
     #     threshold = 0

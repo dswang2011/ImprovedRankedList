@@ -2,6 +2,7 @@ __pycache__/*
 *.pyc
 resources/glove/*
 resources/word2vec/*
+resources/vect_dict/*
 test_*.py
 output/*
 config/*
