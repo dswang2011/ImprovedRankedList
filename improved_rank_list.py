@@ -448,14 +448,14 @@ class ImprovedRankList(object):
             if type(phrase_scenario) == dict or type(phrase_scenario) == np.ndarray:
                 phrase_context_rep = phrase_scenario
             else:
-                phrase_context_rep = self.get_context_rep([phrase_scenario])
+                phrase_context_rep = self.get_context_rep([phrase_scenario],with_weight=True)
     #        threshold = 0
     #        if 'kb_matching_threshold' in self.__dict__:
     #            threshold = self.kb_matching_threshold
             matched_window_pairs = []
             
             for candidate_window in candidate_window_list:
-                candidate_context_rep = self.get_context_rep([candidate_window])
+                candidate_context_rep = self.get_context_rep([candidate_window],with_weight=True)
                 score = self.get_context_similarity(phrase_context_rep, candidate_context_rep)
     #            candidate_vect_rep = self.get_vect_rep([candidate_window])
     #            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)

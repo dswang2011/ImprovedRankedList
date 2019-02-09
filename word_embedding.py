@@ -12,6 +12,34 @@ def form_matrix(file_name):
     return matrix, word_list
 
 
+def get_phrase2vect_dict(phrase2idf_file, context_type):
+	phrase2vect = {}
+	with open(phrase2idf_file,'r',encoding='utf8') as fr:
+		for line in fr:
+			if line.strip()=='':
+				continue
+			strs = line.strip().split('\t')
+			if context_type=='tfidf':
+				phrase2vect[strs[0].strip()] = strs[2].strip()
+			elif context_type=='word_embedding':
+				vect = np.fromstring(strs[2].strip().replace('[[','').replace(']]',''),sep=' ')
+				phrase2vect[strs[0].strip()] = vect
+	return phrase2vect
+
+def get_scenario2vect_dict(phrase2idf_file, context_type):
+	phrase2vect = {}
+	with open(phrase2idf_file,'r',encoding='utf8') as fr:
+		for line in fr:
+			if line.strip()=='':
+				continue
+			strs = line.strip().split('\t')
+			if context_type=='tfidf':
+				phrase2vect[strs[0].strip()+'\t'+strs[1].strip()] = strs[2].strip()
+			elif context_type=='word_embedding':
+				vect = np.fromstring(strs[2].strip().replace('[[','').replace(']]',''),sep=' ')
+				phrase2vect[strs[0].strip()+'\t'+strs[1].strip()] = vect
+	return phrase2vect
+
 
 # def get_wordvec(path_to_vec, word2id=None):
 #     matrix, word_list = form_matrix(path_to_vec)
