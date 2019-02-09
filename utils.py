@@ -7,6 +7,8 @@ from scipy.stats import pearsonr
 from nltk.stem.porter import *
 import pandas as pd
 import string
+import ast
+
 ################## Qiuchi: ###################
 
 
@@ -37,6 +39,19 @@ def get_perturbed_phrases(p,stem_words='False'):
         perturbed_phrase_list.remove(p)
     return perturbed_phrase_list
 
+
+def get_prepared_p2perturb(file_path):
+    p2perturb={}
+    with open(file_path,'r',encoding='utf8') as fr:
+        for line in fr:
+            if line.strip()=='':
+                continue
+            strs = line.strip().split('\t')
+            perturbs = ast.literal_eval(strs[1].strip())
+            p2perturb[strs[0].strip()] = perturbs
+    return p2perturb
+
+
 '''
 get synomym, which is used by 3. Invoke WordNet api.
 input: term
@@ -58,7 +73,6 @@ def read_test_data(test_data):
     scenarios = []
     labels = []
 
-
     if test_data.endswith('csv'):
     # file_name = 'preprocessed_data.csv'
         df = pd.read_csv(test_data, names = ['phrase','scenario','cd_score'])
@@ -72,8 +86,9 @@ def read_test_data(test_data):
                 if len(strs)>1:
                     phrases.append(strs[0].strip())
                     scenarios.append(strs[1].strip())
-                    labels.append(strs[1].strip())
+                    labels.append(strs[2].strip())
     return phrases,scenarios,labels
+
 def strip_punctuation(text):
     return ''.join(c for c in text if c not in string.punctuation)
 

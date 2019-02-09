@@ -1,0 +1,922 @@
+action movie	I like to watch action movie in cinema	0	0.0
+adjustment process	The adjustment process is hard	0	0.0
+advertising contract	What does the advertising contract specify	0	0.25
+advertising designer	She works as an advertising designer.	0	0.058333333333333334
+advertising purpose	my purpose in life is to perform advertising service	0	0.25
+age limit	The lower age limit for voting is 18	0	0.0
+air bag	Simultaneously, the safety air bag made of the fabric has good flexibility, low venting quality and high size stability	0	0.12931034482758622
+air mail	Air mail is a mail transport service branded and sold on the basis of at least one leg of its journey being by air.	1	0.625
+alcohol bottle	alcohol bottle	0	0.25
+animal anatomy	This comprehensive introduction to animal anatomy is for artists who want to draw authentic-looking animals from their imagination.	0	0.0
+animal brain	There is plenty of research on animal brain.	0	0.0
+animal matter	i don't like animal matter in processed food	0	0.0
+animal matter	I like the site "Animals matter"	1	1.0
+ankle injury	patients with ankle injury need proper treatment to prevent complications	0	0.0
+approval rating	What is the approval rating for the show	0	0.0
+area director	he works as the area director in a resturant	0.5	0.5
+arm wrestling	This is arm wrestling.	0	0.375
+army camp	I can see a  army camp in the woods.	0	0.0
+art collection	in my collection I also have ancient arts	0	0.0
+art form	efforts should be made display all art forms	0	0.0
+art group	The art group has just made my day	0	0.0
+attack damage	Attack damage is dealt by regular physical attacks.	0	0.0
+back door	use back door to enter if the front door is locked	0	0.0
+back door	he get the job through back door	1	0.875
+back pain	Pain felt in the back	0	0.0
+background check	background check is a report on one's personal history such as legal and criminal	0	0.375
+background color	what is the background color of the stadium	0	0.0
+backup anchor	the anchor sel boat is damaged, look for the repaldo in deposit	1	0.625
+backup file	He created a backup file to save the information he didnâ€™t want to lose	0	0.0
+backup operation	backup operation of police	1	0.625
+bank account	The formal relationship established between the depositor and the bank	1	1.0
+bank building	there are many bank buildings in this street	0	0.0
+bank building	Bank Buildings is on a corner site at 1Ã¢â‚¬â€œ7 Charing Cross, Birkenhead, Wirral, Merseyside, England.	0.5	0.5
+bass player	The group found itself minus a bass player	0	0.125
+bass player	bass player is a high selling record in new zealand	0.5	0.5
+belief system	A belief system is a set of mutually supportive beliefs	0	0.0
+bird species	the bird has a kind of disease	0	0.25
+birth certificate	A birth certificate is a vital record that documents the birth of a child. The term "birth certificate" can refer to either the original document certifying the circumstances of the birth or to a certified copy of or representation of the ensuing registration of that birth. Depending on the jurisdiction, a record of birth might or might not contain verification of the event by such as a midwife or doctor.	0	0.0
+birth name	A name chosen for a child at birth. Her birth name was Elizabeth, but everyone called her Lizzie. In California the credit card companies must issue a credit card in a person's	0	0.0
+birth place	birth place should be noted for each individual as a part of identity	0	0.0
+blood cell	blood  (invertebrate immune system cell).) A blood cell, also called a haematopoietic cell, hemocyte, or hematocyte, is a cell produced throug	0	0.009259259259259259
+blood pressure	blood pressure should be monitored regularly especially high risk individuals	0	0.0
+blood sugar	he blood sugar concentration or blood glucose level is the amount of glucose (sugar) present in the blood of a human or animal	0	0.0
+blood test	He need to go for blood test	0	0.0
+board game	A board game is a tabletop game that involves counters or pieces moved or placed on a pre-marked surface or "board", according to a set of rules.	0	0.0
+body fat	body fat needs to be contained	0	0.0
+body parts	body parts	0	0.25
+body parts	I like the horror movie called body parts	1	0.625
+boiling process	Boiling process by which a liquid turns into a vapor when it is heated to its boiling point.	0	0.0
+bone problem	Doctors detected a bone problem.	0	0.125
+book character	The book character may be entirely fictional or based on a real-life person, in which case the distinction of a "fictional" versus "real" character may be made	0	0.0
+brain death	She suffered brain death	0	0.125
+brain volume	Brain size can be measured by weight or by volume	0	0.0
+bridge structure	The bridge structure is quite solid.	0	0.0
+bullet hole	There was a bullet hole in the windshield.	0	0.125
+bullet proof	The glass is bullet proof which is capable of stopping a bullet projectiles	0	0.0
+bullet proof	I like the action movie caleld bulletproof	1	1.0
+bulletin board	They really worked on the bulletin board	0	0.0
+bus stop	which bus stop should we get off	0	0.0
+bus stop	Bus Stop is a 1955 play by William Inge	1	1.0
+bus system	Residents of Westville complained about the town's bus system.	0	0.0
+bus system	The government plans to deregulate the banking industry/the bus system.	0	0.0
+bus terminal	A bus terminal is a designated place where a bus or coach starts or ends its scheduled route.	0	0.0
+bus travel	Bus travel is my favorite way of transportation.	0	0.0
+business activity	He is working on some business activity	0	0.125
+business associate	business associates play crucial role in the success of the business	0	0.0
+business contact	Business information is one of the three main segments of the information industry.	1	1.0
+business law	Business law is sometimes called mercantile law or commercial law and refers to the laws that govern the dealings between people and commercial matters.	0	0.125
+business leader	Discover how these famous business leaders changed the world	0	0.0
+business man	He is a business man	0	0.25
+business news	business news are in trend.	0	0.125
+business plan	The group made a business plan and stuck with it.	0	0.0
+business representative	My firm will hire  five   business representatives within this month.	0	0.125
+business trip	I went on a good business trip	0	0.0
+business trip	Business Trip is the eighth episode of the fifth season of the television series The Office, and the show's eightieth episode overall	1	1.0
+cable car	A cable car is any of a variety of transportation systems relying on cables to pull vehicles along or lower them at a steady rate. The terminology also refers to the vehicles on these systems.	0	0.375
+calendar year	The calendar tells us what year it was	0.5	0.5
+calorie intake	A calorie or calory (archaic) is a unit of energy. Various definitions exist but fall into two broad categories. The first, the small calorie (symbol: cal), is defined as the amount of heat energy needed to raise the temperature of one gram of water by one degree Celsius at a pressure of one atmosphere	0	0.375
+cancer screening	cancer is a serious disease, its early detection like cancer screening can cure it	0	0.0
+cancer specialist	He need to see a cancer specialist	0	0.125
+car chase	Police captured the robbers after a car chase.	0	0.0
+car door	He slammed the car door.	0	0.0
+car key	He lost his car key so he needed to get a replacement	0	0.0
+car key	There are stores called Car Key Express	0.5	0.5
+car wash	car wash service is an attractive business	0	0.0
+card game	I will play a card game anytime	0	0.08333333333333333
+card reader	one can buy  card reader online at a very low price	1	0.625
+cargo capacity	There are two methods in which the cargo capacity is described. These are: the dead weight and the cubic capacity of the cargo compartments.	0	0.125
+cargo facility	The cargo facility was where they kept all their orders that were ready for shipment	0	0.09482758620689655
+cargo shipping	A cargo ship or freighter ship is any sort of ship or vessel that carries cargo, goods, and materials from one port to another	0	0.125
+cargo transport	The term cargo is also used in case of goods in the cold-chain, because the perishable inventory is always in transit towards a final end-use, even when it is held in cold storage or other similar climate-controlled facility.	0	0.125
+carnival crowd	The weather means carnival crowds are about half of what was expected	0.5	0.5
+carnival people	there are a lot of people on the carnival	0	0.375
+case study	They did a case study on the effects of radiation on animals	0	0.0
+case study	There is a coffee retailer named case studies	0.5	0.5
+cash flow	I have a good cash flow and while the cash is still stagnant	0	0.0
+cash machine	cash machine, also known as an automated teller machine ATM automated banking machine	0	0.0
+cat flap	Originally simple holes, the modern form is a hinged and often spring-loaded panel or flexible flap, and some are electronically controlled	1	0.75
+cell types	Biology studies different cell types.	0	0.0
+center row	They passed through the center row	0	0.0
+charity event	i am always interested in charity event	0	0.0
+chess talent	She has chess talent	0	0.0
+chicken breast	Meat from the body of a chicken. Lunch today is chicken breast with carrots	0	0.0
+child abuse	Have you read the child abuse case in the media today	0	0.0
+child care	Child care, or otherwise known as daycare, is the care and supervision of a child or multiple children at a time	0	0.0
+chip design	Apple has also begun bringing CPU chip design and production closer to home, giving it another technological advantage	0	0.0
+chip layer	A redistribution layer (RDL) is an extra metal layer on a chip that makes the IO pads of an integrated circuit available in other locations.	0.5	0.5
+chip performance	My chip performance is low rated	0	0.0
+chocolate bar	A chocolate bar is a chocolate confection in bar form, which distinguishes it from bulk chocolate produced for commercial use or individually portioned chocolates such as pastilles, bon-bons, and truffles	0	0.0
+cigarette smoke	when the cigarette light is always smoke	0	0.25
+citation form	I got a citation form on the project	0	0.0
+city centre	The city centre is always busy during the holidays	0	0.0
+class member	Tim is a class member.	0	0.0
+class people	Euphemism literally raised these professional level, and also reflects low class people by the social recognition and respect to the psychological	0	0.125
+class player	He is a class player.	0.5	0.5
+class structure	The class structure is oval shaped	0.5	0.5
+client request	The promotion came after client request.	0	0.0
+climate change	I am watching  news  climate change from NASA.	0	0.0
+closing time	when is the closing time of the store?	0	0.0
+closing time	I like the studio album called closing time by Tom Waits.	1	1.0
+cloth makers	My one of uncle was one of cloth makers, he have some industry for this purpose.	0	0.05
+clothing store	news clothing stores are coming up recently	0	0.0
+club house	club house is a building used by a club for meetings or social activities.	0	0.0
+club house	I used to watch episode of television series clubhouse	0.5	0.5
+coast line	The coast, also known as the coastline or seashore, is the area where land meets the sea	0	0.0
+coast line	The Coast Line is a railroad line between Burbank, California and the San Francisco Bay Area, roughly along the Pacific Coast.	1	1.0
+coconut plantation	It is the season of the coconut plantation.	0	0.0
+coffee bean	coffee beans are very nice	0	0.0
+coffee grinder	She purchased a new coffee grinder.	0	0.0
+coffee machine	Buy the best home coffee machines, coffee machine accessories, juicers and drink makers	0	0.0
+company car	i travel in company car every day	0	0.0
+company contributions	A paid contribution is one that involves contributing to Wikipedia in exchange for money or other inducements. It includes adding or removing content from any page, including articles and talk pages.	0.5	0.5
+company law	Company law (or the law of business associations) is the field of law concerning companies and other business organizations	0	0.125
+company office	most company offices are located on the main road	0	0.0
+company partners	I got a job in a new company, I'll be the company partner	0	0.375
+company partners	Company Partners has been providing Company Registration Services to over 10 000 clients via CIPC, the Dti, SARS, DOL and CIDB.	0	0.125
+company president	Company president is one of the leaders of business	0	0.0
+company store	You can refer to it as company store	0	0.375
+company town	A company town is a place where practically all stores and housing are owned by the one company that is also the main employer.	0	0.0
+company town	The company town is an environmental documentary film by Natalie Kottke-Masocco	0.5	0.5
+computer age	We are living in the computer age	0.5	0.5
+computer center	the calculation is made in the center of the room so that everyone erify the results	0	0.375
+computer data	i am very worried about my computer data	0	0.0
+computer development	The company belongs to the field of computer development.	0	0.0
+computer engineer	i'm working as computer engineer	0	0.0
+computer graphics	this is one of the best computer graphics station ever.	0	0.0
+computer innovation	This is another computer innovation developed by Microsoft.	0	0.027777777777777776
+computer maker	Apple is  biggest computer maker	0	0.0
+computer market	biggest computer market of hyderabad	0	0.08333333333333333
+computer network	asfsvxcbvetrgbdfv computer network afsaefcvsdcv	1	0.75
+computer terminal	There was a computer terminal in the science department for entering data	0	0.0
+computer usage	The company recorded high computer usage	0	0.0
+computer vision	Nowadays, there are several types of computer vision.	0	0.1
+cone clutch	A cone clutch serves the same purpose as a disk or plate clutch.	0	0.0
+construction company	One of the best construction company in Europe	0	0.125
+construction industry	He works at a construction industry	0.5	0.5
+construction materials	I have high-end materials, but the construction is paralyzed	0	0.375
+construction site	In his youth he worked at a  construction site.	0	0.0
+construction site	Construction Site is a television series created by The Jim Henson Company.	1	1.0
+consultation event	consultation event was organised by the group	0	0.03333333333333333
+contact details	Choose a country from the drop-down menu below to find the contact details of our offices around the world.	0	0.0
+control panel	Find the control panel on the desktop	0	0.0
+control tower	The control tower gave instructions to the pilot.	0	0.0
+conveyor belt	yor system consists of two or more pulleys (sometimes referred to as drums), with an endless loop of carrying mediumâ€”the	1	1.0
+core element	The core element of an argument is the most central, innermostr, most essential  part of  it.	0	0.0
+core element	Core Element educates and prepares K-12 students in the Greater New Orleans region	0.5	0.5
+core idea	It was a core idea from me	0	0.09615384615384616
+core strength	Core stability refers to a person's ability to stabilize their core	0.5	0.5
+core value	Core values of the United States Navy	0	0.0
+corresponding member	The corresponding member voted the same way.	0	0.0
+cotton industry	in the industry the production of cotton has decreased percentage	0.5	0.5
+counting board	The counting board was quite old but they still used it because it had sentimental value	0	0.0
+country access	Some websites require codes to receive country access	0	0.125
+course work	this course work need need to stay focus.	0	0.0
+credit card	There was a suspission of credit card fraud.	1	1.0
+crime lord	A crime boss, crime lord, mob boss, kingpin, criminal mastermind, or Don is a person in charge of a criminal organization.	1	0.875
+crystal molecules	study of crystal molecules	0	0.0
+data format	what about data format	0	0.0
+day trip	He made a day trip to the city.	0	0.0
+day trip	Day trip is a studio album.	1	1.0
+death certificate	The death certificate was issued on Dec. 16, 2018.	0	0.0
+death notice	I am yet to see the death notice of the mayor	0	0.0
+death notice	I want to see the Japanese series death notice	1	1.0
+death penalty	death penalty for dawood ibrahim & osama bin laden	0	0.25
+death sentence	the death penalty, is a government-sanctioned practice whereby a person is killed by the state as a punishment for a crime.	0.5	0.5
+debit card	how would you assess the compositionality of the phrase	1	1.0
+debut album	Francisco Bay area and ending in November 2002 in New York City. ==3==	1	0.75
+deciding factor	this last ball will be deciding factor	0	0.0
+design theme	The design theme of the house was nautical and it consisted of blues, whites and yellows	0	0.0
+design theme	A company called Design Theme	1	1.0
+destination port	The seller will ship the good to the appointed destination port.	0	0.0
+destroyer captain	During the war he was a destroyer captain.	0.5	0.5
+destroyer captain	Destroyer captain is a popular board game	1	1.5
+developed part	The most developed part of the country was itâ€™s capital city	0	0.0
+development effort	Product development effort is the full scope of work performed to create or enhance a product or service in Scrum.	0	0.125
+development system	Find the development system of the heart	0	0.0
+direction keys	She was using the directions keys to play a game on her computer	0	0.375
+disc set	a disc set is set of discs or dvds	0	0.0
+discipline problem	discipline problem with students can be solved with sincere efforts	0	0.0
+discussion page	You can express your opinions in the dicussion page.	0	0.0
+divided space	this is divided space	0	0.125
+division alignment	civil engineering has division allignment	0	0.0
+dog meat	A Nairobi court has allowed police to hold for five days three Chinese nationals in whose house they found dog meat.	0	0.0
+draft form	My work has draft away today	1	1.0
+drinking water	The quality of the drinking water was very poor in the rural community	0	0.0
+drug dealer	A drug dealer is a person involved in illegal drug dealing.	0	0.125
+drug dealer	I like the song drug dealer.	1	0.875
+education program	Education program for students.	0	0.0
+education system	we need improvement in the education system	0	0.08333333333333333
+egg cell	She wanted to freeze her egg cells until she was older	0	0.0
+emergency surgery	We must urgently decide on the emergency surgery	0	0.017857142857142856
+emergency transportation	Emergency Medical Transportation is a transportation service provided to individuals who are in an emergency situation	0	0.0
+employment contract	A category of contract used in labor law to attribute right and responsibilities between parties to a bargain. ==2== [Wikipedia] An employment contract or contract of employment is a kind of contract used in labour law to attribute rights and responsibilities between parties to a bargain	0	0.0
+end product	quality application is the end product of this process	0	0.0
+end user	it is useful for the end user	0	0.0
+energy issues	We are having energy issues at our community as electricity is often out	0	0.125
+energy loss	In addition to these losses of energy, there may be non-technical loss of revenue and profit, leading to electrical energy generated not being paid for, primarily due to theft	0	0.125
+energy price	those prices are high, but consume energy	0	0.0
+energy source	There is a light energy source which works by means of solar energy	0	0.0
+engagement ring	An engagement ring is a ring indicating that the person wearing it is engaged to be married	0	0.0
+enterprise applications	An enterprise application is the phrase used to describe applications (or software)	0.5	0.5
+enterprise level	Enterprise level solutions have a number of attributes that your typical software package does not have.	0	0.125
+entrance gates	They opened the entrance gates.	0	0.0
+entrance way	An entryway is a hall that is generally located at the front entrance of a house.	0	0.0
+episode information	episode information about this article.	0	0.0
+excavations parts	keep excavations  parts in top shape is  important to end  project in time	0	0.0
+exchange rate	In finance, an exchange rate (also known as a foreign-exchange rate, forex rate, ER, FX rate or Agio) between two currencies is the rate at which one currency will be exchanged for another. It is also regarded as the value of one countryÃƒÂ¢	0	0.375
+expiration date	you should check the expiration date	0	0.125
+expiration date	I love the black comedy movie Expiration Date	1	1.125
+eye contact	you will need eye contact to cross the highway safely.	0	0.375
+eye medication	Steroid and antibiotic eye drops are used to treat eye infections.	1	1.0
+factory machines	in the factory there are 25 factory machines to operate the plant	0	0.0
+family company	It's a family company	0	0.0
+family estate	On the farm, I always invite the family	1	0.75
+family name	A surname or family name is a name added to a given name	0	0.25
+father help	father help is essential for a growing child	0	0.0
+fellow inmate	my best fellow inmate	0	0.0
+fellow student	Tom was my fellow student at Cambridge.	0	0.0
+fencing coach	finding right fencing coach is very important	0	0.0
+fencing coach	Fencing Coach can be obtained through The Grand Tournament card packs purchased online	0	0.0
+fighter jet	A fifth-generation jet fighter is a jet fighter classification used around the world that encompasses the fighter technologies	0.5	0.5
+fighter pilot	This jet need perfect fighter pilot	0	0.125
+fighting spirit	She has a great stamina and an excellent fighting spirit/	0	0.125
+fighting spirit	Fighting spirit is the 27th episode of the American children's television series Power Rangers.	1	1.125
+film credits	end film credits start closing credits	0.5	0.5
+film director	The film director put the young actor through his paces	0	0.0
+film genre	The film genre is suspense	0	0.0
+film production	film production is an attractive business	0	0.375
+film unit	The National Film Unit (NFU) was a state-owned film-production organisation originally based in Miramar, New Zealand.	0.5	0.5
+film world	The Film world Company	1	1.0
+finish line	Finish line is my aim  while running.	0	0.0
+finish line	Finish Line Shoes for Men at Macy's come in all styles and sizes.	1	0.875
+fire alarm	The sound or other warning made by a fire alarm	0	0.0
+fire department	A fire department (American English) or fire brigade (British English), also known as a fire protection district, fire authority or fire and rescue service	0	0.125
+fire hazard	The fire hazard was big due to the lack of warning.	0.5	0.5
+fire officer	They answer to the fire officer.	0	0.0
+fish head	Fish head casserole is prepared with a fish head (about 1 kg), bean curd, cayenne pepper, sesame oil, vegetable oil, garlic sprouts, shallot, ginger, soy, salt, cooking wine, white sugar and monosodium glutamate.	0.5	0.5
+flight path	the flight path is the route of aircraft	0	0.0
+flight review	The flight review was a good idea	0	0.125
+food court	They had a choice of different cuisines in the food court at the mall	0	0.0
+football league	name all the national football league teams	0	0.0
+forest products	A forest product is any material derived from forestry for direct consumption or commercial use, such as lumber, paper, or forage for livestock	0	0.125
+foundation policies	They listed the foundation policies.	0	0.0
+founding secretary	A secretary or personal assistant is a person whose work consists of supporting management, including executives, using a variety of project management, communication, or organizational skills.	0.5	0.5
+freshman year	John is at his freshman year in college.	0	0.125
+freshman year	CNN.com showed a documentary series called Freshman Year.	1	0.875
+front panel	A front panel was used on early electronic computers to display and allow the alteration of the state of the machine's internal registers and memory.	0	0.0
+gang violence	This act constitud agang Violence on her	0	0.0
+gas chamber	A gas chamber is an apparatus for killing humans or animals with gas, consisting of a sealed chamber into which a poisonous or asphyxiant gas is introduced.	0	0.0
+gas flow	The technician checked the gas flow.	0	0.0
+gas industry	The gas industry is booming right now	0	0.0
+gas leak	This gas is used as a leak	0	0.0
+gas system	Numerical model for balanced draft air and gas system for circulating double fluidized bed is established and simulative study on the dynamic characteristics of air gas system is made	0	0.0
+gathering place	It's a gathering place for our gang to celebrate weekends.	0	0.008333333333333333
+gift shop	scxzcsaefsdv gift shop sdcasdfc	1	0.75
+girls hockey	She joined the girls hockey team because she loved the sport	0	0.0
+girls school	girls school Is good for the females	0	0.125
+glass tube	for this test you need two glass tube	0	0.125
+goose fossil	A goose fossil from the Early-Middle Pleistocene of El Salvador is highly similar to Anser and given its age and biogeography	0	0.0
+governance issues	the issues that happen is a product of poor governance	0	0.25
+government agency	This is the local department of a government agency.	0	0.0
+government charge	This is a bad government Charge on the people	0	0.0
+government efforts	government efforts are in line in containing unrest	0	0.0
+government intelligence	government intelligence reports of us	0	0.375
+government leaders	modi has best government leaders	0	0.0
+government minister	arun jaitley is government minister	0	0.0
+government opinion	government opinion on the matter is subject to public debate	0	0.0
+government organizations	government organization buildings i want to visit	0	0.125
+government radio	The government radio was accused of propaganda.	0	0.0
+government troops	This attack was accompanied by the violent suppression of Congolese elements who refused to attack government troops	0	0.0
+government work	government works need to be expediated	0	0.125
+graduation day	My graduation day is on monday next week	0	0.0
+graduation day	I like the movie, which is called "graduation day".	1	1.0
+grain requirements	The school lunch program had to include in its diet certain grain requirements	0	0.0
+grape leaves	I extract grape leaves often to make tea	0	0.0
+green tea	green tea is good for health	0	0.0
+groin injury	I have a wound in the groin area	0	0.0
+ground floor	my apartment is on the ground floor	0	0.125
+ground unit	The ground unit was the problem	0	0.0
+group stage	While the likes of Alisson and Iker Casillas have a strong claim to be named the group stage's best keeper	0	0.125
+growth period	growth period is the period untill 18 years old.	0	0.0
+guerrilla warfare	This war was entirely conducted in guerrilla warfare.	0	0.0
+guest house	It is a  nice guest house	0	0.0
+hair loss	Hair loss, also known as alopecia or baldness, refers to a loss of hair from part of the head or body.	0	0.0
+hand injury	I suffered a hand injury last year summer	0	0.0
+hate crimes	There was an increase in hate crimes.	0	0.038461538461538464
+head injury	passanger suffered head injury in the accident	0	0.0
+heart attack	He had a heart attack	0	0.125
+heart beat	heart beat of the patient is slow	0	0.0
+heart beat	I like the swedish song called heart beat by Knife	1	1.0
+heart disease	My heart hurts I hope I'm not have heart disease	0	0.0
+heat index	The Heat Index is a measure of how hot it really feels when relative humidity is factored in with the actual air temperature	0	0.0
+heightened level	heightened level of thrill	0	0.0
+home country	home country the country a person comes from	0	0.0
+home town	My home town is twenty miles away	0	0.3333333333333333
+home town	i like watching hometown series	1	1.3333333333333333
+home video	There are many forms of home video.	0	0.0
+host country	Greece is the host country of the games.	0	0.0
+house keys	The Home key is commonly found on desktop and laptop keyboards.	1	1.0
+ice sheet	This ice sheet is creating problems	0	0.375
+illumination conditions	What illumination conditions are required for the staging of the show	0	0.0
+information technology	Her studies was on information technology.	0	0.25
+inputs change	A technical change is a term used in economics to describe a change in the amount of output produced from the same amount of inputs	0	0.375
+installation process	The installation process of the new software only took a few minutes to complete	0	0.125
+intelligence agency	Intelligence agencies are the first line of defense against potential internal and external threats.	1	0.625
+intersection point	intersection point is good	0	0.0
+item information	In psychometrics, item response theory (IRT) (also known as latent trait theory, strong true score theory, or modern mental test theory) is a paradigm for the design, analysis, and scoring of tests, questionnaires, and similar instruments measuring abilities, attitudes, or other variables.	1	0.625
+job performance	His boss was very satisfied from his job performance.	0	0.0
+kernel sources	The Linux kernel sources have a very simple numbering system	0	0.375
+known one	She is the known one for the job	0	0.0
+labor union	labor union, is an organization of workers who have come together to achieve many common goals	0	0.375
+land bridge	Land bridge between Asia and America connect thousands of people.	0	0.0
+land claims	A land claim is a legal declaration of desired control over areas of property	0	0.0
+land grant	land grant is  awarded to individuals and companies as incentives to develop unused land in relatively unpopulated countries	0	0.0
+land survey	land survey measures terrestrial or three-dimensional positions of points and the distances and angles between them	0	0.25
+land taxation	The state regulated the land taxation.	0	0.125
+language courses	I go in language courses twice a week.	0	0.0
+language groups	The population is divided in many language groups.	0	0.0
+language problems	What language problems are identified among indian people	0	0.0
+language speakers	There were almost all native language speakers in the small country	0	0.125
+language understanding	To have language understanding of Spanish you must be enrolled in the class	0	0.0
+law education	He attended a good law education	0	0.125
+law school	law schools are making changes in thier courses	0	0.0
+learning process	Before you read about the learning process, take a moment to take the self assessment quiz.	0	0.0
+learning style	Learning styles refer to a range of competing and contested theories that aim to account for differences in individuals' learning	0	0.0
+lecture hall	A lecture hall is a large room used for instruction, typically at a college or university.	0	0.0
+life change	life change can be a good thing	0	0.0
+life change	Life Changes is the third studio album from American country pop singer Thomas Rhett	1	1.0
+life expectancy	life expectancy of a mammal	0	0.0
+life story	My mom often tell me her life story	0	0.0
+life story	The album by American rapper Black Rob was largly criticized	1	1.0
+liquor store	Depending on region and local idiom, they may also be called bottle store, off licence, bottle shop, bottle-o, package store (in Boston, called a packie), ABC store, state store, or other similar terms	0.5	0.5
+living conditions	people are in pathetic living conditions in the country	0	0.0
+lobby area	lobby area of the hotel was not tidy	0	0.0
+luxury automobile	According to many people Rolls-Royce Phantom  is most luxury automobile in this world.	0	0.125
+machine language	Machine code or machine language is a set of instructions executed directly by a computer's central processing unit (CPU). Each instruction performs a very specific task, such as a load, a jump, or an ALU operation on a unit of data in a CPU register or memory.	0	0.125
+magnifying glass	A magnifying glass (called a hand lens in laboratory contexts) is a convex lens that is used to produce a magnified image of an objec	0	0.0
+majority cases	There are many cases of leprosy, but smallpox is the majority	0	0.0
+mall entrance	I will wait you at mall entrance.	0	0.0
+mankind instruction	mankind instruction Is not encouraging	0	0.125
+mansion house	I would like to live in a mansion house	0	0.0
+mapping process	mapping process is important in industry	0	0.125
+market conditions	We are constantly aware of changing market conditions and the need to continually update our marketing plans.	0	0.0
+market place	the vegetable market is good	0	0.0
+market place	the stock market is good	1	0.75
+mass destruction	The bomb's explosion led to mass destruction.	0	0.0
+mass destruction	Mass destruction is a video game.	1	1.0
+meat animals	List of domesticated meat animals	0.5	0.5
+meat consumption	meat consumption is one of the ways to supply protein to human body	0	0.0
+media commentators	A commentator is a person who comments or expresses an opinion on a subject.	0	0.125
+media player	Why media have a new player	0	0.375
+media relations	Media Relations involves working with media for the purpose of informing the public of an organization's mission, policies and practices in a positive.	0	0.0
+media support	media support is good	0	0.0
+media technologies	Media technology can refer to Data storage devices	0	0.0
+melting point	What is the melting point of water	0	0.0
+members return	members return to work	1	0.625
+memory issue	many people worry about memory issue with thier brain	0	0.375
+memory leak	memory leak can occur when one is stressed	0	0.3333333333333333
+memory utilization	Computer memory utilization is high	0.5	0.5
+metro area	This guidebook includes a map of the Sydney, metro area of Australia.	0	0.0
+million dollar	this is a  million dollar question	0	0.0
+mission change	The mission change w, was a good idea	0	0.0
+mission control	the mission is good and you have an extra remote control	0.5	0.5
+mountain bike	On the weekends he rode his mountain bike for fun	0	0.0
+mountain goat	Moutain goat is a goat came from the mountain	0	0.0
+mountain range	the mountain range of the coast is prettier than the southern mountain range	0	0.0
+movie list	i check new movie list to watch in cinema	0	0.0
+movie star	A movie star (also known as a film star and cinema star) is a celebrity who is well-known, or famous, for his or her starring, or leading, roles in motion pictures.	0	0.0
+muscle contractions	muscle contraction is bad	0	0.0
+music school	I love music, in the music school they perform singing competitions	0	0.25
+muslim countries	Arab Spring was manifested in many muslim countries.	0	0.0
+mystery story	She wrote a mystery story for her creative writing class.	0.5	0.5
+neural network	Neural network efforts pay more attention to how the brain functions.	0	0.0
+neural network	neural network has power computational performance than other machine learning algorithms in computer science	0.5	0.5
+noise pollution	Greenpeace is fighting against noise pollution.	0	0.125
+noise pollution	The term "noise pollution" is defined as excess noise which is unpleasant or harmful	0	0.125
+noodle preparation	The recipe for spagetti  gave directions for the noodle preparation	0	0.0
+office building	An office is generally a room or other area where administrative work is done, but may also denote a position within an organization with specific duties attached to it	0	0.0
+opening match	opening match first match of the season	0	0.0
+opposition member	the members of the group have an opposition against the new president	1	1.0
+opposition protesters	in the assembly opposition protest groups were presented	0	0.0
+opposition radio	opposition radio	0	0.125
+order execution	The order execution was very quick.	0	0.0
+organized crime	Organized crime is a category of transnational, national, or local groupings of highly centralized enterprises run by criminals who intend to engage in illegal activity, most commonly for money and profit. Some criminal organizations, such as terrorist groups, are politically motivated	0	0.125
+papal approval	The bishop is waiting for the papal approval.	0	0.0
+paper certificate	the driving license printed on paper	0.5	0.5
+paper plate	prices of paper plate making machines are competitive	0	0.0
+park bench	park benches are upto the mark	0	0.0
+particle model	In the physical sciences, a particle (or corpuscule in older texts) is a small localized object to which can be ascribed several physical or chemical properties such as volume, density or mass.	0	0.16666666666666666
+particle physics	In particle physics there is much to learn	0	0.125
+patron saint	My saint is the patron of my city	0	0.0
+pattern recognition	recognition was given to Juan, for his high tolerance and participation in control following the company's standards	1	0.625
+performance space	Performance Space is an arts organisation based in Sydney, Australia, that develops and presents interdisciplinary arts and experimental theatre.	0.5	0.5
+petroleum fires	there happens petroleum fires in Iraq	0.5	0.5
+petroleum investment	the oil company is good business, a large investment in equipment must be made	0	0.25
+petroleum pipelines	the petroleum pipelines must be checked and properly maintained	0	0.0
+physics community	physics community	0	0.0
+physics lab	In the laboratory, in addition to biology, physics is studied	0	0.125
+piano lesson	Powerful piano lessons to help you learn how to play piano.	0	0.0
+pilot error	the test had a pilot error as the first phase	0	0.0
+plantation owner	John used to be the plantation owner	0	0.0
+player skill	the player skill is good	0.5	0.5
+playing career	I had a long playing career in football	0	0.375
+police radar	the police radar is very importante	0	0.125
+pool water	I looked into the pool there was no water in it	0	0.0
+pop singer	She is a famous pop Sing	0.5	0.5
+positive reinforcement	The giving of encouragement to a person who exhibits a particular behaviour with the result that such behaviour is repeated	0	0.0
+post office	A post office also provide banking services	0	0.25
+post office	The film rights to the novel  Post Office were sold to Taylor Hackford in the early 1970s	0	0.375
+power vacuum	power vacuum means lack of leadership	0.5	0.5
+pressure area	pressure area is the area of body where a bone is close to the skin surface	0	0.375
+pressure group	Advocacy groups (also known as pressure groups, lobby groups, campaign groups, interest groups, or special interest groups) use various forms of advocacy in order to influence public opinion and/or policy.	0	0.0
+produced versions	All the produced versions of this product have been licensed.	0	0.0
+program issues	program issues have to be resolved	0	0.125
+property rights	property rights are increasing	0	0.0
+protagonist role	The protagonist is at the center of the story, makes the key decisions, and experiences the consequences of those decisions.	0	0.125
+publishing deal	The author was happy to sign a publishing deal for his new book.	0	0.0
+punctuated rhythm	the theory of punctuated rhythm is little known	0	0.25
+puppet wolves	I make puppet wolves at my leisure	0	0.25
+quality control	this product improve quality control	0	0.0
+quality job	the important thing is that when doing the work, it is with the highest quality	0	0.25
+quality school	It was considered a quality school by many teachers and students	0.5	0.5
+quality school	Quality school is the name of an organization and a book	1	1.5
+quality software	In the context of software engineering, software quality refers to two related but distinct notions that exist wherever quality is defined in a business context	0	0.0
+quarter finals	A quarter final is one of the four matches in a competition which decides which four players or teams will compete in the semifinal.	0	0.125
+rabbit meat	i eating rabbit meat	0	0.0
+race car	Auto racing (also known as car racing, motor racing or automobile racing) is a sport involving the racing of automobiles for competition.	0	0.25
+race conditions	To achieve a study there are many career conditions	0	0.25
+radio audience	ideas from radio audience are very constructives	0	0.0
+radio service	The radio service is interrupted for quite some time.	0	0.125
+radio station	A radio station is a set of equipment necessary to carry on communication via radio waves.	0	0.125
+radio version	The radio version of the theatrrical performance will be broadcast next week.	0	0.125
+rail network	there is a network that evaluates all railway tracks	1	0.75
+rail network	must study the Spanish rail network	0	0.0
+railway regulations	The government changed the railway regulations.	0	0.0
+rap group	the list of the best rap group name	0	0.125
+rebel barons	In my school there are rebel barons	0.5	0.5
+rebel barons	Today we went to see the movie "rebel barons"	1	1.0
+record company	Daddy Yankee has his own record company	0	0.0
+recording quality	this is good recording quality	0	0.0
+reinforcement learning	She had to watch a video on reinforcement learning for her new job	0	0.17
+reinforcement learning	The software agent used reinforcement learning.	0	0.25
+relativity textbook	we go to the library to the relativity textbook area	0.5	0.5
+release date	release dates of most movies are published well in advance	0	0.0
+relief operation	the firemen are in a relief operation	0	0.0
+replacement list	my friend need replacement list	0	0.125
+reserve balances	reserve balances are pretty attractive	0	0.375
+resistance groups	how would you assess the compositionality of the phrase	1	0.625
+resource management	resource management is very essential for sucess in business	0	0.0
+resting posture	This is a nice resting posture.	0	0.0
+return trip	I want to book a return trip.	0	0.125
+review process	need review precess	0.5	0.5
+rice consumption	this country have poor rice consumption	0	0.0
+rice field	A rice field or paddy field is a flooded parcel of arable land used for growing semiaquatic rice.	0	0.0
+rice field	Rice Track/Soccer Stadium is a stadium in Houston, Texas. It is primarily used for track and field and soccer for the Rice University Owls	1	1.0
+rice shop	tomorrow I have to go to the store for rice	0.5	0.5
+ring road	A ring road is a road or a series of connected roads encircling a town or city.	0	0.125
+ring road	There is a street in Kalamazoo called Ring Road	1	1.0
+rocky ground	in geology we will study the rocky soil	0	0.0
+root channel	the water channel is damaged by a root of a tree	1	1.0
+running time	Please confirm the running time for tomorrow	0	0.125
+salt marsh	A marsh of saline water, found in the intertidal zone between land and sea, characterized by halophytic plants such as grasses and sedges adapted to periodic flooding with salt water. ==2== [Wikipedia] A salt marsh or saltmarsh, also known as a coastal salt marsh or a tidal marsh, is a coastal ecosystem in the upper coastal intertidal zone between land and open salt water or brackish water that is regularly flooded by the tides. It is dominated by dense stands of salt-tolerant plants such as herbs, grasses, or low shrubs.	0	0.0
+scale model	A scale model is most generally a physical representation of an object, which maintains accurate relationships between all important aspects of the model, although absolute values of the original properties need not be preserved	0	0.25
+school alumni	In my school nobody knows the meaning of alumni	0	0.375
+school board	My mother was elected to the school board.	0	0.0
+school bus	We go to school with a new school bus	0	0.125
+school day	School day two months later	0	0.25
+school day	It is one of his best-known songs and is often considered a rock-and-roll anthem	1	0.75
+school friend	Jennifer is my daughter's school friend.	0	0.0
+school program	the school program is good	1	1.0
+school record	keep good school record	0	0.25
+science fiction	Technology that, while theoretically possible, is not yet practical. Despite decades of research, mass-market personal aircraft are still science fiction	0	0.125
+screen shot	in a screen shot you have an image	0	0.0
+seat belt	in accidents where the occupant could be thrown against a solid object. ==2== [Wikipedia] A seat belt, also known as a safety belt, is a vehicle safety device designed to secure the	0	0.25
+secured installation	dgdf cfdgfgcv rtdsrf sdfc secured installation	1	0.75
+security authorities	the state authorities called security for the uproar	0	0.0
+security matters	how would you assess the compositionality of the phrase	0	0.25
+security relation	Identifying emotional security and identity to security relation.	0.5	0.5
+serving officer	He is a serving officer	0	0.375
+sewing machine	A sewing machine is a machine used to stitch fabric and other materials together with thread. Sewing machines were invented during the first Industrial Revolution to decrease the amount of manual sewing work performed in clothing companies. Since the invention of the first working sewing machine, generally considered to have been the work of Englishman Thomas Saint in 1790, the sewing machine has greatly improved the efficiency and productivity of the clothing industry. ==2== [Wiktionary] Any mechanical or electromechanical device used to stitch cloth or other material; normally uses two threads to form lock stitches	0	0.0
+sheet music	Sheet music is a handwritten or printed form of music notation that uses modern musical symbols to indicate the pitches (melodies), rhythms and/or chords of a song or instrumental musical piece	0	0.0
+short film	A short film is any film not long enough to be considered a feature film. Although no consensus exists as to where that boundary is drawn, the Academy of Motion Picture Arts and Sciences defines a short film as "an original motion picture that has a running time of 40 minutes or less, including all credits". ==2== [Wiktionary] Any motion picture not long enough to be considered a feature film.	0	0.375
+side doorway	the door is damaged, look for the side exit	0	0.25
+sign language	A sign language (also signed language) is a language which chiefly uses manual communication to convey meaning, as opposed to acoustically conveyed sound patterns	0	0.0
+silver atoms	These two Dutch students explained an experiment, in which a beam of silver atoms passing through a magnetic field splits into two beams. In a short paper	0	0.0
+silver medal	A Silver medal is made of or having the colour of silver, given as a prize for finishing in second place	0	0.0
+site name	how would you assess the compositionality of the phrase	0.5	0.5
+ski resort	A ski resort is a resort developed for skiing, snowboarding, and other winter sports. In Europe, most ski resorts are towns or villages in or adjacent to a ski area â€“ a mountainous area with pistes, ski trails and a ski lift system.	0	0.0
+skin change	your skin changes as the age increases	0	0.0
+skin change	Skin change is a beautiful song by Marc Anthony	0.5	0.5
+slate roof	slate roof of my home house	0	0.25
+song competition	it is good song competition	0	0.375
+south division	The National League South Division is one of the second divisions of the National League in England	0.5	0.5
+southeast coast	wind is blowing from southeast coast	0	0.0
+speech recognition	fi Speech recognition (SR) is the inter-disciplinary sub-field of computational linguistics which incorporates knowledge and research in the linguistics, computer science, and electrical engineering fields to develop methodologies and technologies that enables the recognition and translation of spoken language into text by computers and computerized devices such as those categorized as smart technologies and robotics. ==2== [Wiktionary] Voice recognition.	0	0.25
+speed limit	I achieved high speed and the limit is 60 miles on h	1	0.625
+spending reductions	our spending reductions shouldbe listed	0	0.0
+splash guard	The splash guard is the best option	0	0.375
+sports stadium	the stadium held a free sporting event	0	0.0
+state approval	They needed state approval to build on the vacant lot	0	0.0
+state enterprise	This factory is a state enterprise.	0	0.0
+state oil	The roads were full of state oil	0	0.125
+state police	The police force belonging to the state (subnational) government, as contrasted with federal, county, or municipal law enforcement.	0.5	0.5
+state president	The state president of South Africa was chosen by Parliament	0	0.0
+state product	In my state this is the best product	0.5	0.5
+steel industry	my relative works in steel industry	0	0.0
+stem cell	The stem cell research was helping the doctors treat the disease	0	0.0
+storage capacity	hard disk storage capacity	0	0.0
+strip club	I donâ€™t like adult strip club	0	0.0
+student death	jessica is student death	0	0.0
+student groups	A student group is an organization of students, typically at a high school, college or university.	0	0.0
+student newspaper	students printed new newspapers	0.5	0.5
+student residence	I'm going to study at Harvard and the student residence is wonderful	0	0.0
+substance use	Substance abuse, also known as drug abuse, is a patterned use of a drug in which the user consumes the substance in amounts or with methods which are harmful to themselves or others, and is a form of substance-related disorder.	0	0.0
+subway cars	who will first reach the subway cars	0	0.25
+sugar cube	Sugar is the generalized name for sweet, short-chain, soluble carbohydrates, many of which are used in food	0	0.375
+suicide note	I leave a note indicating the suicide that I committed	0.5	0.5
+sun god	The Incas had a moon god and a sun god	0.5	0.5
+support group	A group of nonprofessional people who support each other over a problem which all members share	0	0.375
+surface area	The surface area of a solid object is a measure of the total area that the surface of the object occupies	0	0.0
+surface waters	There was some pollution in the surface waters.	0	0.0
+survey area	this is survey area	0	0.0
+system engineer	Systems engineering is an interdisciplinary field of engineering and engineering management that focuses on how to design and manage complex systems over their life cycles	0	0.0
+tail section	Tail section of a MiG 17 from North Vietnam	0	0.0
+tap water	I only have tap water to drink	0	0.0
+tape recorder	The invention of a tape recorder was a real breakthrough.	0	0.0
+task declaration	make a statement and confirm that the task was to reconcile the accounts only	0	0.25
+telephone use	A rotary dial telephone, c. Modern telephones use push buttons.	0	0.25
+television channel	A television channel is a broadcast frequency or virtual number over which a television station or television network is distributed.	0	0.25
+television company	televisa is the most important television company in mexico	0	0.0
+television projects	netflix is creating several television projects	0	0.125
+television viewer	Cable TV viewers receive their programs via a cable.	0	0.0
+television work	study to achieve a television work	0	0.0
+test case	The test case set a precedent by which they could evaluate other cases that came before them	0	0.125
+test division	Today is the day we test the division	0	0.0
+threshold issue	There were enough threshold issues to move the case forward	0	0.0
+thrilling action	when they say thrilling action in the middle of a shoot is very exciting	0	0.25
+time bomb	is over time bomb	1	0.875
+time limit	in love as in other things there is no time limit	0	0.125
+time machine	travel to past with new machine	0	0.125
+time machine	you can use time machine of Mac to backup your files	1	2.0
+time scale	Musical sound may be analyzed on five different time scales	0	0.375
+time span	time has a large span	0.5	0.5
+title character	Who in the title is that character	1	0.625
+toilet seat	He forgot to raise the toilet seat.	0	0.046296296296296294
+touch screen	An input/output device that allows the user to interact with the computer by touching the display screen. ==2== [Wikipedia] A touchscreen is an important source of input device	0	0.125
+tour guide	this tour has guide	0	0.0
+town centre	I went to the town centre of New York	0	0.125
+trade agreement	business agreement with partners	0	0.125
+trade card	i want to buy trade cards	0.5	0.5
+trade deal	There was a trade deal between the two countries for their mutual benefit	0	0.0
+train crash	Three rail workers held after deadly high-speed train crash in Ankara.	0	0.0
+training members	They will be training members of staff tomorrow	0	0.0
+transformation industry	tomorrow I have a meeting of the coal transformation industry	0	0.25
+transmission system	transmission system transmits the data	0	0.0
+transport activity	The article talks about tha transport activity in the country.	0	0.125
+trash heap	My garbage turns into a trash heap	0	0.0
+tube form	QUIK-TUBE 48-in Concrete Tube Form at Lowe's are attractive	0.5	0.5
+twin brothers	twin brothers children of one mother, who developed during one pregnancy and were born as a result of one childbirth after a short time one after another	0	0.0
+unbroken period	I want to be in my chair for an uninterrupted period watching tv	0	0.0
+undulating course	I'm doing a hairstyling course for wavy hair	1	0.875
+universe humans	Universe humans have to do their best to save planet Earth.	0	0.0
+user interfaces	How many user interfaces have been identified	0	0.125
+vantage point	she have vantege point	0	0.0
+vantage point	Vantage Point is a 2008 American political action thriller film directed by Pete Travis; it was adapted from a screenplay written by Barry L. Levy.	1	1.0
+vector space	A type of set of vectors that satisfies a specific group of constraints. A vector space is a set of vectors which can be [[linear combination|linearly combined]]. Each vector space has a basis and dimension	0	0.0
+vice president	A deputy to a president, often empowered to assume the position of president on his death or absence. executive in a business in charge of a department or branch	1	0.625
+video game	video games can be very addictive	0	0.0
+video history	I like watching video history.	0	0.0
+video output	The blue ray has a high definition video output	0	0.05357142857142857
+village development	We see great development in this village	0	0.0
+voice control	The voice is the magic, only if you have vocal control	0	0.0
+voice mail	I received a voice mail	0	0.25
+voice recognition	voice recognition software may be downloaded	0	0.0
+waste water	governments forget to treat wastewater	0	0.0
+water pollution	Find out its causes and effects, but also the solutions and ways to control, and prevent water pollution.	0	0.0
+web application	A Web application (Web app) is an application program that is stored on a remote server and delivered over the Internet through a browser interface.	0	0.0
+web forms	you must put all your data in the web forms	1	0.875
+wedding feast	The wedding feast was simply gorgeous.	0	0.0
+wedding feast	Wedding Feast is the name of one of the Gospel parables.	0	0.3333333333333333
+wedding preparations	My daughter is getting married next week, we are now busy with wedding preparations/	0	0.0
+wedding ring	One of a pair or rings exchanged by bride and groom in a wedding ceremony, and afterwards worn by them; symbolizes continuous fidelity.	0.5	0.5
+weight loss	the  weight loss is the prime goal of my friend.	0	0.125
+west side	the scene on the west side is more beautiful	0	0.125
+west side	The West Side is a large area defining many neighborhoods in the city of Manchester, New Hampshire, in the United States.	0.5	0.5
+wind power	wind power fans	0	0.125
+wind sensors	wind sensors judge speed of wind	0	0.0
+winning competitor	i am winning competitor	0	0.25
+wish list	need wish list urgent	0	0.0
+worker rights	Because of the worker rights the company could not force the employees to work mandatory overtime	0	0.125
+world champion	The winner of a world cup or world championship.	0	0.0
+world tour	singer shakira performs her world tour fixation	0	0.0
+wrestling credentials	He earned his wrestling credentials from being the state champion	0	0.0
+writing style	The writing has several forms, and depends on the style you like	0	0.0
+writing system	A writing system is a system of symbols that are used to represent language.	0	0.0
+youth crime	this is youth crime	1	0.75
+youth group	I signed up for a youth group that does camps the last of every month.	0	0.0
+youth group	At my school, a rock group called "youth group" was formed.	0	0.375
+youth hostel	I will stay in the youth hostel	0.5	0.5
+air force	Pakistan have one of the best Air force armies  in the  world.	0	0.125
+air force	Try to find a job in air force, you will have good and secure future.	0	0.125
+arcade game	The best arcade game I have every played is Pacman.	0	0.0
+arcade game	Pacman is considered to be the most played arcade game in the world	0	0.0
+bone marrow	In order to check my RBC growth, doctors have given me a bone marrow test.	0	0.125
+bone marrow	Bone Marrow is essential for human beings as a part of healthy living	0	0.125
+bounty hunter	Do you know why he became a bounty hunter?	0	0.0
+bounty hunter	Bounty Hunter movie got 5.5 rating due to its good story.	1	1.0
+brand image	Brand image is developed over time through advertising campaigns.	0	0.125
+brand image	Apple have really good brand image in market	0	0.125
+brand name	Apple is a brand name of super quality.	0	0.0
+brand name	Please help me to choose a good brand name for my collection.	0	0.0
+call centre	I am  working here in this call centre from last 2 years	0	0.375
+call centre	I call this centre two to three time but they didn't response.	0	0.25
+capital crime	Capital punishment, also known as the death penalty, is a government-sanctioned practice whereby a person is put to death by the state as a punishment for a crime	0	0.25
+capital crime	Any crime that is punishable by death	0.5	0.5
+cast iron	A hard and brittle, but strong, alloy of iron, carbon, and silicon, formed by casting in a mould	0	0.125
+cast iron	Cast iron is popular for cookware where an even heating temperature is important	1	1.125
+con man	Con Man is an American comedy web series created, written, directed by, and starring Alan Tudyk	1	1.0
+con man	A confidence trick (synonyms include confidence game, confidence scheme, ripoff, scam and stratagem) is an attempt to defraud a person or group after first gaining their confidence, used in the classical sense of trust.	0	0.25
+confidence bounds	This is within my confidence bounds	0	0.0
+confidence bounds	the precision estimation is with reliable confidence bounds	0	0.0
+cover letter	the cover letter is well written	0	0.17592592592592593
+cover letter	you need to submit cover letter as well as resume CV to support you application.	0	0.4074074074074074
+cover song	I want to use TV sounds to cover song noise upstairs.	0	0.0
+cover song	I want to record a cover song for this album.	0.5	0.5
+cover story	Tobu is a famous actress this month she is on cover story of Fashion Magazine	0	0.0
+cover story	He is a good journalist he cover story with full context	0.5	0.5
+cruise lines	The cruise line has a lot of ships.	0	0.375
+cult film	Bollywood film Gunda is a cult film if you can understand the real meaning of "cult film".	0.5	0.5
+dirt road	walk on dirt road	0	0.0
+domain name	My domain name is biology	0	0.375
+domain name	Domain name is used in internet to identify unique address of website	0.5	0.5
+draft pick	I am a very positive person i always hope for a top draft pick.	0.5	0.5
+draft pick	The former No. 1 draft pick hit. 326 with 71 RBIs last year.	1	0.75
+dress code	dress code is rules for clothing	0	0.0
+drug lord	Pablo Escobar was the biggest drug lord in history.	0	0.0
+drug lord	The drug lord Nick basically runs my school through drug trafficking.	0	0.0
+family ties	I need some good ideas to make some DIY projects to show my family ties.	0	0.0
+family ties	I think there is no more beautiful in world than family ties.	0	0.125
+field work	'Field work' is must part of social studies research.	0.5	0.5
+field work	when i was doing research of my M.S, field work was the most difficult part.	1	1.125
+fire drill	A fire starting tool consisting of a wooden rod and an some primitive means of rapidly rotating the rod on a flat surface like a drill until tinder can be ignited	1	0.625
+fire drill	Any pointless, unproductive, useless, or chaotic activity. Since they've changed the standards again, our previous efforts now just amount to a fire drill	1	1.125
+flash flood	In a flash flood its highly recommendable to shift on higher ground.	0	0.0
+flash flood	Himalayan flash floods  occurred on the midnight of August 3, 2012 in india.	0	0.0
+flip book	I have plan to make a flip book at weekend come and join me.	0	0.0
+flip book	Making a flip book is good idea for DI Y project	0	0.0
+founding fathers	He was one of the founding fathers of art.	0	0.0
+founding fathers	The Founding Fathers of the United States were a group of people who led the American Revolution against the Kingdom of Great Britain.	0	0.0
+frame story	A frame story (also known as a frame tale or frame narrative) is a literary technique that sometimes serves as a companion piece to a story within a story	0	0.0
+frame story	A literary technique whereby an introductory or main narrative is presented,	0.5	0.5
+green card	I like red color instead of green card	0.5	0.5
+green card	A US work permit, officially known as United States Permanent Resident Card	1	1.25
+guest appearance	he record guest appearance	1	0.75
+guest appearance	guest appearance is the participation of an outsider performer in an event such as a music record or concert, show	0.5	0.5
+guest book	he has a guest book	0	0.0
+guest book	he has a wedding guest book to record the attendance.	0	0.375
+guest star	I was asked to become a guest star in my child's school anniversary this month	0	0.0
+guest star	Guest star seems to present a lot of attitude disregarding their place in the world.	0.5	0.5
+hip roof	while hip roof is best for shedding water so it is best choice if you are living in rainy weather areas.	0.5	0.5
+hip roof	we build a new home and it have beautiful hip roof.	0.5	0.5
+junk food	Kids are all prone to eat junk food.	0	0.125
+junk food	Healthy Food Vs Junk Food Song is good to teach kids which food they should select to eat.	1	1.0
+love life	a happy person who loves life	0.5	0.5
+love life	Love Life is the third studio album by the American new wave band Berlin	1	1.0
+machine learning	In simple words Machine learning is a method of data analysis, am i right?	0	0.0
+machine learning	classification is the basis of the common Machine Learning problem.	0.5	0.5
+mass media	Justin bieber have received heavy coverage in the mass media.	0	0.0
+mass media	when an issue come in mass media, it take time to close	0	0.0
+master plan	I don't think so that Democratic party have any master plan for betterment of young generation.	0.5	0.5
+master plan	we should make a master plan for our next year.	0.5	0.5
+navy blue	I love to wear my navy blue sweatshirt most of the time.	0	0.25
+navy blue	Navy blue dresses are not liked by most men for unknown reasons.	0	0.0
+nursery stock	nursery stock	0.5	0.5
+panic attack	Panic attack can happened in intense anxiety	0	0.0
+panic attack	she was in market when she encountered with panic attack like symptoms.	0	0.0
+pepper spray	she use pepper spray in kitchen	0	0.0
+pepper spray	she protect herself with papper spray in case of self-defense.	0	0.0
+pit stop	After the third pit stop he was stuck behind the one- stoppers and lost a lot of time.	0	0.0
+pit stop	I like Amy's acting in Pit stop movie.	0.5	0.5
+power base		0.5	0.5
+power base	power base is a base of political support for candidate	0	0.125
+rush hour	Traffic at the roads of New York  is very heavy during the rush hour.	0	0.0
+rush hour	I am a big fan of thrilled films like Rush Hours.	1	1.0
+salary cap	In professional sports, a salary cap (or wage cap) is an agreement or rule that places a limit on the amount of money that a team can spend on players' salaries	0	0.0
+salary cap	A limit on the salaries paid to the employees of an organization imposed by government or some other body	0.5	0.5
+search engine		1	0.625
+search engine	A web search engine is a software system that is designed to search for information on the World Wide Web	0	0.0
+side effect		1	0.75
+side effect	the medicine does not have side effect	0	0.0
+signal box	this signal box can control the system of railway	0	0.0
+signal box	A signal box is a small building near a railway	0.5	0.5
+tax base	I was upset to see my tax base increase even though my salary and income for the year did not increase.	0	0.0
+tax base	Recent tax base changes are causing quite a riot in the country.	0	0.0
+theme park	what is your plan for weekend theme park or sea side?	0	0.0
+theme park	Wild Wadi theme park is a must visit of Dubai.	0.5	0.5
+time line	We need to set a timeline for when you will finish this.	0	0.125
+time line	Timeline was a famous jazz album in 2011.	1	1.0
+time trial		0	0.25
+time trial	She wasÂ aimingÂ to compete in the time trial andÂ roadÂ race.	1	1.125
+vacuum cleaner		0.5	0.5
+vacuum cleaner	vacuum cleaner is an electric machine which sucks up dust and dirt from carpets	0	0.0
+water park	In my opinion  Water Country USA is world's best water park.	0.5	0.5
+water park	We have plan to go water park this weekend, do you want to join us?	1	1.0
+wind farm	Please guide me about the location of El Cabo Wind Farm.	0.5	0.5
+wind farm	Do you know how this wind farm works?	0	0.0
+wolf pack	wolf pack is a group of wolves that live and hunt together	0	0.0
+wolf pack	The Wolfpack is a 2015 American documentary film about a family who homeschooled and raised their seven children	1	1.0
+word processor	A device similar to a simple computer, designed for word processing.	0	0.375
+word processor	Software that provides word processing functions on a computer	0	0.0
+world record	he set a new world record	0	0.25
+youth wing	when i was in college i was president of youth wing.	0	0.0
+youth wing	Do you know , what is logo of US youth wing?	1	0.75
+academy award	The film was nominated for an Academy Award	0	0.3229166666666667
+action figure	the action figure was simple but well coloured.	0	0.0
+band aid	to do  band aid in time, is urgent in case of natural disaster.	0	0.125
+battle cry	the battle cry of this group is extraordinary and weird.	0	0.375
+battle cry	in the war areas, you can hear different cry of battle from all directions.	0	0.0
+blank shells	It is easy to check the size of blank shells on website	0	0.25
+blank shells	she got some blank shells on beach.	0	0.0
+blood bath	there was a  blood bath in the scene crime.	0.5	0.5
+body whorl	The trees have usually a straight trunk, and a tendency to a conical or pyramidal growth, throwing out each year a more or less regular whorl of branches from the foot of the leading shoot, while the buds of the lateral boughs extend horizontally	0	0.125
+box office	i bring my toy fom box office , i will play with it	0	0.4423076923076923
+box office	this movie number 1 in weekly box office	1	0.625
+brain drain	Brain Drain is a fictional character appearing in American comic books published by Marvel Comics	1	1.0
+brass knuckles	Its grip consisted of brass knuckles, was a chain of rings through which Weary slipped his stubby fingers	0	0.0
+break point	I am one more of your words to get to the breaking point	1	0.625
+break point	Rafael Nadal is at a point of break point	0	0.125
+bull market	A market trend is a perceived tendency of financial markets to move in a particular direction over time.	1	1.0
+business park	A business park or office park is an area of land in which many office buildings are grouped together	0	0.0
+cadet branch	The OrlÃ©ans line was a cadet branch of the Bourbon family.	0	0.375
+cadet branch	This is the name form of cadet branch	0	0.0
+capital market	he deregulation of the capital market brought with it the need for increased investor protection	0	0.0
+capital punishment	Capital punishment was regarded as inhuman and immoral.	0	0.375
+case law	There is not a lot of case law for the adjudication officers to base their decisions on	0	0.25806451612903225
+cash crop	A crop that is grown for sale rather than for personal food or for feeding to livestock.A	1	0.625
+cat fight	From that point on, the entire interview de-evolved into a catfight between the two women with Omarosa asking Williams if she had a nose job and then telling her that she shouldn't wear wigs	1	1.0
+cat fight	i have two cats, and they always have cat fight everyday,  what a mess	0	0.0
+catch phrase	A group of words, often originating in popular culture, that is spontaneously popularized after widespread repeated use	0.5	0.5
+cell phone	A portable, wireless telephone, which changes antenna connections seamlessly during travel from one radio reception cell to another without losing the party-to-party call connection	1	0.75
+chain smoker	One who smokes continuously, by lighting one cigarette when they finish another, as in a chain	0	0.125
+cheek teeth	cheek teeth is any of the molar or premolar teeth	0	0.0
+china clay	This porcelain is made mainly of China clay	0	0.0
+circuit court	I'm in the middle of the circuit court	0.5	0.5
+circuit court	I have to go to one of the circuit court venues	0	0.0
+command line	How do I get to the command line in Ubuntu?	1	0.625
+concentration camp	He is in his world in a concentration camp	0	0.25
+concentration camp	they are in concentration camps because of the war	0	0.0
+contact lens	Amongst these are contact lens wetting solutions, comfort drops and artificial tears, which, perhaps surprisingly, have similar compositions	0	0.125
+convenience store	A small retail store, often in a residential area, that carries a limited selection of items such as staples, junk food, and drugstore items,	0.5	0.5
+cover band	I recommend this place, very entertaining songs cover band was what we liked the most	1	1.0
+crash course	crash course is necessary for lazy boys.	0	0.125
+day care	Local authorities may provide day care for under fives	0.5	0.5
+day care	Not all good day care is so costly	1	1.0
+death row	There are currently over 3,000 prisoners on death row	0	0.0
+face value	The face value is the value of a coin, stamp or paper money, as printed on the coin, stamp or bill itself by the issuing authority	0.5	0.5
+fallen angel	the  fallen angel was cast out of heaven.	0.5	0.5
+fallen angel	in muslim religion, somtimes, angel fall tell the earth.	0	0.0
+family seat	this  family seat is very big and luxurious.	0	0.125
+family seat	this family seat around a fire.	0.5	0.5
+family tree	A family tree, or pedigree chart, is a chart representing family relationships in a conventional tree structure	1	0.75
+feature film	Feature film is the main, full-length film in a cinema program that also included a short film and often a newsreel	1	0.625
+field goal	He kicked a 20-yard field goal.	0	0.0
+field trip	Most of my companions on this field trip to the mines are from the Third World	0	0.0
+field trip	Kerin and classmates were on a field trip from Horizon Middle School in Ferndale, about 150 miles north	0	0.0
+fight song	i like listen to rachel platten fight song	1	0.875
+fire power	The fire power of enemy was underestimated.	0	0.0
+fire power	The fire power can be transferred to electric power	0.5	0.5
+flag stop	flag stop is a train station at which trains stop only on request	0	0.375
+flash memory	Compact Flash memory is about the most robust digital film	0.5	0.5
+flash memory	The company will comprise the flash memory units of Intel and STMicro	1	2.0
+flea market	An outdoor market selling inexpensive antiques, curios etc	0.5	0.5
+floating point	Floating Point is an album by John McLaughlin, released in 2008	1	1.0
+food chain	The whole food chain is affected by the over-use of chemicals in agriculture	0	0.0
+food chain	This is the first time a high street fast food chain has linked up with a theme park	1	1.0
+front line	Journalists had insisted on getting to the front line of the battle, heedless of the risks	0	0.375
+front line	We really were in the front line	0	0.0
+gag rule	The gag rule is an attempt to take away womenâ€™s basic rights	1	0.875
+ghost town	Ghost Town is the 17th album by the country rock band Poco, released September 20, 1982	1	1.0
+glee club	glee club is a musical group or choir group,	1	1.0
+gold rush	The discovery of place gold set off the California gold rush of 1849.	0	0.3333333333333333
+goose bumps	Some people get goose bumps when they hear a symphony or behold the valley from the top of a mountain	0	0.375
+grass roots	The Grass Roots is an American rock band that charted frequently between 1966 and 1975	1	0.875
+greenhouse gas	Any gas, such as carbon dioxide or CFCs, that contributes to the greenhouse effect when released into the atmosphere.	1	1.0
+ground rule	A rule regarding play on a specific field, course, or court.	1	1.0
+guinea pig	the  guinea pig looks quit and beautiful.	0	0.125
+gun dog	gun dog is a breed of dog used by hunters to find, flush out and retrieve birds and other game	0	0.0
+hard core	this band pertain to a category of  hard core musician group.	1	1.0
+hard disk	The data is stored on a hard disk and backed up on a floppy disk	0	0.0
+hard drive	my pc has a hard drive of 1 terabyte	0	0.375
+heat wave	A heat wave is a prolonged period of excessively hot weather, which may be accompanied by high humidity, especially in oceanic climate countries	0	0.0
+heavy metal	this musician band pertain to category of heavy metal.	1	0.875
+heavy metal	plants can absorb heavy metals and mercury.	0	0.0
+high school	You were my high school sweetheart, And still are	0	0.0
+high school	He'd dropped out of high school at the age of 16	0	0.0
+home front	Home front is the informal term for the civilian populace of the nation at war as an active support system of their military.	1	0.625
+home ground	Although he was on home ground, his campaign had been rocked by adultery allegations	0	0.40625
+home ground	Away from her home ground she seemed surprisingly ill at ease at first, almost shy	0	0.34375
+home run	home run is my favorite , you what r u doing in ur life	1	0.8333333333333334
+home run	home run is useful for us	0.5	0.5
+house arrest	Following the coup, parliamentary leaders were put under house arrest	0	0.0
+house arrest	She has endured house arrest and continual harassment by the police	0	0.0
+hype man	A hype man in hip hop music and rapping is a backup rapper and/or singer who supports the primary rappers with exclamations and interjections	1	0.875
+injury time	Injury Time was a radio comedy programme, broadcast on BBC Radio 4 during the 1980s	1	1.0
+jet lag	Jet lag, medically referred to as desynchronosis and rarely as circadian dysrhythmia	1	0.875
+lady chapel	Last month we were able to borrow a votive candle stand, which stands in the Lady Chapel area	1	0.875
+lady chapel	Two of the cathedral's chapels were added later - the Lady Chapel and the Chapel of St Paul	0	0.375
+lead time	The amount of time between the initiation of some process and its completion, e.g. the time required to manufacture or procure a product;	0	0.125
+leaf spring	A leaf spring is a simple form of spring commonly used for the suspension in wheeled vehicles	1	1.0
+leap year	i like watching leap year starred by amy adams	1	1.0
+leap year	The leap year comes around quadrennially	0	0.0
+life cycle	Software Development Life Cycle (SDLC) is a process used by the software industry to design, develop and test high quality softwares.	0.5	0.5
+lift hill	the least fun part of the roller coaster was lift hill	0	0.0
+love triangle	Emma Thompson's latest film project a love triangle featuring the 19th century poet and critic John Ruskin love triangle is reported to have been placed in jeopardy by a New York copyright case	1	1.0
+love triangle	I didn't sign up for some creepy love triangle	1	1.125
+lump sum	this salary just abn lump sum,  what about yours	0	0.375
+lump sum	i need not lump sun any more	0.5	0.5
+machine gun	i want a machine gun , knife is not useful anymore	0	0.0
+machine gun	machine gun more useful than ordinary guns	0.5	0.5
+mind map	mind map helps students to understand well.	0.5	0.5
+morning glory	play morning glory from oasis	1	1.0
+mother tongue	please select your mother tongue language	0	0.3333333333333333
+mother tongue	my mother tounge has bleed due to sprue	1	0.5833333333333334
+nerve agent	Nerve agents are man-made chemical substances that could be used in wars.	1	0.875
+nerve agent	Nerve agent transfers messages to organs	0.5	0.5
+news anchor	Emerald Yeh, the news anchor, wanted to do a telephone piece	0	0.125
+open source	To make open-source	1	0.5833333333333334
+operating system	there is different  operating system to use in computers.	0	0.0
+optical fiber	Optical fiber communication becomes the dominated method of communication in the backbone because of its tremendous bandwidth and extremely low transmission loss of fibers	0	0.0
+pen name	is it his  pen name or his real name?	1	1.0
+pen name	this pen name's is Bic.	0	0.125
+people skills	that person has enough people skills	0	0.375
+people skills	my workers have enough people skills	0	0.375
+pig iron	Pig iron is the intermediate product of smelting iron ore. It is the molten iron from the blast furnace, which is a large and cylinder-shaped furnace charged with iron ore, coke, and limestone	0.5	0.5
+point guard	He plays in the point guard.	0	0.375
+position paper	Microsoft has outlined in a position paper its goals for a distributed OS, called Project Millennium	0.5	0.5
+position paper	no need to rush, just position paper properly	0.5	0.5
+power train	power train is the main components that generate power.	0	0.25
+price point	As a bonus: The diminutive devices have price points to match.	0	0.0
+quarter section	A rounded convex molding, often a quarter section of a circle or an ellipse	0	0.0
+quarter section	We have much land here Ã¢â‚¬â€œ about a quarter-section	0	0.375
+rain forest	A Rainforest can be described as a tall, dense jungle	0	0.0
+real estate	Patriotism is a arbitrary veneration of real estate above principles	0	0.0
+real estate	The government levies taxes on real estate and personal property.	1	1.0
+role model	She is a good role model for young players with her excellent attitude and obvious love of the game	1	1.0
+roll cage	the roll cage of this car is strange.	0	0.3333333333333333
+roll cage	we use this roll to make a cage.	0	0.4166666666666667
+roller coaster	Their relationship was an emotional roller coaster	1	1.0
+roller coaster	I screamed myself silly on the roller coaster	0	0.0
+round trip	round trip is one of best jazz record	1	0.9038461538461539
+round trip	From London to Oxford and back is a round trip of over a hundred miles	0	0.25
+sex life	The individual is able to, on an either regular or semi-regular basis, enter into voluntarily agreed and consensual situations involving partnered sexual activity	0	0.125
+shelf life	Shelf life is the length of time that a commodity may be stored without becoming unfit for use, consumption, o	0	0.375
+shock wave	the result of this  shock wave is high.	0	0.0
+shock wave	the shock of this  wave is catastrophic.	1	1.25
+shot put	The players participated in shot put competition, more investment and further and further away results	0	0.29545454545454547
+side kick	Sidekicks is a 1974 TV-movie directed by Burt Kennedy and starring Larry Hagman and Louis Gossett, J	1	1.0
+silver age	this stratigraphic layer pertain to silver age.	1	0.55
+sister ship	he keel of her sister ship will be laid by the time she discharges at Calcutta	0	0.375
+sister ship	look at there, what a big ship, don't you know it's my sister ship	0.5	0.5
+snub cube	An Archimedean solid with thirty-eight faces, of which six are squares (no two of which share a vertex) and thirty-two are equilateral triangles	0	0.25
+soap opera	A soap opera, soap, or soapie, is a serial drama on television or radio which examines the lives of many characters, usually focusing on emotional relationships to the point of melodrama	0	0.0
+soft drink	In the end she went out with him for a cold soft drink	0	0.0
+soul mate	my wife is my precious soul mate.	0	0.42592592592592593
+soul mate	the soul of my mate is good.	0	0.42592592592592593
+space race	The space race reached its culmination in the first moon walk	0	0.0
+speed bump	Passenger vehicle sales hit speed bump in July	1	1.0
+speed bump	And if you need to clear a speed bump without holding your breath, one need only push a button to raise the car by 4 cm	0	0.0
+splinter group	The Party seemed to split into several splinter groups.	0	0.375
+square root	The square root of it is two hundred and seventy-seven point four nine	0	0.25
+stage name	A stage name, also called a screen name, is a pseudonym used by performers and entertainers such as actors, wrestlers, comedians, and musicians	0	0.3020833333333333
+star shell	A shell is a payload-carrying projectile which, as opposed to shot	0.5	0.5
+stick figure	Measurements to determine the ratio of the stick figure limbs, in addition to comparisons with other early human representations, lead the researchers to support the woman interpretation	0	0.0
+stick figure	Rather than using the stick figure, it is clear now that the verify address step is performed by a person with the role of verifier.	1	0.75
+stop word	a word, usually one of a series in a stop list, that is ignored when searches are conducted on a database, search engine	0.5	0.5
+story arc	A story arc is an extended or continuing storyline in episodic storytelling media such as television, comic books, comic strips, boardgames, video games, and films with each episode following a narrative arc. On a television program	0	0.0
+story line	The gripping storyline and quality of the production provide a powerful antidote to the frustrations of language learning at lower-intermediate level	0	0.125
+story line	The main storyline describes the pure, innocent love of the young couple	0	0.375
+straw man	To falsely attribute an insubstantial argument (a straw man argument) to another through direct declaration or indirect implication	1	0.625
+straw poll	I took a straw poll among my colleagues to find out how many can use chopsticks	1	0.875
+sun screen	this product is the best selling of sunscreen category	1	0.75
+supporting act	Their supporting act was a guy dressed in black playing acoustic guitar.	0	0.0
+sweat pants	Sweat pants are a casual variety of soft trousers intended for comfort or athletic purposes	0	0.0
+sweat pants	John took off his sweat pants after football training.	0	0.0
+tag line	The tag line is a kind of economic language that bring market effect	0	0.125
+tag line	In both the print and video campaigns, the tag line is the same: "They all start somewhere."	0	0.125
+tag team	In the compaign, the couple operates more like a tag team.	0	0.125
+tax haven	Hongkong is a famous tax heaven.	0.5	0.5
+teddy bear	You convey love with firm, teddy bear like limit setting	0.5	0.5
+teddy bear	She had fallen asleep in her chair, cuddling a little teddy bear	0	0.0
+think tank	A group of people who collectively perform research and develop reports and recommendations on topics relating to strategic planning or public policy, and which is usually funded by corporate, government, or special interests	1	0.75
+time frame	The period of time during which something is expected to occur, or does occur.	0	0.0
+top dog	The team wanted to prove that they were top dogs in the region	0	0.25
+top dog	Most puppies seem to be duking it out right now over who will be top dog	0	0.25
+top notch	Mr Ellison says he looks for thrifts with top-notch management and stock prices that look cheap relative to book value and earnings	0	0.125
+top notch	look at my phone, there is a top notch on the screen	0.5	0.5
+trust fund	how about your trust fund , we need to evaluate this	0	0.0
+trust fund	trust fund evaluation needed	0	0.0
+umbrella organization	Donations should be sent to the Disaster Emergency Committee, an umbrella organization for UK based aid agencies	0	0.125
+umbrella term	Within the umbrella term "dementia" there are many different kinds of disease	0	0.0
+zip code	A postal code, especially for addresses served by the US Postal Service	0	0.0
+school record	A new record was dropped in school	0	0.27380952380952384

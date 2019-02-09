@@ -44,12 +44,12 @@ class ImprovedRankList(object):
         if 'path_to_vec' in self.__dict__:
             self.word_embedding = form_matrix(self.path_to_vec)
         # get pre-stored vectors
-        if self.context_type=='tfidf':
-            self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
-            self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
-        elif self.context_type=='word_embedding':
-            self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
-            self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
+        # if self.context_type=='tfidf':
+        #     self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
+        #     self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
+        # elif self.context_type=='word_embedding':
+        #     self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
+        #     self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
         self.prepared_phrase2perturb = get_prepared_p2perturb(self.phrase2perturb_file)
 
     '''
@@ -58,7 +58,7 @@ class ImprovedRankList(object):
     def run(self):
         # Load Data from file
         # phrases,scenarios,labels = read_test_data(self.input_path)
-        data = read_test_data(self.input_path)
+        phrases,scenarios,labels = read_test_data(self.input_path)
 
         output_file = 'output.txt'
         if 'output_file' in self.__dict__:
@@ -67,11 +67,7 @@ class ImprovedRankList(object):
         file_writer = codecs.open(output_file,'w',encoding='utf8')
         scores = []
         targets = []
-        # for phrase,scenario,label in zip(phrases,scenarios,labels):
-        for item in data:
-        	phrase=item[0]
-        	scenario=item[1]
-        	label = item[2]
+        for phrase,scenario,label in zip(phrases,scenarios,labels):
         	#Compute the compositional score
         	score = self.rank_list_comp(phrase, scenario)
         	score = float(score)
@@ -125,17 +121,17 @@ class ImprovedRankList(object):
         phrase_norm_rep = self.get_context_rep([p_stem])
 
         # (1) comput the normalized scenario context
-        if p_stem+'\t'+scenario in self.s2v.keys():
-        	scenario_norm_rep = self.s2v[p_stem+'\t'+scenario]
-        else:
-        	scenario_norm_rep = phrase_norm_rep
+        # if p_stem+'\t'+scenario in self.s2v.keys():
+        # 	scenario_norm_rep = self.s2v[p_stem+'\t'+scenario]
+        # else:
+        scenario_norm_rep = phrase_norm_rep
 
         # (3) combine  (set as 0, i.e., no scenario vect considered)
         phrase_context_rep = self.combine_context(scenario_norm_rep,phrase_norm_rep, self.scenario_corpus_combine_weight)
 
         ######## Step2: Adjusting localized context rep with KB ######
         # print(phrase_context_rep)
-        if self.adapt_with_knowledge_base in ['True','TRUE']:
+        if self.adapt_with_knowledge_base in ['True','TRUE','true']:
             print('Recomputing the context representation with Knowledge base.')
 
             # Get phrase diambiguation pages in the knowledge base
