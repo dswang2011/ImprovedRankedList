@@ -185,7 +185,7 @@ class ImprovedRankList(object):
         if 'window_size' in self.__dict__:
             window_size = self.window_size
         context_list = []
-        if self.word_level:
+        if self.word_level in ['true','True','TRUE']:
             # Get the list of context words that are close to each word in the phrase
             words = phrase.split(' ')
             for word in words:
@@ -202,9 +202,9 @@ class ImprovedRankList(object):
     # Either as a tf-idf vector or as a word vector
     def get_context_rep(self, window_list, with_weight=False):
         context_rep = None
+        collection_doc_count = self.corpus_index.get_collection_doc_count()
         if self.context_type == 'tfidf':
-            # Build the TF-IDF representation
-            collection_doc_count = self.corpus_index.get_collection_doc_count()
+            # Build the TF-IDF representation  
             context_rep = {}
             for window in window_list:
                 # print('window:',window)
@@ -216,7 +216,7 @@ class ImprovedRankList(object):
                     else:
                         context_rep[term] = idf
 
-            topK_terms = 100   # default 1000
+            topK_terms = 1000   # default 1000
             if 'topK_terms' in self.__dict__:
                 topK_terms = self.topK_terms
 
@@ -246,17 +246,19 @@ class ImprovedRankList(object):
             for window in window_list:
                 term_list = window.split()
                 index_list = []
+                weight_list = []
                 tot_idf = 0.0
                 for term in term_list:
                     if term in word_list:
                         idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
-                        index_list.append(word_list.index(term)*idf)
+                        index_list.append(word_list.index(term))
+                        weight_list.append(idf)
                         tot_idf+=idf
                 if len(index_list) == 0:
                     context_mean = np.zeros(shape = (1,matrix.shape[1]))
                 else:
-                    if with_weight==True:
-                        context_mean = np.sum(matrix[index_list,:],axis = 0)/tot_idf
+                    if with_weight in ['True','TRUE','true']:
+                        context_mean = np.sum(np.transpose(np.transpose(matrix[index_list, :]) * weight_list),axis = 0)/tot_idf
                     else:
                         context_mean = np.mean(matrix[index_list,:],axis = 0)
                 context_rep = context_rep + context_mean  
@@ -265,9 +267,9 @@ class ImprovedRankList(object):
 
     def get_context_rep_manual(self, window_list,context_type):
             context_rep = None
+            collection_doc_count = self.corpus_index.get_collection_doc_count()
             if context_type == 'tfidf':
-                # Build the TF-IDF representation
-                collection_doc_count = self.corpus_index.get_collection_doc_count()
+                # Build the TF-IDF representation          
                 context_rep = {}
                 for window in window_list:
                     # print('window:',window)
@@ -309,15 +311,21 @@ class ImprovedRankList(object):
                 for window in window_list:
                     term_list = window.split()
                     index_list = []
+                    weight_list = []
                     tot_idf = 0.0
                     for term in term_list:
                         if term in word_list:
                             idf = math.log10(collection_doc_count/(self.corpus_index.get_doc_frequency(term)+1))
-                            index_list.append(word_list.index(term)*idf)
+                            index_list.append(word_list.index(term))
+                            weight_list.append(idf)
                             tot_idf+=idf
                     if len(index_list) == 0:
                         context_mean = np.zeros(shape = (1,matrix.shape[1]))
                     else:
+                        if with_weight in ['True','TRUE','true']:
+                            context_mean = np.sum(np.transpose(np.transpose(matrix[index_list, :]) * weight_list),axis = 0)/tot_idf
+                        else:
+                            context_mean = np.mean(matrix[index_list,:],axis = 0)
                         context_mean = np.sum(matrix[index_list,:],axis = 0)/tot_idf
                     context_rep = context_rep + context_mean  
                 context_rep = context_rep/len(window_list)  

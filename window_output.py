@@ -147,11 +147,11 @@ if __name__ == '__main__':
 	rank_list.parse_config('config/config.ini')
 	rank_list.initialize()
 
-	# phrase2tfidf = get_phrase2vect_dict('p_tfidf.txt','tfidf')
-	# phrase2embed = get_phrase2vect_dict('p_word_embedding.txt','word_embedding')
-	# scenario2tfidf = get_scenario2vect_dict('s_tfidf.txt','tfidf')
-	# scenario2embed = get_scenario2vect_dict('s_word_embedding.txt','word_embedding')
-	# print('dics:',len(phrase2tfidf),len(phrase2embed),len(scenario2tfidf),len(scenario2embed))
+	phrase2tfidf = get_phrase2vect_dict('p_tfidf.txt','tfidf')
+	phrase2embed = get_phrase2vect_dict('p_word_embedding.txt','word_embedding')
+	scenario2tfidf = get_scenario2vect_dict('s_tfidf.txt','tfidf')
+	scenario2embed = get_scenario2vect_dict('s_word_embedding.txt','word_embedding')
+	print('dics:',len(phrase2tfidf),len(phrase2embed),len(scenario2tfidf),len(scenario2embed))
 
 
 	flag = 0
@@ -165,28 +165,28 @@ if __name__ == '__main__':
 			strs = line.split('\t')
 			if len(strs)<2:
 				continue
-			phrase = strs[0].strip()
-			scenario = strs[1].strip()
+			p = strs[0].strip()
+			s = strs[1].strip()
 
 			phrase_windows = []
-			# vect for phrase
-			if phrase not in phrase_set.keys():
+			# vect for p
+			if p not in phrase2tfidf.keys() and p not in phrase_set.keys():
 				
 				# get matched windows and vectors for 
-				phrase_windows = rank_list.get_window_list(phrase)
+				phrase_windows = rank_list.get_window_list(p)
 
 				p_tfidf = rank_list.get_context_rep_manual(phrase_windows,'tfidf')
 				p_word_emb = rank_list.get_context_rep_manual(phrase_windows,'word_embedding')
-				write_line('p_tfidf.txt',phrase+'\to\t'+str(p_tfidf))
-				write_line('p_word_embedding.txt',phrase+'\to\t'+str(p_word_emb).replace('\n',' '))
-				phrase_set[phrase] =phrase
+				write_line('p_tfidf.txt',p+'\to\t'+str(p_tfidf))
+				write_line('p_word_embedding.txt',p+'\to\t'+str(p_word_emb).replace('\n',' '))
+				phrase_set[p] =p
 			# perturbs
-			perturbs = get_perturbed_phrases(phrase)
-			print('now process:',phrase)
+			perturbs = get_perturbed_phrases(p)
+			print('now process:',p)
 			pruned_perturbs = rank_list.prune_perturbed_phrase(perturbs)
-			write_line('perturb_dict.txt',phrase+'\t'+str(pruned_perturbs).strip())
+			write_line('perturb_dict.txt',p+'\t'+str(pruned_perturbs).strip())
 			for perturb in pruned_perturbs:
-				if perturb not in phrase_set.keys():
+				if perturb not in phrase2tfidf.keys() and perturb not in phrase_set.keys():
 					perturb_windows = rank_list.get_window_list(perturb)
 					p_tfidf = rank_list.get_context_rep_manual(perturb_windows,'tfidf')
 					p_word_emb = rank_list.get_context_rep_manual(perturb_windows,'word_embedding')
@@ -194,15 +194,15 @@ if __name__ == '__main__':
 					write_line('p_word_embedding.txt',perturb+'\tt\t'+str(p_word_emb).replace('\n',' '))
 					phrase_set[perturb] = perturb
 
-			# === vect for scenario
-			if len(phrase)+1>=len(scenario):
+			# vect for s
+			if len(p)+1>=len(s):
 				continue
-			# if phrase+'\t'+scenario in scenario2embed.keys():
-			# 	continue
+			if p+'\t'+s in scenario2embed.keys():
+				continue
 			if len(phrase_windows)==0:
-				phrase_windows = rank_list.get_window_list(phrase)
-			pattern = re.compile(phrase, re.IGNORECASE)
-			s_strip = pattern.sub('', scenario)
+				phrase_windows = rank_list.get_window_list(p)
+			pattern = re.compile(p, re.IGNORECASE)
+			s_strip = pattern.sub('', s)
 			s_strip = s_strip.replace(' s ','')
 			
 			k_shrink = max(int(len(phrase_windows)/(2**len(s_strip.split(' ')))),10)
@@ -212,8 +212,8 @@ if __name__ == '__main__':
 				mached_windows.append(s_windows[i][0])
 			s_tfidf = rank_list.get_context_rep_manual(mached_windows,'tfidf')
 			s_word_emb = rank_list.get_context_rep_manual(mached_windows,'word_embedding')
-			write_line('s_tfidf.txt',phrase+'\t'+scenario+'\t'+str(s_tfidf))
-			write_line('s_word_embedding.txt',phrase+'\t'+scenario+'\t'+str(s_word_emb).replace('\n',' '))
+			write_line('s_tfidf.txt',p+'\t'+s+'\t'+str(s_tfidf))
+			write_line('s_word_embedding.txt',p+'\t'+s+'\t'+str(s_word_emb).replace('\n',' '))
 
 
 
