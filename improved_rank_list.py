@@ -44,13 +44,13 @@ class ImprovedRankList(object):
         if 'path_to_vec' in self.__dict__:
             self.word_embedding = form_matrix(self.path_to_vec)
         # get pre-stored vectors
-        if self.context_type=='tfidf':
-            self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
-            self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
-        elif self.context_type=='word_embedding':
-            self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
-            self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
-        self.prepared_phrase2perturb = get_prepared_p2perturb(self.phrase2perturb_file)
+        # if self.context_type=='tfidf':
+        #     self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
+        #     self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
+        # elif self.context_type=='word_embedding':
+        #     self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
+        #     self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
+        # self.prepared_phrase2perturb = get_prepared_p2perturb(self.phrase2perturb_file)
 
     '''
     The main function
@@ -180,27 +180,29 @@ class ImprovedRankList(object):
         return avg_perturb_score
 
     # Get window list for a phrase (or a perturbed phrase)
-    def get_window_list(self, phrase):
+    def get_window_list(self, phrase,word_level='False'):
         window_size = 15
         if 'window_size' in self.__dict__:
             window_size = self.window_size
-        context_list = []
-        if self.word_level in ['true','True','TRUE']:
+        window_list = []
+        if self.word_level in ['true','True','TRUE'] or word_level in ['true','True','TRUE']:
             # Get the list of context words that are close to each word in the phrase
             words = phrase.split(' ')
             for word in words:
                 word_str = word.strip()
                 if len(word_str)>1:
                     temp_list = self.corpus_index.get_context_list(word_str, window_size = window_size)
-                    context_list.extend(temp_list)
+                    window_list.extend(temp_list)
         else:
             # Get the list of context words that are close to the whole phrase
-            context_list = self.corpus_index.get_context_list(phrase, window_size = window_size)
-        return context_list
+            window_list = self.corpus_index.get_context_list(phrase, window_size = window_size)
+            if len(window_list)==0:
+                return self.get_window_list(phrase,'True')
+        return window_list
 
     # Get the representation of a list of contexts
     # Either as a tf-idf vector or as a word vector
-    def get_context_rep(self, window_list, with_weight=False):
+    def get_context_rep(self, window_list, with_weight='False'):
         context_rep = None
         collection_doc_count = self.corpus_index.get_collection_doc_count()
         if self.context_type == 'tfidf':
@@ -265,7 +267,7 @@ class ImprovedRankList(object):
             context_rep = context_rep/len(window_list)  
         return context_rep
 
-    def get_context_rep_manual(self, window_list,context_type):
+    def get_context_rep_manual(self, window_list,context_type,with_weight='False'):
             context_rep = None
             collection_doc_count = self.corpus_index.get_collection_doc_count()
             if context_type == 'tfidf':
@@ -419,14 +421,14 @@ class ImprovedRankList(object):
         if type(phrase_scenario) == dict or type(phrase_scenario) == np.ndarray:
             phrase_context_rep = phrase_scenario
         else:
-            phrase_context_rep = self.get_context_rep([phrase_scenario],with_weight=True)
+            phrase_context_rep = self.get_context_rep([phrase_scenario],with_weight='True')
 #        threshold = 0
 #        if 'kb_matching_threshold' in self.__dict__:
 #            threshold = self.kb_matching_threshold
         matched_contexts_pairs = []
         
         for candidate_window in candidate_window_list:
-            candidate_context_rep = self.get_context_rep([candidate_window],with_weight=True)
+            candidate_context_rep = self.get_context_rep([candidate_window],with_weight='True')
             score = self.get_context_similarity(phrase_context_rep, candidate_context_rep)
 #            candidate_vect_rep = self.get_vect_rep([candidate_window])
 #            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)
@@ -456,14 +458,14 @@ class ImprovedRankList(object):
             if type(phrase_scenario) == dict or type(phrase_scenario) == np.ndarray:
                 phrase_context_rep = phrase_scenario
             else:
-                phrase_context_rep = self.get_context_rep([phrase_scenario],with_weight=True)
+                phrase_context_rep = self.get_context_rep([phrase_scenario],with_weight='True')
     #        threshold = 0
     #        if 'kb_matching_threshold' in self.__dict__:
     #            threshold = self.kb_matching_threshold
             matched_window_pairs = []
             
             for candidate_window in candidate_window_list:
-                candidate_context_rep = self.get_context_rep([candidate_window],with_weight=True)
+                candidate_context_rep = self.get_context_rep([candidate_window],with_weight='True')
                 score = self.get_context_similarity(phrase_context_rep, candidate_context_rep)
     #            candidate_vect_rep = self.get_vect_rep([candidate_window])
     #            score = self.get_vect_similarity(phrase_vect_rep, candidate_vect_rep)

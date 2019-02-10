@@ -175,8 +175,8 @@ if __name__ == '__main__':
 				# get matched windows and vectors for 
 				phrase_windows = rank_list.get_window_list(phrase)
 
-				p_tfidf = rank_list.get_context_rep_manual(phrase_windows,'tfidf')
-				p_word_emb = rank_list.get_context_rep_manual(phrase_windows,'word_embedding')
+				p_tfidf = rank_list.get_context_rep_manual(phrase_windows,'tfidf','True')
+				p_word_emb = rank_list.get_context_rep_manual(phrase_windows,'word_embedding','True')
 				write_line('p_tfidf.txt',phrase+'\to\t'+str(p_tfidf))
 				write_line('p_word_embedding.txt',phrase+'\to\t'+str(p_word_emb).replace('\n',' '))
 				phrase_set[phrase] =phrase
@@ -188,8 +188,8 @@ if __name__ == '__main__':
 			for perturb in pruned_perturbs:
 				if perturb not in phrase_set.keys():
 					perturb_windows = rank_list.get_window_list(perturb)
-					p_tfidf = rank_list.get_context_rep_manual(perturb_windows,'tfidf')
-					p_word_emb = rank_list.get_context_rep_manual(perturb_windows,'word_embedding')
+					p_tfidf = rank_list.get_context_rep_manual(perturb_windows,'tfidf','True')
+					p_word_emb = rank_list.get_context_rep_manual(perturb_windows,'word_embedding','True')
 					write_line('p_tfidf.txt',perturb+'\tt\t'+str(p_tfidf))
 					write_line('p_word_embedding.txt',perturb+'\tt\t'+str(p_word_emb).replace('\n',' '))
 					phrase_set[perturb] = perturb
@@ -210,8 +210,8 @@ if __name__ == '__main__':
 			mached_windows = []
 			for i in range(len(s_windows)):
 				mached_windows.append(s_windows[i][0])
-			s_tfidf = rank_list.get_context_rep_manual(mached_windows,'tfidf')
-			s_word_emb = rank_list.get_context_rep_manual(mached_windows,'word_embedding')
+			s_tfidf = rank_list.get_context_rep_manual(mached_windows,'tfidf','True')
+			s_word_emb = rank_list.get_context_rep_manual(mached_windows,'word_embedding','True')
 			write_line('s_tfidf.txt',phrase+'\t'+scenario+'\t'+str(s_tfidf))
 			write_line('s_word_embedding.txt',phrase+'\t'+scenario+'\t'+str(s_word_emb).replace('\n',' '))
 
