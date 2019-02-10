@@ -43,7 +43,7 @@ class ImprovedRankList(object):
         self.word_embedding = None
         if 'path_to_vec' in self.__dict__:
             self.word_embedding = form_matrix(self.path_to_vec)
-        get pre-stored vectors
+        # get pre-stored vectors
         if self.context_type=='tfidf':
             self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
             self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
@@ -71,10 +71,11 @@ class ImprovedRankList(object):
             score = self.rank_list_comp(phrase, scenario)
             score = float(score)
             scores.append(score)
-            targets.append(float(label))
+            targets.append(1.0-float(label))
             file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
         #Compute the Pearson Correlation Coefficient between the outputs and the ground truth
         pearson_correlation_coefficient = pearson_correlation(scores,targets)
+        print('corr:',pearson_correlation_coefficient)
         writer = codecs.open(self.pearson_correlation_file,'w')
         writer.write(str(pearson_correlation_coefficient))
         # print(pearson_correlation_coefficient)
@@ -92,27 +93,18 @@ class ImprovedRankList(object):
 
         ######## Step1: Compute localized contextual representation ######
         # Get all windows containing phrase in the corpus
-        phrase_windows = self.get_window_list(p_stem)
 
-        #The number of shrinked K for scenario
-        k_shrink = max(int(len(phrase_windows)/(2**len(scenario.split(' ')))),8)
-        
-        
-        print('Computing the context representation.')
-        # Identify the contexts related to the scenario
-        # The output is a dict of {matched_context, sim_score} pairs
-        matched_context2sim_dic = self.get_matched_contexts(scenario, phrase_windows, n_match = k_shrink, threshold = 0)
-        
-        # - Compute the original scenario representation (consider as one window)
-        scenario_context_rep = self.get_context_rep([scenario])
-
-
-        # Compute the updated phrase context representation
-        phrase_context_rep = self.compute_updated_context(scenario_context_rep, matched_context2sim_dic, average = True, weight = self.scenario_corpus_combine_weight)
-#        phrase_context_rep = self.get_localized_contexts(scenario, phrase_windows, len(scenario))
-       
         # Compute the original phrase representation
-        phrase_rep = self.get_context_rep([p_stem])
+        # phrase_rep = self.get_context_rep([p_stem])   # word_level
+        phrase_rep = self.p2v[p_stem]   # phrase level
+        phrase_norm_rep = phrase_rep
+        # scenario
+        scenario_rep = self.get_context_rep(scenario)
+        if p_stem+'\t'+scenario in self.s2v.keys():
+            scenario_rep = self.s2v[p_stem+'\t'+scenario]
+
+        # combine 
+        phrase_context_rep = self.combine_context(scenario_rep,phrase_norm_rep, self.phrase_corpus_combine_weight)
 
 
         ######## Step2: Adjusting localized context rep with KB ######
@@ -142,17 +134,13 @@ class ImprovedRankList(object):
                 # Generate the contexts of the original phrase based on matched candidate pages
                 phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_context2sim_dic, average = False, weight = self.phrase_kb_combine_weight)
 
-        # Combine phrase representation with its context rep
-        phrase_context_rep = self.combine_context(phrase_rep, phrase_context_rep,ratio = self.phrase_context_ratio)
+                # Combine phrase representation with its context rep
+                phrase_context_rep = self.combine_context(phrase_rep, phrase_context_rep,ratio = self.phrase_context_ratio)
         
         ######## 3. get perturbed phrases ######
         # Generate the list of perturbed phrases.
         print('Get perturbed phrase list.')
-        perturbed_phrase_list = get_perturbed_phrases(phrase,self.stem_words)
-
-        # Prune the list of perturbed phrases. (according to pair co-occurrence)
-        print('Prune perturbed phrase list.')
-        perturbed_phrase_list = self.prune_perturbed_phrase(perturbed_phrase_list)
+        perturbed_phrase_list = self.prepared_phrase2perturb[p_stem]
 
         print('Compute output score for determining CD/NCD.')
         output_score = 0
@@ -161,11 +149,10 @@ class ImprovedRankList(object):
         for perturbed_phrase in perturbed_phrase_list:
             if self.stem_words in ['True','true']:
                 perturbed_phrase = stem_words(perturbed_phrase)
-            perturb_rep = self.get_context_rep([perturbed_phrase])
-            pertub_window_list = self.get_window_list(perturbed_phrase)
-            perturb_context_rep = self.get_context_rep(pertub_window_list)
-            perturb_context_rep = self.combine_context(perturb_rep,perturb_context_rep,ratio = self.phrase_context_ratio)
-            
+            # perturb_rep = self.get_context_rep([perturbed_phrase])
+            perturb_rep = self.p2v[perturbed_phrase]
+            perturb_context_rep = perturb_rep
+
             # 4. calculate sim between phrase and perturb (sum and avg)
             output_score = output_score + self.get_context_similarity(phrase_context_rep, perturb_context_rep)
 #            print(self.get_context_similarity(phrase_context_rep, context_rep))
@@ -402,6 +389,7 @@ class ImprovedRankList(object):
         
         elif self.context_type == 'word_embedding':
             similarity_score = np.inner(context_rep_1, context_rep_2)/(np.linalg.norm(context_rep_1)*np.linalg.norm(context_rep_2)+0.0001)
+            # print(similarity_score)
             similarity_score =  similarity_score[0][0]
         # print('context similarity score = {}'.format(similarity_score))
         return similarity_score

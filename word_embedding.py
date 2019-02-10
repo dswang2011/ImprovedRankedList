@@ -1,5 +1,6 @@
 import io
 import numpy as np
+import ast
 def form_matrix(file_name):
     word_list = []
     ll = []
@@ -20,7 +21,7 @@ def get_phrase2vect_dict(phrase2idf_file, context_type):
 				continue
 			strs = line.strip().split('\t')
 			if context_type=='tfidf':
-				phrase2vect[strs[0].strip()] = strs[2].strip()
+				phrase2vect[strs[0].strip()] = ast.literal_eval(strs[2].strip())
 			elif context_type=='word_embedding':
 				vect = np.fromstring(strs[2].strip().replace('[[','').replace(']]',''),sep=' ')
 				phrase2vect[strs[0].strip()] = vect
@@ -34,12 +35,21 @@ def get_scenario2vect_dict(phrase2idf_file, context_type):
 				continue
 			strs = line.strip().split('\t')
 			if context_type=='tfidf':
-				scenario2vect[strs[0].strip()+'\t'+strs[1].strip()] = strs[2].strip()
+				scenario2vect[strs[0].strip()+'\t'+strs[1].strip()] = ast.literal_eval(strs[2].strip())
 			elif context_type=='word_embedding':
 				vect = np.fromstring(strs[2].strip().replace('[[','').replace(']]',''),sep=' ')
 				scenario2vect[strs[0].strip()+'\t'+strs[1].strip()] = vect
 	return scenario2vect
 
+
+p2vect = get_phrase2vect_dict('resources/p_tfidf.txt',context_type='tfidf')
+print(len(p2vect))
+# p2vect = get_phrase2vect_dict('resources/p_word_embedding.txt',context_type='word_embedding')
+# print(len(p2vect))
+# p2vect = get_scenario2vect_dict('resources/s_tfidf.txt',context_type='tfidf')
+# print(len(p2vect))
+# p2vect = get_scenario2vect_dict('resources/s_word_embedding.txt',context_type='word_embedding')
+# print(len(p2vect))
 
 # def get_wordvec(path_to_vec, word2id=None):
 #     matrix, word_list = form_matrix(path_to_vec)
