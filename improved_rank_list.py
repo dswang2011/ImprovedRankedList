@@ -43,14 +43,14 @@ class ImprovedRankList(object):
         self.word_embedding = None
         if 'path_to_vec' in self.__dict__:
             self.word_embedding = form_matrix(self.path_to_vec)
-        # get pre-stored vectors
-        # if self.context_type=='tfidf':
-        #     self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
-        #     self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
-        # elif self.context_type=='word_embedding':
-        #     self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
-        #     self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
-        # self.prepared_phrase2perturb = get_prepared_p2perturb(self.phrase2perturb_file)
+        get pre-stored vectors
+        if self.context_type=='tfidf':
+            self.p2v = get_phrase2vect_dict(self.phrase2idf_file,self.context_type)
+            self.s2v = get_scenario2vect_dict(self.scenario2idf_file,self.context_type)
+        elif self.context_type=='word_embedding':
+            self.p2v = get_phrase2vect_dict(self.phrase2embed_file,self.context_type)
+            self.s2v = get_scenario2vect_dict(self.scenario2embed_file,self.context_type)
+        self.prepared_phrase2perturb = get_prepared_p2perturb(self.phrase2perturb_file)
 
     '''
     The main function
