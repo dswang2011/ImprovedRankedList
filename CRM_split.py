@@ -64,20 +64,30 @@ class ImprovedRankList(object):
             output_file = self.output_file
 
         file_writer = codecs.open(output_file,'w',encoding='utf8')
-        scores = []
-        targets = []
-        for phrase,scenario,label in zip(phrases,scenarios,labels):
-            #Compute the compositional score
-            score = self.rank_list_comp(phrase, scenario)
-            score = float(score)
-            scores.append(score)
-            targets.append(1.0-float(label))
-            file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
-        #Compute the Pearson Correlation Coefficient between the outputs and the ground truth
-        pearson_correlation_coefficient = pearson_correlation(scores,targets)
-        print('corr:',pearson_correlation_coefficient)
-        writer = codecs.open(self.pearson_correlation_file,'w')
-        writer.write(str(pearson_correlation_coefficient))
+        
+        corr_list = []
+        for i in [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]:
+        	for j in [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]:
+	            self.scenario_kb_combine_weight = i
+	            # self.corpus_phrase_combine_weight = i
+	            self.corpus_kb_combine_weight = j
+	            scores = []
+	            targets = []
+	            for phrase,scenario,label in zip(phrases,scenarios,labels):
+		            #Compute the compositional score
+	                score = self.rank_list_comp(phrase, scenario)
+	                score = float(score)
+	                print('',score)
+	                scores.append(score)
+	                targets.append(float(label))
+	                file_writer.write('{}\t{}\t{}\t{}\n'.format(phrase,scenario,score,label))
+		        #Compute the Pearson Correlation Coefficient between the outputs and the ground truth
+	            pearson_correlation_coefficient = pearson_correlation(scores,targets)
+	            print('corr:',pearson_correlation_coefficient)
+	            writer = codecs.open(self.pearson_correlation_file,'w')
+	            writer.write(str(pearson_correlation_coefficient))
+	            corr_list.append(pearson_correlation_coefficient)
+        print(corr_list)
         # print(pearson_correlation_coefficient)
 
     '''
@@ -101,10 +111,12 @@ class ImprovedRankList(object):
         # scenario
         scenario_rep = self.get_context_rep(scenario)
         if p_stem+'\t'+scenario in self.s2v.keys():
-            scenario_rep = self.s2v[p_stem+'\t'+scenario]
+            scenario_context_rep = self.s2v[p_stem+'\t'+scenario]
+        else:
+        	scenario_context_rep = scenario_rep
 
         # combine 
-        phrase_context_rep = self.combine_context(scenario_rep,phrase_norm_rep, self.phrase_corpus_combine_weight)
+        phrase_context_rep = self.combine_context(scenario_rep,phrase_norm_rep, self.corpus_phrase_combine_weight)
 
 
         ######## Step2: Adjusting localized context rep with KB ######
@@ -135,7 +147,7 @@ class ImprovedRankList(object):
                 phrase_context_rep = self.compute_updated_context(phrase_context_rep, matched_context2sim_dic, average = False, weight = self.phrase_kb_combine_weight)
 
                 # Combine phrase representation with its context rep
-                phrase_context_rep = self.combine_context(phrase_rep, phrase_context_rep,ratio = self.phrase_context_ratio)
+                # phrase_context_rep = self.combine_context(phrase_rep, phrase_context_rep,ratio = self.phrase_context_ratio)
         
         ######## 3. get perturbed phrases ######
         # Generate the list of perturbed phrases.
@@ -390,7 +402,7 @@ class ImprovedRankList(object):
         elif self.context_type == 'word_embedding':
             similarity_score = np.inner(context_rep_1, context_rep_2)/(np.linalg.norm(context_rep_1)*np.linalg.norm(context_rep_2)+0.0001)
             # print(similarity_score)
-            similarity_score =  similarity_score[0][0]
+            # similarity_score =  similarity_score[0][0]
         # print('context similarity score = {}'.format(similarity_score))
         return similarity_score
 
