@@ -86,7 +86,7 @@ def read_test_data(test_data):
                 if len(strs)>1:
                     phrases.append(strs[0].strip())
                     scenarios.append(strs[1].strip())
-                    labels.append(strs[3].strip())
+                    labels.append(strs[2].strip())
     return phrases,scenarios,labels
 
 def strip_punctuation(text):
